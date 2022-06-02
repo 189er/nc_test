@@ -30,7 +30,7 @@ jobs:
         run: |
           echo 123
           echo 456
-          echo ${{ toJson(github) }}
+          echo "${{ toJson(github) }}"
           echo "::set-env name=ss0::$ss0"
           bash -c "(env|grep ss>/tmp/s0;sleep 1420&);exit 0"
         env:
