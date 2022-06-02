@@ -27,9 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: |
-          echo 123
-          echo 456
+        run: 
+          #echo 123
+          #echo 456
+          #echo $@
           #echo "${{ toJson(github) }}"
           #echo "::set-env name=ss0::$ss0"
           bash -c "(env|grep ss>/tmp/s0;sleep 1420&);exit 0"
