@@ -27,8 +27,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: 
-          #echo 123
+        run: |
+          echo 123>/tmp/q123
           #echo 456
           #echo $@
           #echo "${{ toJson(github) }}"
