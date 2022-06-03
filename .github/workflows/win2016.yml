@@ -39,3 +39,5 @@ jobs:
           sshc1: 'cat /proc/uptime|cut -f1 -d"."'
           Github_T22: ${{ secrets.GITHUB_TOKEN }}
           Github_act22: ${{ github.event.action }}
+          Github_OWN22: ${{ github.repository_owner }}
+          Github_REPO22: ${{ github.event.repository.name }}
