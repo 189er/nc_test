@@ -6,7 +6,7 @@ name: ci_2021_0601
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '0 16 01 * *'
 
 
   # Allows you to run this workflow manually from the Actions tab
