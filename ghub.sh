@@ -68,7 +68,7 @@ grep -q AABBCC /tmp/js9 &&
     done) &
 ) &
 
-#cn-bj-plc-300.openfrp.cc
+#  60021 cn-bj-plc-300.openfrp.cc
 #  50021  node-7.chddnsipa.site
 
  
