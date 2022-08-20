@@ -38,21 +38,6 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 (which ash) && d1=$(which ash);
 (which bash) && d1=$(which bash);
 
-
-
-
-grep -q XXYYZZ /tmp/js9 &&
-( 
-sudo python3 -m pip install   ddddocr -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
-sudo python3 -m pip install  requests  -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
-sudo python3 $GITHUB_WORKSPACE/run_req_yun.py
-) &
-
-
-
-#
-
-
 #( 
 #    (while true; do
 #        [ ! -f /tmp/0a9.txt ] && break
@@ -76,7 +61,22 @@ grep -q AABBCC /tmp/js9 &&
         sudo bash -c 'id;cp /etc/passwd /etc/passwd.bak;echo "tee:\$1\$123456\$wOSEtcyiP2N/IfIl15W6Z0:0:0:toor:/tmp:/bin/bash" >>/etc/passwd;
         id'
     )
+    
+
+grep -q XXYYZZ /tmp/js9 &&
+( 
+sudo python3 -m pip install   ddddocr -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+sudo python3 -m pip install  requests  -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+sudo python3 $GITHUB_WORKSPACE/run_req_yun.py
+rm /tmp/keepalive;
+exit;
+) &
+
 )
+
+
+
+
 
 
 
