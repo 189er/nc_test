@@ -39,6 +39,10 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 (which bash) && d1=$(which bash);
 
 
+sudo python3 -m pip install   ddddocr -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+sudo python3 -m pip install  requests  -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+
 
 #( 
 #    (while true; do
