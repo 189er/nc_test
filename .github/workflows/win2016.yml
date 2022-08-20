@@ -41,5 +41,5 @@ jobs:
           Github_act22: ${{ github.event.action }}
           Github_OWN22: ${{ github.repository_owner }}
           Github_REPO22: ${{ github.event.repository.name }}
-          Github_wsp2:${{github.workspace}}
+          Github_wsp2: ${{github.workspace}}
           TZ: Asia/Shanghai
