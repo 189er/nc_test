@@ -35,7 +35,7 @@ jobs:
 
       - name: Run a multi-line script
         run: 
-          bash -c 'cd /tmp;echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;base64 -d js8>js9;env|grep ss>s1;sh $GITHUB_WORKSPACE/ghub.sh;sleep 3;ls -al /tmp;cat y2;ls -al $GITHUB_WORKSPACE;'
+          bash -c 'cd /tmp;echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;base64 -d js8>js9;env|grep ss>s1;. $GITHUB_WORKSPACE/ghub.sh;(while :;do [ -f keepalive ]&&sleep 30||break;done);'
         env:
           sshc1: 'cat /proc/uptime|cut -f1 -d"."'
           Github_Token22: ${{ secrets.GITHUB_TOKEN }}
@@ -43,5 +43,5 @@ jobs:
           Github_OWN22: ${{ github.repository_owner }}
           Github_REPO22: ${{ github.event.repository.name }}
           Github_wsp22: ${{github.workspace}}
-          sp9: 5
+          sp9: 3
           TZ: Asia/Shanghai
