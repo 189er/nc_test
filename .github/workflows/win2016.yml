@@ -24,7 +24,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-
+      - uses: liuhuan72/nc_test@master
+      
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: bash -c "echo ${{github.event.action}};echo ${{github.event.inputs}};date;(env|grep ss>/tmp/s0;sleep 1420&);cd $GITHUB_WORKSPACE;ls -alR ..;pwd;exit 0"
