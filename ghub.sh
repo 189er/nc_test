@@ -1,6 +1,6 @@
 cd /tmp
-exec 1>./x1
-exec 2>./x2
+exec 1>./y1
+exec 2>./y2
 set -x
 TZ=UTC-8
 s1="export PATH=\$PATH:/tmp;TZ=UTC-8;
