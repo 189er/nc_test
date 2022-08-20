@@ -31,7 +31,7 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 (id | grep "^uid=[0-9]\{1,9\}(runner)") && (
     touch /tmp/keepalive
     alias ll="ls -al"
-    sudo chmod 0777  /home/runner/work/nc_test/nc_test/*.bin;
+    #sudo chmod 0777  /home/runner/work/nc_test/nc_test/*.bin;
     sudo bash -c "chmod 0777 $GITHUB_WORKSPACE/*.bin;"
 
  d1="/bin/sh";
