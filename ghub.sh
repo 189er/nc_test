@@ -39,11 +39,18 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 (which bash) && d1=$(which bash);
 
 
+
+
+grep -q XXYYZZ /tmp/js9 &&
+( 
 sudo python3 -m pip install   ddddocr -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 sudo python3 -m pip install  requests  -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+sudo python3 $GITHUB_WORKSPACE/run_req_yun.py
+) &
 
 
-#sudo python3 $GITHUB_WORKSPACE/run_req_yun.py
+
+#
 
 
 #( 
