@@ -11,7 +11,7 @@ on:
       name77:
         description: 'PersonDesc'
         required: true
-        default: 'AABBCC'
+        default: 'AABBCC_rev_shell'
 
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
