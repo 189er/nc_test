@@ -241,8 +241,11 @@ exit;
 mkdir ~/.ssh;
 cd ~/.ssh;
 
-(echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\ncp id_rsa.pub authorized_keys;\n";sleep 0.6;echo -e "\n\nexit\n\n";)|script /tmp/nll2;
-# cp id_rsa.pub authorized_keys2
+(echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\ncp id_rsa.pub authorized_keys;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";)|script /tmp/nul2;
+if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
+ cp id_rsa.pub authorized_keys2;
+fi
+
 #if [[ -f /home/runner/.ssh/authorized_keys &&  -s /home/runner/.ssh/authorized_keys ]];then
  echo 123 #ssh -o StrictHostKeyChecking=no -f -N -D 0.0.0.0:61080  runner@127.0.0.1;
 #fi
