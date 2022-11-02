@@ -240,8 +240,8 @@ exit;
 #)
 mkdir ~/.ssh;
 cd ~/.ssh;
-(echo "ssh-keygen -t  rsa";sleep 0.8;echo -e "\n";sleep 0.6;echo -e "\n\n\nexit\nexit\n";)|script /tmp/null 
-cp id_rsa.pub  authorized_keys;
+(echo "ssh-keygen -t  rsa";sleep 0.8;echo -e "\n";sleep 0.6;echo -e "\n\n\ncp id_rsa.pub  authorized_keys;\nexit\nexit\n";)|script /tmp/null
+
 
 
 if [ ! -z ${sp9} ]; then sleep $sp9; fi
