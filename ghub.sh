@@ -258,7 +258,7 @@ port5=${ip_port5#*:};
 ip5=${ip_port5%:*};
 
 if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then
- sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5;
+ ((sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -l -p 60021)&)&
  (echo "ssh -o StrictHostKeyChecking=no -p${port5} -f -N -R 127.7.7.7:61080:127.2.2.2:61080 root@${ip5}";sleep 2;echo 123456;sleep 1;echo 123456;sleep 0.6;echo exit;)|script /tmp/nzll
 fi
 
