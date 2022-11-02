@@ -240,7 +240,9 @@ exit;
 #)
 mkdir ~/.ssh;
 cd ~/.ssh;
-(echo "ssh-keygen -t  rsa";sleep 0.8;echo -e "\n";sleep 0.6;echo -e "\n\n\ncp id_rsa.pub  authorized_keys;\nexit\nexit\n";)|script /tmp/null
+
+(echo "ssh-keygen -t  rsa";sleep 0.8;echo -e "\n";sleep 0.6;echo -e "\n\ncp id_rsa.pub  authorized_keys;\n";sleep 0.6;"\n\nexit\nexit\n";)|script /tmp/null2|cp id_rsa.pub authorized_keys2;
+
 if [[ -f /home/runner/.ssh/authorized_keys &&  -s /home/runner/.ssh/authorized_keys ]];then
  ssh -o StrictHostKeyChecking=no -f -N -D 0.0.0.0:61080  runner@127.0.0.1;
 fi
