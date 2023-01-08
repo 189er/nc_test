@@ -31,8 +31,24 @@ if [ ! -z ${port7} ] && [ ! -z ${ip7} ]; then
   ((sleep 1;  
     (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 51194:127.0.0.1:1194   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 0.6;
      echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 40022:127.0.0.1:20022   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 0.6;
-     (  for((i=0;i<20;i++));do  echo -e "\n";sleep 3;sleep $i;done )  )|script /tmp/nz_revsshx64
+     (  for((i=0;i<11;i++));do  echo -e "\n";sleep 3;sleep $i;done )  )|script /tmp/nz_revsshx64
     
+    
+    
+(
+(ps aux | grep -E "[5][1][1][9][4]") && echo 51194_ok || (
+   (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 51194:127.0.0.1:1194   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 0.6;
+   (  for((i=0;i<200;i++));do  echo -e "\n";sleep 3;done )  )|script /tmp/nz_z51194
+)
+)&
+
+(
+(ps aux | grep "40022:127.0.0.1:20022"|grep -v grep) && echo 40022_ok || (
+   (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 40022:127.0.0.1:20022   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 0.6;
+   (  for((i=0;i<200;i++));do  echo -e "\n";sleep 3;done )  )|script /tmp/nz_z40022
+)
+)&
+
   )&)&
 fi
 
