@@ -27,7 +27,7 @@ port7=${ip_port7#*:};
 ip7=${ip_port7%:*};
 
 if [ ! -z ${port7} ] && [ ! -z ${ip7} ]; then
- ((/home/runner/work/nc_test/nc_test/socat.bin -v  TCP4-LISTEN:50022,reuseaddr,fork  proxy:${ip7}:127.0.0.1:2244,proxyport=${port7}  )&)&
+ ((/home/runner/work/nc_test/nc_test/socat.bin TCP4-LISTEN:50022,reuseaddr,fork  proxy:${ip7}:127.0.0.1:2244,proxyport=${port7}  )&)&
   ((sleep 1;  
     (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 51194:127.0.0.1:1194   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 0.6;echo 1234567;
      echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 40022:127.0.0.1:20022   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 0.6;
@@ -50,13 +50,14 @@ if [ ! -z ${port7} ] && [ ! -z ${ip7} ]; then
 )&
 
   )&)&
-fi
-
-if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then 
- sudo chmod 0777 $GITHUB_WORKSPACE/natapp;
+else
+  if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then 
+    sudo chmod 0777 $GITHUB_WORKSPACE/natapp;
  #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
- sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5; 
+   sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5; 
 #else sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p 60021 cn-bj-plc-300.openfrp.cc ;
+  fi
+
 fi
 
 
