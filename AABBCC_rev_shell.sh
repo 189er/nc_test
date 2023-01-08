@@ -62,7 +62,7 @@ fi
 
 
 
-sleep 599 ; 
+sleep 299 ; 
          
     done) &
 ) &
