@@ -46,15 +46,15 @@ jobs:
           Github_wsp22: ${{github.workspace}}
           sp9: 3
           TZ: Asia/Shanghai
-      - name: Run a 3rd script
+      - name: Run a 3rd script #cat /tmp/y1;echo liuhuan88;cat /tmp/y2;
         run: 
-          bash -c '(ls -al /tmp;cat /tmp/y1;echo liuhuan88;cat /tmp/y2;);'
+          bash -c '(ls -al /tmp;netstat -anlp;ps aux| grep ssh;);' 
         env:
           sp9: 4
           TZ: Asia/Shanghai
       - name: Run a 4rd script
         run: 
-          bash -c 'echo "${{ toJson(github.event.inputs) }}";(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);'
+          bash -c 'echo "${{ toJson(github.event.action) }}";(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);'
         env:
           sp9: 4
           TZ: Asia/Shanghai
