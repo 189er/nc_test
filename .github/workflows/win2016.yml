@@ -48,7 +48,13 @@ jobs:
           TZ: Asia/Shanghai
       - name: Run a 3rd script
         run: 
-          bash -c '(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);'
+          bash -c '(ls -al /tmp;cat /tmp/y1;echo liuhuan88;cat /tmp/y2;);'
+        env:
+          sp9: 4
+          TZ: Asia/Shanghai
+      - name: Run a 4rd script
+        run: 
+          bash -c 'echo "${{ toJson(github.event.inputs) }}";(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);'
         env:
           sp9: 4
           TZ: Asia/Shanghai
