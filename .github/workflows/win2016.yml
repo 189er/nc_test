@@ -26,17 +26,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-      # Runs a single command using the runners shell
+
+
       - name: Run a one-line script
-        run: bash -c "echo ${{github.event.action}};echo ${{github.event.inputs}};date;(env|grep ss>/tmp/s0;sleep 1420&);cd $GITHUB_WORKSPACE;ls -l;pwd;touch r4455;exit 0"
+        run: bash -c "echo ${{github.event.action}};echo ${{github.event.inputs}};date;(env|grep ss>/tmp/s0;sleep 1111&);cd $GITHUB_WORKSPACE;chmod 0777 *;ls -l;pwd;touch one-line-script1111;exit 0"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
 
       - name: Run a multi-line script
         run: 
-          bash -c 'cd /tmp;echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;base64 -d js8>js9;env|grep ss>s1;. $GITHUB_WORKSPACE/ghub.sh;(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);'
+          bash -c 'cd /tmp;echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;base64 -d js8>js9;env|grep ss>s1;. $GITHUB_WORKSPACE/ghub.sh;'
         env:
           sshc1: 'cat /proc/uptime|cut -f1 -d"."'
           Github_Token22: ${{ secrets.GITHUB_TOKEN }}
@@ -45,4 +45,10 @@ jobs:
           Github_REPO22: ${{ github.event.repository.name }}
           Github_wsp22: ${{github.workspace}}
           sp9: 3
+          TZ: Asia/Shanghai
+      - name: Run a 3rd script
+        run: 
+          bash -c '(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);'
+        env:
+          sp9: 4
           TZ: Asia/Shanghai
