@@ -52,7 +52,7 @@ if [ ! -z ${port7} ] && [ ! -z ${ip7} ]; then
   )&)&
 else
   if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then 
-    sudo chmod 0777 $GITHUB_WORKSPACE/natapp;
+    #sudo chmod 0777 $GITHUB_WORKSPACE/natapp;
  #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
    sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5; 
 #else sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p 60021 cn-bj-plc-300.openfrp.cc ;
