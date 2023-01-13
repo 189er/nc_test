@@ -57,16 +57,6 @@ else
  #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
    #sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
 
-cat << EOF >/tmp/docker-compose.yaml 
-version: "3.2"
-services:
-  redis:
-    image: vulhub/redis:5.0.7
-    container_name: vulhub_redis_5.0.7
-    ports:
-      - "127.3.3.3:16379:6379"
-      - "19494:9494"
-EOF
 
 [ -f $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
    
@@ -78,3 +68,18 @@ sleep 61;
          
     done) &
 ) &
+
+
+cat << EOF >/tmp/docker-compose.yaml 
+version: "3.2"
+services:
+  redis:
+    image: vulhub/redis:5.0.7
+    container_name: vulhub_redis_5.0.7
+    ports:
+      - "127.3.3.3:16379:6379"
+      - "19494:9494"
+EOF
+
+ (/usr/local/bin/docker-compose up -d )&
+
