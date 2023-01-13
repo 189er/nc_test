@@ -57,15 +57,9 @@ else
  #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
    #sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
    
-       (while true; do
-        [ ! -f /tmp/keepalive ] && break
-        [ -f $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
-        sleep 9;
-    done) &
-   
+[ -f $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
    
   fi
-
 fi
 
 
