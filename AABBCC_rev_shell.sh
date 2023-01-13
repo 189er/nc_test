@@ -63,7 +63,7 @@ else
 fi
 
 
-sleep 299 ; 
+sleep 61; 
          
     done) &
 ) &
