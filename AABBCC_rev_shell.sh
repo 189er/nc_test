@@ -55,7 +55,7 @@ else
   if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then 
     #sudo chmod 0777 $GITHUB_WORKSPACE/natapp;
  #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
-   sudo sh -c "export HOME=/tmp;alias ll=\"ls -al\";$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
+   sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
   fi
 
 fi
