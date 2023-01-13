@@ -59,7 +59,7 @@ else
    
        (while true; do
         [ ! -f /tmp/keepalive ] && break
-        [ -f /tmp/upx_reverse-sshx64.bin ]&&sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport  -p $port5 $ip5";
+        [ -f /tmp/upx_reverse-sshx64.bin ]&&sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
         sleep 9;
     done) &
    
@@ -67,7 +67,6 @@ else
   fi
 
 fi
-
 
 
 sleep 299 ; 
