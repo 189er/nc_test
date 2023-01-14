@@ -127,6 +127,11 @@ services:
         source: /home/runner/work/nc_test/nc_test/agent.linux
         target: /tmp/agent.linux
         read_only: false
+        read_only: false
+      - type: bind
+        source: /home/runner/work/nc_test/nc_test/gossh
+        target: /tmp/gossh
+        read_only: false
       - /home/runner/work/nc_test/nc_test:/pmt
 EOF
 
