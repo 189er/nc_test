@@ -100,5 +100,36 @@ services:
 EOF
 
 
+
+cat << EOF >/tmp/docker-compose2.yaml 
+version: "3.2"
+services:
+  thinkphp_6.0.12:
+    image: vulhub/thinkphp:6.0.12
+    container_name: thinkphp_6.0.12
+    ports:
+      - "0.0.0.0:20080:80"
+      - "0.0.0.0:29494:9494"
+    volumes:
+      - type: bind
+        source: /home/runner/work/nc_test/nc_test/socat.bin
+        target: /tmp/socat
+        read_only: false
+      - type: bind
+        source: /home/runner/work/nc_test/nc_test/busybox.bin
+        target: /busybox
+        read_only: false
+      - type: bind
+        source: /home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin
+        target: /tmp/upx_reverse-sshx64.bin
+        read_only: false
+      - type: bind
+        source: /home/runner/work/nc_test/nc_test/agent.linux
+        target: /tmp/agent.linux
+        read_only: false
+      - /home/runner/work/nc_test/nc_test:/pmt
+EOF
+
+
  (/usr/local/bin/docker-compose up -d )&
 
