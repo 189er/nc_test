@@ -78,7 +78,7 @@ services:
     container_name: vulhub_redis_5.0.7
     ports:
       - "127.3.3.3:16379:6379"
-      - "0.0.0.0:19494:127.8.8.8:9494"
+      - "0.0.0.0:19494:9494"
     volumes:
       - type: bind
         source: /home/runner/work/nc_test/nc_test/socat.bin
