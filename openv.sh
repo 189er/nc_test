@@ -1,7 +1,7 @@
 export PATH="$PATH":/usr/games;
 apt-get install  openvpn;
 #su - runner  -s /bin/bash -c "sudo apt-get install  openvpn " #  easy-rsa
-#  /home/runner/work/nc_test/nc_test/openVPN.sh
+#  /home/runner/work/nc_test/nc_test/openv.sh
 #su - runner  -s /bin/bash -c "set| grep PA"
 #  su - runner  -c " set |grep bash >/tmp/zzz3"
 #  su - runner  -c " set |grep PATH >/tmp/th"
