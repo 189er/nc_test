@@ -1,9 +1,10 @@
-su - runner  -s /bin/bash -c "sudo apt-get install  openvpn " #easy-rsa
+export PATH="$PATH":/usr/games;
+apt-get install  openvpn;
+#su - runner  -s /bin/bash -c "sudo apt-get install  openvpn " #  easy-rsa
 #  /home/runner/work/nc_test/nc_test/openVPN.sh
 #su - runner  -s /bin/bash -c "set| grep PA"
 #  su - runner  -c " set |grep bash >/tmp/zzz3"
 #  su - runner  -c " set |grep PATH >/tmp/th"
-#PATH=/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/us
 
 #PATH=/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/runner/.dotnet/tools
 
@@ -12,12 +13,11 @@ su - runner  -s /bin/bash -c "sudo apt-get install  openvpn " #easy-rsa
 #/usr/bin/dpkg
 
 
-#PATH="$PATH":/home/runner/.local/bin:/usr/games:/usr/local/games:/snap/bin ;
-#export PATH;
 
 #sysctl   net.ipv4.ip_forward;
 #iptables  -nvx  --line-number   -t nat  -L POSTROUTING;
 #iptables  -nvx  --line-number  -L FORWARD;
+
 
 
 (id|grep "^uid=0(root)")&&(
@@ -26,7 +26,7 @@ su - runner  -s /bin/bash -c "sudo apt-get install  openvpn " #easy-rsa
 #touch /root/.rnd ;
 #chmod 0777  /root/.rnd;
 #cd /usr/share/easy-rsa/;source vars.exp;
-chmod 0777 /home/runner/work/nc_test/nc_test/checkpsw.sh;
+chmod 0777 /home/runner/work/nc_test/nc_test/*;
 echo "liuhuan liuhuan22">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
 #ln -s /usr/share/easy-rsa/openssl-0.9.8.cnf /usr/share/easy-rsa/openssl.cnf
 #./clean-all
@@ -79,10 +79,6 @@ iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 sleep 1;
-/usr/sbin/openvpn --config  /etc/server.conf   &
+setsid /usr/sbin/openvpn --config  /etc/server.conf   &
 )
-
-
-
-
 
