@@ -50,7 +50,7 @@ jobs:
           TZ: Asia/Shanghai
       - name: Run a 3rd script #cat /tmp/y1;echo liuhuan88;cat /tmp/y2;cat /tmp/y1;
         run: 
-          bash -c '(ls -al /tmp;sudo netstat -tnlp;ps aux| grep ssh;cat /etc/*release);' 
+          bash -c '(ls -al / /tmp;sudo netstat -tnlp;ps aux| grep ssh;cat /etc/*release);' 
         env:
           sp9: 4
           TZ: Asia/Shanghai
