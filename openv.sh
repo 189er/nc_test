@@ -1,5 +1,7 @@
 export PATH="$PATH":/usr/games;
-apt-get install  openvpn;
+# apt-get install  openvpn;
+sudo -E bash -c "set|grep PATH >/tmp/env999;export PATH="$PATH":/usr/games;apt-get install  openvpn;"
+
 #su - runner  -s /bin/bash -c "sudo apt-get install  openvpn " #  easy-rsa
 #  /home/runner/work/nc_test/nc_test/openv.sh
 #su - runner  -s /bin/bash -c "set| grep PA"
@@ -79,6 +81,6 @@ iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 sleep 1;
-setsid /usr/sbin/openvpn --config  /etc/server.conf   &
+#setsid /usr/sbin/openvpn --config  /etc/server.conf   &
 )
 
