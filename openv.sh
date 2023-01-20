@@ -81,4 +81,4 @@ setsid /usr/sbin/openvpn --config  /etc/server.conf   &
 #iptables  -nvx  --line-number  -L FORWARD;
 
 
-'(id|grep "^uid=0(root)")&&(  )
+#(id|grep "^uid=0(root)")&&(  )
