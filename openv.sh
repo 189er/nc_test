@@ -3,7 +3,7 @@
 
 (id | grep "^uid=[0-9]\{1,9\}(runner)") && (
 #export PATH="$PATH":/tmp/AAAABBBB;
-export P566="/tmp/AAAABBBB";
+export P566="/tmp/AAAABBBB;\$PATH";
 sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;apt-get install  openvpn;"#set|grep PATH >/tmp/env777;
 #:/usr/games;set|grep PATH >/tmp/env999;
 
@@ -12,7 +12,7 @@ sudo bash -c '
 echo "liuhuan liuhuan22">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
 
 
-cat << EOF >/etc/server.conf 
+cat << EOF >/etc/5server.conf 
 port 1194
 proto tcp
 dev tun
@@ -50,13 +50,13 @@ EOF
 
 mkdir -p /etc/openvpn/ccd;
 chmod 0777 /etc/openvpn/ccd;
-echo -e "ifconfig-push 10.8.2.5 255.255.255.0\\\niroute 172.30.200.0 255.255.255.0">/etc/openvpn/ccd/liuhuan;
+echo -e "ifconfig-push 10.8.2.5 255.255.255.0\niroute 172.30.200.0 255.255.255.0">/etc/openvpn/ccd/liuhuan;
 
 iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 sleep 1;
-#setsid /usr/sbin/openvpn --config  /etc/server.conf   &
+#setsid /usr/sbin/openvpn --config  /etc/5server.conf   &
 '
 )&
 
