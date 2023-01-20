@@ -32,8 +32,8 @@ jobs:
         run:  "choco install busybox which>nul"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
-      # Runs a set of commands using the runners shell
+      # Runs a set of commands using the runners shell \"C:/Program Files/Git/bin/"
       - name: Run a 2-line script
-        run:  "choco -V&&busybox&&busybox pwd&&dir \"C:/Program Files/Git/bin/" "
+        run:  "choco -V&&busybox&&busybox pwd&&dir  "
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7" 
