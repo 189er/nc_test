@@ -23,6 +23,9 @@ sudo -E bash -c "set|grep PATH >/tmp/env999;export PATH="$PATH":/usr/games;apt-g
 
 
 (id|grep "^uid=0(root)")&&(
+export PATH="$PATH":/usr/games;
+apt-get install  openvpn;
+
 #grep -v "^#" /usr/share/easy-rsa/vars | grep -v "^$" >/usr/share/easy-rsa/vars.exp;
 #touch ~/.rnd;
 #touch /root/.rnd ;
