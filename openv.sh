@@ -41,7 +41,7 @@ client-config-dir /etc/openvpn/ccd
 ;cipher AES-256-CBC
 ;compress lz4-v2
 ;push "compress lz4-v2"
-#auth_user_pass_file = '[UNDEF]'
+#auth_user_pass_file = "[UNDEF]"
 auth-user-pass-verify /home/runner/work/nc_test/nc_test/checkpsw.sh via-env
 client-cert-not-required  
 username-as-common-name 
@@ -50,13 +50,13 @@ EOF
 
 mkdir -p /etc/openvpn/ccd;
 chmod 0777 /etc/openvpn/ccd;
-echo -e \'ifconfig-push 10.8.2.5 255.255.255.0\\\niroute 172.30.200.0 255.255.255.0\'>/etc/openvpn/ccd/liuhuan;
+echo -e "ifconfig-push 10.8.2.5 255.255.255.0\\\niroute 172.30.200.0 255.255.255.0">/etc/openvpn/ccd/liuhuan;
 
 iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 sleep 1;
-setsid /usr/sbin/openvpn --config  /etc/server.conf   &
+#setsid /usr/sbin/openvpn --config  /etc/server.conf   &
 '
 )&
 
