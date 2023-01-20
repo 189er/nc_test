@@ -62,7 +62,7 @@ jobs:
           
       - name: Run a 4rd script
         run: 
-          bash -c 'echo "${{ toJson(github.event.action) }}";(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);'
+          bash -c 'echo "${{ toJson(github.event.action) }}";(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);cat y2;'
         env:
           sp9: 4
           TZ: Asia/Shanghai
