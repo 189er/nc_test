@@ -2,7 +2,7 @@
 
 
 (id | grep "^uid=[0-9]\{1,9\}(runner)") && (
-export PATH="$PATH":/AAAABBBB;
+export PATH="$PATH":/tmp/AAAABBBB;
 
 sudo -E bash -c "set|grep PATH >/tmp/env777;export PATH="$PATH":/usr/games;set|grep PATH >/tmp/env999;apt-get install  openvpn;"
 
