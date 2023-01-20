@@ -4,8 +4,8 @@
 (id | grep "^uid=[0-9]\{1,9\}(runner)") && (
 #export PATH="$PATH":/tmp/AAAABBBB;
 
-sudo -E bash -c "export PATH="$PATH":/usr/games;set|grep PATH >/tmp/env999;apt-get install  openvpn;"#set|grep PATH >/tmp/env777;
-
+sudo -E bash -c "export PATH="$PATH";apt-get install  openvpn;"#set|grep PATH >/tmp/env777;
+#:/usr/games;set|grep PATH >/tmp/env999;
 )&
 
 
