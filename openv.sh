@@ -6,49 +6,11 @@
 export P566="/tmp/AAAABBBB";
 sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;apt-get install  openvpn;"#set|grep PATH >/tmp/env777;
 #:/usr/games;set|grep PATH >/tmp/env999;
-)&
 
 
-
-
-
-#su - runner  -s /bin/bash -c "sudo apt-get install  openvpn " #  easy-rsa
-#  /home/runner/work/nc_test/nc_test/openv.sh
-#su - runner  -s /bin/bash -c "set| grep PA"
-#  su - runner  -c " set |grep bash >/tmp/zzz3"
-#  su - runner  -c " set |grep PATH >/tmp/th"
-
-#PATH=/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/runner/.dotnet/tools
-
-#PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-#runner@fv-az236-674:~$ which dpkg
-#/usr/bin/dpkg
-
-
-
-#sysctl   net.ipv4.ip_forward;
-#iptables  -nvx  --line-number   -t nat  -L POSTROUTING;
-#iptables  -nvx  --line-number  -L FORWARD;
-
-
-
-(id|grep "^uid=0(root)")&&(
-export PATH="$PATH":/usr/games;
-apt-get install  openvpn;
-
-#grep -v "^#" /usr/share/easy-rsa/vars | grep -v "^$" >/usr/share/easy-rsa/vars.exp;
-#touch ~/.rnd;
-#touch /root/.rnd ;
-#chmod 0777  /root/.rnd;
-#cd /usr/share/easy-rsa/;source vars.exp;
-chmod 0777 /home/runner/work/nc_test/nc_test/*;
+sudo bash -c '
 echo "liuhuan liuhuan22">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
-#ln -s /usr/share/easy-rsa/openssl-0.9.8.cnf /usr/share/easy-rsa/openssl.cnf
-#./clean-all
-#./build-ca --batch
-#touch /usr/share/easy-rsa/keys/index.txt.attr
-#./build-key-server  --batch server
-#./build-dh
+
 
 cat << EOF >/etc/server.conf 
 port 1194
@@ -88,12 +50,35 @@ EOF
 
 mkdir -p /etc/openvpn/ccd;
 chmod 0777 /etc/openvpn/ccd;
-echo -e 'ifconfig-push 10.8.2.5 255.255.255.0\niroute 172.30.200.0 255.255.255.0'>/etc/openvpn/ccd/liuhuan;
+echo -e \'ifconfig-push 10.8.2.5 255.255.255.0\\\niroute 172.30.200.0 255.255.255.0\'>/etc/openvpn/ccd/liuhuan;
 
 iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 sleep 1;
 setsid /usr/sbin/openvpn --config  /etc/server.conf   &
-)
+'
+)&
 
+
+
+
+
+#su - runner  -s /bin/bash -c "sudo apt-get install  openvpn " #  easy-rsa
+#  /home/runner/work/nc_test/nc_test/openv.sh
+#su - runner  -s /bin/bash -c "set| grep PA"
+#  su - runner  -c " set |grep bash >/tmp/zzz3"
+#  su - runner  -c " set |grep PATH >/tmp/th"
+
+#PATH=/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/runner/.dotnet/tools
+
+#PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+#runner@fv-az236-674:~$ which dpkg
+#/usr/bin/dpkg
+
+#sysctl   net.ipv4.ip_forward;
+#iptables  -nvx  --line-number   -t nat  -L POSTROUTING;
+#iptables  -nvx  --line-number  -L FORWARD;
+
+
+(id|grep "^uid=0(root)")&&(  )
