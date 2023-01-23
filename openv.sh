@@ -7,7 +7,7 @@ export P566="/tmp/ABFFT0;\$PATH";
 export Z566="/tmp/ACCDD1;$PATH";
 sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;apt-get install  openvpn;"
 #set|grep PATH >/tmp/env77722;
-#:/usr/games;set|grep PATH >/tmp/env999;
+#  export PATH=$PATH:/usr/games;  set|grep PATH >/tmp/env999;
 
 
 sudo bash -c '
