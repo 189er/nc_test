@@ -11,6 +11,10 @@ grep -q NPV /tmp/js9 &&
 . $GITHUB_WORKSPACE/openv.sh
 )&
 
+mkdir -p -v  $GITHUB_WORKSPACE/package;
+date>$GITHUB_WORKSPACE/package/d2023.txt;
+
+
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
 ((sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022)&)&
