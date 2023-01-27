@@ -68,8 +68,8 @@ jobs:
           TZ: Asia/Shanghai
       - uses: actions/upload-artifact@v2
         with:
-         name: nuget
+         name: nuget123
          path: ${{ github.workspace }}/package
-        name: "Upload Package"
+        name: "Upload Package9981"
       
       
