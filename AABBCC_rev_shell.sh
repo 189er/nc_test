@@ -15,7 +15,7 @@ mkdir -p -v  $GITHUB_WORKSPACE/package;
 mkdir -p -v  $GITHUB_WORKSPACE/dist;
 date>$GITHUB_WORKSPACE/package/d2023.txt;
 date>$GITHUB_WORKSPACE/dist/d2023.txt;
-
+date>$GITHUB_WORKSPACE/d2023.txt;
 
 
 
