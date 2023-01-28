@@ -66,7 +66,7 @@ jobs:
         env:
           sp9: 4
           TZ: Asia/Shanghai
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
          name: nuget123
          path: ${{ github.workspace }}/package
@@ -98,14 +98,15 @@ jobs:
           sp9: 2
           TZ: Asia/Shanghai
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
          name: nuget123
          path: ${{ github.workspace }}/package
         name: "Upload Package9982"
       - name: Run a 9rd script
-        run: 
-          bash -c '(ls -alR $GITHUB_WORKSPACE;)' 
+        run: |
+          bash -c '(ls -alR $GITHUB_WORKSPACE)' 
+          id
         env:
           sp9: 1
           TZ: Asia/Shanghai
