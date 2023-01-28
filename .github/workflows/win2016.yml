@@ -81,7 +81,9 @@ jobs:
             #body_path: CHANGELOG.txt
             draft: false  # 是否是草稿
             prerelease: false  # 是否是预览版
-            files: d2023.txt
+            files: |
+                    d2023.txt
+                    js9.txt
             
 
   build_jobs8:    
