@@ -77,15 +77,16 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/download-artifact@v2
-        with:
-         name: nuget123
-         path: ${{ github.workspace }}/package
-        name: "Upload Package9982"
-
       - name: Run a 8rd script
         run: 
           bash -c '(ls -al /tmp;sudo netstat -tnlp;ps aux| grep ssh;cat /etc/os*release; ls -alR $GITHUB_WORKSPACE;)' 
         env:
           sp9: 2
           TZ: Asia/Shanghai
+
+      - uses: actions/download-artifact@v2
+        with:
+         name: nuget123
+         path: ${{ github.workspace }}/package
+        name: "Upload Package9982"
+
