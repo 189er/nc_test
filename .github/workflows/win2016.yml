@@ -76,7 +76,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
             tag_name: v1.6
-            name: ${{ github.ref }}
+            name: "ka卡卡"
             body: TODO New Release${{ github.ref }}.
             body_path: CHANGELOG.txt
             draft: false  # 是否是草稿
