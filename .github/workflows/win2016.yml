@@ -19,8 +19,8 @@ jobs:
   # This workflow contains a single job called "build"
   build_jobs3:
     # The type of runner that the job will run on
-    runs-on: ubuntu-18.04
-    #ubuntu-latest
+    runs-on: ubuntu-20.04
+    #ubuntu-latest  18.04 20.04  22.04
     #container: 'centos:latest'
     
 
@@ -71,13 +71,14 @@ jobs:
          name: nuget123
          path: ${{ github.workspace }}/package
         name: "Upload Package9981"
+        
       - name: Create Release and Upload Release Asset
         uses: softprops/action-gh-release@v1
         with:
-            tag_name: v1.5
+            tag_name: v1.6
             name: ${{ github.ref }}
-            body: TODO New Release.
-            #body_path: CHANGELOG.txt
+            body: TODO New Release${{ github.ref }}.
+            body_path: CHANGELOG.txt
             draft: false  # 是否是草稿
             prerelease: false  # 是否是预览版
             files: d2023.txt
