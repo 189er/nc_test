@@ -90,7 +90,7 @@ jobs:
     steps:
       - name: Run a 8rd script
         run: 
-          bash -c '(ls -al /tmp;sudo netstat -tnlp;ps aux| grep ssh;cat /etc/os*release; ls -alR $GITHUB_WORKSPACE;)' 
+          bash -c '(ls -al /tmp;ls -alR $GITHUB_WORKSPACE;)' 
         env:
           sp9: 2
           TZ: Asia/Shanghai
@@ -100,4 +100,10 @@ jobs:
          name: nuget123
          path: ${{ github.workspace }}/package
         name: "Upload Package9982"
+      - name: Run a 9rd script
+        run: 
+          bash -c '(ls -alR $GITHUB_WORKSPACE;)' 
+        env:
+          sp9: 1
+          TZ: Asia/Shanghai
 
