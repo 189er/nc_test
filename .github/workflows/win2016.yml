@@ -83,7 +83,8 @@ jobs:
             files: d2023.txt
             
 
-  build_jobs8:
+  build_jobs8:    
+    needs: build_jobs3
     runs-on: ubuntu-22.04
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
