@@ -70,6 +70,7 @@ jobs:
         with:
          name: nuget123
          path: ${{ github.workspace }}/package
+         retention-days: 6
         name: "Upload Package9981"
         
       - name: Create Release and Upload Release Asset
