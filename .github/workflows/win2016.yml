@@ -62,7 +62,7 @@ jobs:
           
       - name: Run a 4rd script
         run: 
-          bash -c 'cd /tmp;echo "${{toJson(github.event.action)}}";(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);cat y2;'
+          bash -c 'cd /tmp;echo "${{toJson(github.event.action)}}";(while :;do [ -f /tmp/keepalive ]&&sleep 10||break;done);' #cat y2;
         env:
           sp9: 4
           TZ: Asia/Shanghai
@@ -71,5 +71,21 @@ jobs:
          name: nuget123
          path: ${{ github.workspace }}/package
         name: "Upload Package9981"
-      
-      
+
+
+  build_jobs8:
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+         name: nuget123
+         path: ${{ github.workspace }}/package
+        name: "Upload Package9982"
+
+      - name: Run a 8rd script
+        run: 
+          bash -c '(ls -al /tmp;sudo netstat -tnlp;ps aux| grep ssh;cat /etc/os*release; ls -alR $GITHUB_WORKSPACE;)' 
+        env:
+          sp9: 2
+          TZ: Asia/Shanghai
