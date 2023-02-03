@@ -6,7 +6,7 @@
 
 export HOME=/tmp;
 
-cat $GITHUB_WORKSPACE/123.apk.00? >/tmp/t933.apk;
+cat $GITHUB_WORKSPACE/docs/123.apk.00? >/tmp/t933.apk;
 
 grep -q NPV /tmp/js9 &&
 (
