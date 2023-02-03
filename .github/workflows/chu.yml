@@ -5,12 +5,18 @@ name: ci_2021_0601
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  schedule:
-    - cron: '0 16 01 * *'
+ # schedule:
+  #  - cron: '0 16 01 * *'
 
 
   # Allows you to run this workflow manually from the Actions tab
+  
   workflow_dispatch:
+    inputs:
+      name77:
+        description: 'PersonDesc'
+        required: true
+        default: 'XXX'
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
