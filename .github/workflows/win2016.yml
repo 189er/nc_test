@@ -19,7 +19,7 @@ jobs:
   # This workflow contains a single job called "build"
   build_jobs3:
     # The type of runner that the job will run on
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-19.04
     #ubuntu-latest  18.04 20.04  22.04
     #container: 'centos:latest'
     #services:
