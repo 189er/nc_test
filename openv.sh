@@ -58,6 +58,8 @@ iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 sleep 1;
+echo "setsid /usr/sbin/openvpn --config /etc/5server.conf &" >/tmp/npv.sh;
+
 #setsid /usr/sbin/openvpn --config  /etc/5server.conf   &
 '
 )&
