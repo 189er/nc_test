@@ -26,8 +26,8 @@ server 10.8.2.0 255.255.255.0
 push "route 10.1.0.0  255.255.0.0"
 #push "route 0.0.0.0  128.0.0.0"
 #push "route 128.0.0.0  128.0.0.0"
-;push "redirect-gateway def1"
-push "dhcp-option DNS 8.8.4.4"
+#;push "redirect-gateway def1"
+#push "dhcp-option DNS 8.8.4.4"
 ifconfig-pool-persist /etc/openvpn/ccd/ipp_liuhuan.txt
 keepalive 10 120
 persist-key
@@ -53,6 +53,8 @@ EOF
 mkdir -p /etc/openvpn/ccd;
 chmod 0777 /etc/openvpn/ccd;
 echo -e "ifconfig-push 10.8.2.5 255.255.255.0\niroute 172.30.200.0 255.255.255.0">/etc/openvpn/ccd/ipp_liuhuan.txt;
+echo -e "ifconfig-push 10.8.2.9 255.255.255.0">/etc/openvpn/ccd/ipp_aa.txt;
+
 
 iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
