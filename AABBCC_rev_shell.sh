@@ -13,6 +13,12 @@ grep -q NPV /tmp/js9 &&
 . $GITHUB_WORKSPACE/openv.sh
 )&
 
+grep -q xrdp /tmp/js9 &&
+(
+. $GITHUB_WORKSPACE/xrdp.sh
+)&
+
+
 mkdir -p -v  $GITHUB_WORKSPACE/package;
 mkdir -p -v  $GITHUB_WORKSPACE/dist;
 id>$GITHUB_WORKSPACE/package/d2023.txt;
