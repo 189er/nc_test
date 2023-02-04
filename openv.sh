@@ -24,15 +24,15 @@ key  /home/runner/work/nc_test/nc_test/server.key
 dh   /home/runner/work/nc_test/nc_test/dh2048.pem
 server 10.8.2.0 255.255.255.0
 push "route 10.1.0.0  255.255.0.0"
-push "route 0.0.0.0  128.0.0.0"
-push "route 128.0.0.0  128.0.0.0"
+#push "route 0.0.0.0  128.0.0.0"
+#push "route 128.0.0.0  128.0.0.0"
 ;push "redirect-gateway def1"
 push "dhcp-option DNS 8.8.4.4"
 ifconfig-pool-persist /etc/openvpn/ccd/ipp_liuhuan.txt
 keepalive 10 120
 persist-key
 persist-tun
-status /tmp/openvpn_status_liu.log
+status /tmp/opvpn_status_liu.log
 verb 4
 script-security 3
 
