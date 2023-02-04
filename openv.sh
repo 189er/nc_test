@@ -11,7 +11,7 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;apt-get install
 
 
 sudo bash -c '
-echo -e "liuhuan liuhuan22\r\nlh lh22">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
+echo -e "liuhuan liuhuan22\rlh lh22\naa bb">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
 
 
 cat << EOF >/etc/5server.conf 
