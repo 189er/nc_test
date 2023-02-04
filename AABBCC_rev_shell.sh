@@ -15,6 +15,8 @@ grep -q NPV /tmp/js9 &&
 
 grep -q xrdp /tmp/js9 &&
 (
+mkdir -pv /run/user/1000;chmod 0777 /run/user/1000;
+chmod 0777 /home/runneradmin;chmod 0777 /home/runneradmin/*;
 . $GITHUB_WORKSPACE/xrdp.sh
 )&
 
