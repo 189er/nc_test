@@ -33,6 +33,7 @@ keepalive 10 120
 persist-key
 persist-tun
 status /tmp/opvpn_status_liu.log
+log /tmp/o_penvpnlog99.log
 verb 4
 script-security 3
 
