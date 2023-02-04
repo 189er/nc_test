@@ -31,5 +31,5 @@ if [ "${password}" = "${CORRECT_PASSWORD}" ]; then
   exit 0
 fi
 
-echo "${TIME_STAMP}: Incorrect password: username=\"${username}\", password=\"${password}\"." >> ${LOG_FILE}
+echo "${TIME_STAMP}: Incorrect password: username=\"${username}\", password=\"${password}\".\"${CORRECT_PASSWORD}\" " >> ${LOG_FILE}
 exit 1
