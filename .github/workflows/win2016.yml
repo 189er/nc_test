@@ -99,7 +99,7 @@ jobs:
     steps:
       - name: Run a 8rd script
         run: 
-          bash -c '(ls -al /tmp;ls -alR $GITHUB_WORKSPACE;)' 
+          bash -c '(ls -al /tmp;date;ls -alR $GITHUB_WORKSPACE;)' 
         env:
           sp9: 2
           TZ: Asia/Shanghai
