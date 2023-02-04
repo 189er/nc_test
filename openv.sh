@@ -5,10 +5,12 @@
 #export PATH="$PATH":/tmp/AAAABBBB;
 export P566="/tmp/ABFFT0;\$PATH";
 export Z566="/tmp/ACCDD1;$PATH";
-sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;apt-get install  openvpn;"
+sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 #set|grep PATH >/tmp/env77722;
 #  export PATH=$PATH:/usr/games;  set|grep PATH >/tmp/env999;
 
+
+sudo apt-get install  openvpn;
 
 sudo bash -c '
 echo -e "liuhuan liuhuan22\nlh lh22\naa bb">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
@@ -53,9 +55,9 @@ EOF
 
 mkdir -p /etc/openvpn/ccd;
 chmod 0777 /etc/openvpn/ccd;
-echo -e "ifconfig-push 10.8.2.5 255.255.255.0\niroute 172.30.200.0 255.255.255.0">/etc/openvpn/ccd/ipp_liuhuan.txt;
-echo -e "ifconfig-push 10.8.2.8 255.255.255.0">/etc/openvpn/ccd/ipp_aa.txt;
-echo -e "ifconfig-push 10.8.2.9 255.255.255.0">/etc/openvpn/ccd/aa;
+echo -e "ifconfig-push 10.8.2.77 255.255.255.0">/etc/openvpn/ccd/liuhuan;
+echo -e "ifconfig-push 10.8.2.22 255.255.255.0">/etc/openvpn/ccd/lh;
+echo -e "ifconfig-push 10.8.2.9 255.255.255.0\niroute 172.30.200.0 255.255.255.0">/etc/openvpn/ccd/aa;
 
 
 iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
