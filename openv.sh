@@ -10,7 +10,7 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 #  export PATH=$PATH:/usr/games;  set|grep PATH >/tmp/env999;
 
 
-sudo apt-get install  openvpn;
+sudo apt-get install  openvpn >/tmp/ovn.txt;
 
 sudo bash -c '
 echo -e "liuhuan liuhuan22\nlh lh22\naa bb">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
