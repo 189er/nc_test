@@ -6,23 +6,34 @@
 
 export HOME=/tmp;
 
-cat $GITHUB_WORKSPACE/docs/123.apk.00? >/tmp/t933.apk;
-
-grep -q NPV /tmp/js9 &&
+#cat $GITHUB_WORKSPACE/docs/123.apk.00? >/tmp/t933.apk;
+grep -q NPV /tmp/js9&&grep -q xrdp /tmp/js9&&
 (
 . $GITHUB_WORKSPACE/openv.sh
-)&
-
-grep -q xrdp /tmp/js9 &&
-(
 sudo bash -c 'mkdir -pv /run/user/1000;chmod 0777 /run/user/1000;
 chmod 0777 /home/runneradmin;chmod 0777 /home/runneradmin/*;'
 . $GITHUB_WORKSPACE/xrdp.sh
 )&
 
 
+grep -q NPV /tmp/js9||
+(
+grep -q xrdp /tmp/js9&&(
+sudo bash -c 'mkdir -pv /run/user/1000;chmod 0777 /run/user/1000;
+chmod 0777 /home/runneradmin;chmod 0777 /home/runneradmin/*;'
+. $GITHUB_WORKSPACE/xrdp.sh
+)&
+
+
+grep -q xrdp /tmp/js9||
+(
+grep -q NPV /tmp/js9&&(. $GITHUB_WORKSPACE/openv.sh)
+)&
+
+
 mkdir -p -v  $GITHUB_WORKSPACE/package;
 mkdir -p -v  $GITHUB_WORKSPACE/dist;
+
 id>$GITHUB_WORKSPACE/package/d2023.txt;
 #date>$GITHUB_WORKSPACE/dist/d2023.txt;
 uptime>$GITHUB_WORKSPACE/d2023.txt;
