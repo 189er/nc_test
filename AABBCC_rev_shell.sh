@@ -7,6 +7,7 @@
 export HOME=/tmp;
 
 #cat $GITHUB_WORKSPACE/docs/123.apk.00? >/tmp/t933.apk;
+cat /tmp/js9;
 grep -q NPV /tmp/js9&&grep -q xrdp /tmp/js9&&
 (
 . $GITHUB_WORKSPACE/openv.sh
@@ -16,17 +17,16 @@ chmod 0777 /home/runneradmin;chmod 0777 /home/runneradmin/*;'
 )&
 
 
-grep -q NPV /tmp/js9||
-(
+grep -q NPV /tmp/js9||(
 grep -q xrdp /tmp/js9&&(
 sudo bash -c 'mkdir -pv /run/user/1000;chmod 0777 /run/user/1000;
 chmod 0777 /home/runneradmin;chmod 0777 /home/runneradmin/*;'
 . $GITHUB_WORKSPACE/xrdp.sh
+)
 )&
 
 
-grep -q xrdp /tmp/js9||
-(
+grep -q xrdp /tmp/js9||(
 grep -q NPV /tmp/js9&&(. $GITHUB_WORKSPACE/openv.sh)
 )&
 
