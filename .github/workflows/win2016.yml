@@ -67,7 +67,7 @@ jobs:
           
       - name: Run a 4rd script
         run: 
-          bash -c 'cd /tmp;echo "${{toJson(github.event.action)}}";(rt=0;while :;do rt=$((${rt}+1));[ ${rt} -gt 10 ]&&break;[ $((${rt}%60)) -eq 0 ]&&echo $rt&&(netstat -anlp|grep 34292;ps aux|grep sshx64);[ -f /tmp/keepalive ]&&sleep 10||break;done);' #cat y2;
+          bash -c 'cd /tmp;echo "${{toJson(github.event.action)}}";(rt=0;while :;do rt=$((${rt}+1));[ ${rt} -gt 10 ]&&whoami&&break;[ $((${rt}%60)) -eq 0 ]&&echo $rt&&(netstat -anlp|grep 34292;ps aux|grep sshx64);[ -f /tmp/keepalive ]&&sleep 10||break;done);' #cat y2;
         env:
           sp9: 4
           TZ: Asia/Shanghai
