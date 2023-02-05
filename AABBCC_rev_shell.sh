@@ -13,6 +13,7 @@ grep -q NPV /tmp/js9&&grep -q xrdp /tmp/js9&&
 . $GITHUB_WORKSPACE/openv.sh
 sudo bash -c 'mkdir -pv /run/user/1000;chmod 0777 /run/user/1000;
 chmod 0777 /home/runneradmin;chmod 0777 /home/runneradmin/*;'
+sleep 1;
 . $GITHUB_WORKSPACE/xrdp.sh
 )&
 
