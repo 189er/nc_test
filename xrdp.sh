@@ -14,6 +14,6 @@ sudo bash -c "echo exec startxfce4 >>/etc/xrdp/xrdp.ini;"
 sudo systemctl restart xrdp;
 break;
 }||sleep 5;
-echo $fr5;
+echo "$fr5";
 done
 ';
