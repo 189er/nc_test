@@ -18,6 +18,6 @@ break;
 
 }||sleep 5;
 echo "$fr5";
-
+stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
 done
 ';
