@@ -6,7 +6,7 @@ echo runner:123456|chpasswd;
 while true;
 do
 fr5=$(sudo ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep);
-[ -z $fr5 ]&&{
+[ -z "$fr5" ]&&{
 
 sudo apt install -y xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils >/tmp/xf.txt;
 sudo apt install -y xrdp >/tmp/xr.txt;
