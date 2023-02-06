@@ -7,7 +7,8 @@
 export HOME=/tmp;
 
 #cat $GITHUB_WORKSPACE/docs/123.apk.00? >/tmp/t933.apk;
-cat /tmp/js9;
+#cat /tmp/js9;
+
 grep -q NPV /tmp/js9&&grep -q xrdp /tmp/js9&&
 (
 . $GITHUB_WORKSPACE/openv.sh
