@@ -1,5 +1,6 @@
 #/usr/lib/apt/methods/http
 # netstat -anlp|grep http
+#  stat  /var/lib/dpkg/lock
 
 sudo bash -c '
 ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep >>/tmp/x0.c;
