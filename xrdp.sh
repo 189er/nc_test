@@ -1,5 +1,7 @@
 sudo bash -c '
 ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep >>/tmp/x0.c;
+stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
+
 echo runneradmin:123456|chpasswd ;  
 echo runner:123456|chpasswd;
 
