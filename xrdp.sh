@@ -3,6 +3,8 @@
 #  stat  /var/lib/dpkg/lock
 # /var/lib/apt/lists/lock
 # /var/cache/apt/archives/lock
+#  /usr/bin/dpkg --force-confdef --force-confold --status-fd 47 --configure --pending
+# /usr/bin/perl -w /usr/share/debconf/frontend /var/lib/dpkg/info/openvpn.postinst configure
 
 
 sudo bash -c '
