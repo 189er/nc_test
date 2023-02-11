@@ -61,6 +61,7 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
         echo runner:123456|chpasswd;
         sed -i "s/^#\?\(PermitRootLogin\)/\1 yes#/g" /etc/ssh/sshd_config;
         echo root:123456|chpasswd;
+        setsid bash -c "/etc/init.d/ssh   stop ;/etc/init.d/ssh   start ;" &
         id'
     )
     
