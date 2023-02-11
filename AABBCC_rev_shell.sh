@@ -68,7 +68,7 @@ if [ ! -z ${port7} ] && [ ! -z ${ip7} ]; then
  ((/home/runner/work/nc_test/nc_test/socat.bin TCP4-LISTEN:50022,reuseaddr,fork  proxy:${ip7}:127.0.0.1:2244,proxyport=${port7}  )&)&
   ((sleep 1;  
     (echo "ssh -o StrictHostKeyChecking=no -CNf -R 51194:127.0.0.1:1194   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;echo "ps aux|grep ssh";
-     echo "ssh -o StrictHostKeyChecking=no -CNf -R 40022:127.0.0.1:20022  root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;echo "ps aux|grep ssh";
+     echo "ssh -o StrictHostKeyChecking=no -CNf -R 40022:127.0.0.1:22  root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;echo "ps aux|grep ssh";
      (  for((i=0;i<3;i++));do  echo -e "123456\n";sleep 2;done )  )|script /tmp/nz_revsshx64
     
     
@@ -81,8 +81,8 @@ if [ ! -z ${port7} ] && [ ! -z ${ip7} ]; then
 )&
 
 (
-(ps aux | grep "40022:127.0.0.1:20022"|grep -v grep) && echo 40022_ok || (
-   (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 40022:127.0.0.1:20022   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;
+(ps aux | grep "40022:127.0.0.1:22"|grep -v grep) && echo 40022_ok || (
+   (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 40022:127.0.0.1:22   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;
    (  for((i=0;i<8;i++));do  echo -e "\n";sleep 3;done )  )|script /tmp/nz_z40022
 )
 )&
@@ -100,13 +100,16 @@ else
   fi
 fi
 
-echo "will sleep 61s for while true";
+echo "will sleep 31s for while true";
 sleep 31; 
          
     done) &
 ) &
 
 
+setsid docker pull   idoall/ubuntu16.04-sshd &
+ 
+ 
 cat << EOF >/tmp/docker-compose.yaml 
 version: "3.2"
 services:
@@ -180,3 +183,4 @@ EOF
 
 
 [ -x /home/runner/work/nc_test/nc_test/socat.bin ]  &&busybox setsid /home/runner/work/nc_test/nc_test/socat.bin -v tcp-l:9696,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
+
