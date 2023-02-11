@@ -46,11 +46,10 @@ cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
 
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
-((sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022)&)&
+setsid sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
 
  sudo bash -c '  sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g"  /etc/sudoers;
                  grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 >  /tmp/js9a.txt '
-
 
 
     (while true; do
@@ -67,30 +66,24 @@ port7=${ip_port7#*:};
 ip7=${ip_port7%:*};
 
 if [ ! -z ${port7} ] && [ ! -z ${ip7} ]; then
- ((/home/runner/work/nc_test/nc_test/socat.bin TCP4-LISTEN:50022,reuseaddr,fork  proxy:${ip7}:127.0.0.1:2244,proxyport=${port7}  )&)&
-  ((sleep 1;  
-    (echo "ssh -o StrictHostKeyChecking=no -CNf -R 51194:127.0.0.1:1194   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;echo "ps aux|grep ssh";
-     echo "ssh -o StrictHostKeyChecking=no -CNf -R 40022:127.0.0.1:22  root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;echo "ps aux|grep ssh";
-     (  for((i=0;i<3;i++));do  echo -e "123456\n";sleep 2;done )  )|script /tmp/nz_revsshx64
-
-
-
+ setsid /home/runner/work/nc_test/nc_test/socat.bin TCP4-LISTEN:50022,reuseaddr,fork  proxy:${ip7}:127.0.0.1:2244,proxyport=${port7}  &
+ 
 (
-(ps aux | grep  "51194:127.0.0.1:1194"|grep -v grep) && echo 51194_ok || (
-   (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 51194:127.0.0.1:1194   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;
-   (  for((i=0;i<9;i++));do  echo -e "\n";sleep 3;done )  )|script /tmp/nz_z51194
-)
-)&
-
-(
-(ps aux | grep "40022:127.0.0.1:22"|grep -v grep) && echo 40022_ok || (
+ (ps aux|grep -v grep|grep "40022:127.0.0.1:22")&& echo 40022_ok ||(sleep 1;
    (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 40022:127.0.0.1:22   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;
-   (  for((i=0;i<8;i++));do  echo -e "\n";sleep 3;done )  )|script /tmp/nz_z40022
+   (  for((i=0;i<8;i++));do  echo -e "\n";sleep 2;done )  )|script /tmp/nz_z51194
 )
 )&
 
-  )&)&
+
+(
+ (ps aux|grep -v grep|grep "51194:127.0.0.1:1194")&& echo 51194_ok ||(sleep 1;
+   (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 40022:127.0.0.1:22   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;
+   (  for((i=0;i<8;i++));do  echo -e "\n";sleep 2;done )  )|script /tmp/nz_z40022
+)
+)&
 fi
+
 
 if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then 
     #sudo chmod 0777 $GITHUB_WORKSPACE/natapp;
