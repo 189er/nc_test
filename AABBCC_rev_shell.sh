@@ -101,7 +101,7 @@ else
 fi
 
 echo "will sleep 61s for while true";
-sleep 61; 
+sleep 31; 
          
     done) &
 ) &
