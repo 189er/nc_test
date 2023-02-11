@@ -51,6 +51,8 @@ grep -q AABBCC_rev_shell /tmp/js9 &&
  sudo bash -c '  sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g"  /etc/sudoers;
                  grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 >  /tmp/js9a.txt '
 
+
+
     (while true; do
         [ ! -f /tmp/keepalive ] && break        
          num67z=$(date +%S);num76=$((${num67z}%8));
@@ -70,9 +72,9 @@ if [ ! -z ${port7} ] && [ ! -z ${ip7} ]; then
     (echo "ssh -o StrictHostKeyChecking=no -CNf -R 51194:127.0.0.1:1194   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;echo "ps aux|grep ssh";
      echo "ssh -o StrictHostKeyChecking=no -CNf -R 40022:127.0.0.1:22  root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;echo "ps aux|grep ssh";
      (  for((i=0;i<3;i++));do  echo -e "123456\n";sleep 2;done )  )|script /tmp/nz_revsshx64
-    
-    
-    
+
+
+
 (
 (ps aux | grep  "51194:127.0.0.1:1194"|grep -v grep) && echo 51194_ok || (
    (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 51194:127.0.0.1:1194   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;
@@ -88,8 +90,9 @@ if [ ! -z ${port7} ] && [ ! -z ${ip7} ]; then
 )&
 
   )&)&
-else
-  if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then 
+fi
+
+if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then 
     #sudo chmod 0777 $GITHUB_WORKSPACE/natapp;
  #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
    #sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
@@ -97,8 +100,8 @@ else
 
 [ -f $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
    echo "exit_revSSH_isOK_$bport";
-  fi
 fi
+
 
 echo "will sleep 31s for while true";
 sleep 31; 
@@ -108,7 +111,8 @@ sleep 31;
 
 
 setsid docker pull   idoall/ubuntu16.04-sshd &
- 
+
+
  
 cat << EOF >/tmp/docker-compose.yaml 
 version: "3.2"
