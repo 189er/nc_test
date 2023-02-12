@@ -7,6 +7,8 @@
 export HOME=/tmp;
 
 #setsid docker pull  metasploitframework/metasploit-framework &
+#setsid docker pull   idoall/ubuntu16.04-sshd &
+setsid docker pull  xrsec/cobaltstrike &
 
 #cat $GITHUB_WORKSPACE/docs/123.apk.00? >/tmp/t933.apk;
 #cat /tmp/js9;
@@ -105,7 +107,7 @@ sleep 31;
 ) &
 
 
-#setsid docker pull   idoall/ubuntu16.04-sshd &
+
 
 
  
