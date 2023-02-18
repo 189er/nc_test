@@ -17,7 +17,7 @@ do
 fr5=$(sudo ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep);
 [ -z "$fr5" ]&&{
 
-sudo apt install -y xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils >/tmp/xa.txt&&sudo apt install -y xrdp >/tmp/xz.txt"
+sudo apt install -y xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils >/tmp/xa.txt&&sudo apt install -y xrdp >/tmp/xz.txt;
 sudo systemctl restart xrdp;
 break;
 
