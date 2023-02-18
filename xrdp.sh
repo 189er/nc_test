@@ -29,3 +29,4 @@ done
 ';
 
 # &&sudo bash -c "echo exec startxfce4 >>/etc/xrdp/xrdp.ini;
+#    setsid /usr/sbin/xrdp-sesman --nodaemon ;  setsid /usr/sbin/xrdp  --nodaemon ;
