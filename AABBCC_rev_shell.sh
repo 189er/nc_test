@@ -10,7 +10,7 @@ export HOME=/tmp;
 #setsid docker pull   idoall/ubuntu16.04-sshd &
 #setsid docker pull  xrsec/cobaltstrike &
 #setsid docker pull  couchbase/centos7-systemd  &  
-setsid docker pull centos:centos7  &
+#setsid docker pull centos:centos7  &
 
 
 
