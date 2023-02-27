@@ -66,7 +66,8 @@ iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 sleep 1;
 echo "setsid /usr/sbin/openvpn --config /etc/5server.conf &" >/tmp/npv.sh;
 
-#setsid /usr/sbin/openvpn --config  /etc/5server.conf   &
+setsid /usr/sbin/openvpn --config  /etc/5server.conf   &
+
 '
 )&
 
