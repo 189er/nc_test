@@ -231,7 +231,9 @@ exit;
 mkdir ~/.ssh;
 cd ~/.ssh;
 
-((echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\ncp id_rsa.pub authorized_keys4;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";)|script /tmp/nul2) 2>&1 >/tmp/nu2;
+((echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\ncp id_rsa.pub authorized_keys4;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";)|script /tmp/nul2) 2>&1 >/tmp/nu2 &
+
+
 if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
  cp id_rsa.pub authorized_keys;
 fi
