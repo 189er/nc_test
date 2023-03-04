@@ -7,9 +7,13 @@
 # /usr/bin/perl -w /usr/share/debconf/frontend /var/lib/dpkg/info/openvpn.postinst configure
 
 
+cd /tmp;
 sudo bash -c '
 ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep >>/tmp/x0.c;
 stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
+
+echo "xterm -bg black -fg white -geometry 150x50+20+10  ;">~/.xsession;
+chmod 777 ~/.xsession;  cat ~/.xsession;
 
 
 while true;
