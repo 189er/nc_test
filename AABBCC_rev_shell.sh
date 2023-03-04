@@ -13,6 +13,8 @@ export HOME=/tmp;
 #setsid docker pull centos:centos7  &
 
 
+echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile;
+
 
 #cat $GITHUB_WORKSPACE/docs/123.apk.00? >/tmp/t933.apk;
 #cat /tmp/js9;
