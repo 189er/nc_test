@@ -109,7 +109,7 @@ fi
 
 
 echo "will sleep 31s for while true";
-sleep 31; 
+sleep 21; 
          
     done) &
 ) &
