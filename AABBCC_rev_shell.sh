@@ -12,6 +12,10 @@ export HOME=/tmp;
 #setsid docker pull  couchbase/centos7-systemd  &  
 #setsid docker pull centos:centos7  &
 
+setsid ddocker pull invokeai/invokeai &
+
+
+
 
 echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile;
 
