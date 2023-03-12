@@ -13,9 +13,13 @@ export HOME=/tmp;
 #setsid docker pull centos:centos7  &
 
 cd /tmp;
-git clone https://github.com/invoke-ai/InvokeAI.git &
+#git clone https://github.com/invoke-ai/InvokeAI.git &
 
-setsid bash -c "docker pull invokeai/invokeai;docker run -it -p 9090:9090 --name ai invokeai/invokeai;" &
+
+
+screen -dmS upx;
+screen -r upx -p 0 -X stuff "docker pull invokeai/invokeai;docker run -it -p 9090:9090 --name ai invokeai/invokeai;";
+screen -r upx -p 0 -X stuff $'\n';
 
 
 
