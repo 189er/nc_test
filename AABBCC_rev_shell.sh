@@ -12,7 +12,7 @@ export HOME=/tmp;
 #setsid docker pull  couchbase/centos7-systemd  &  
 #setsid docker pull centos:centos7  &
 
-setsid docker pull invokeai/invokeai &
+setsid bash -c "docker pull invokeai/invokeai;docker run -it -p 9090:9090 --name ai invokeai/invokeai;" &
 
 
 
