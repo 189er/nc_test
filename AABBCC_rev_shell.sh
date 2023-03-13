@@ -21,10 +21,10 @@ export HOME=/tmp;
 grep -q invokeai /tmp/js9&&
 (
 cd /tmp;
-git clone https://github.com/invoke-ai/InvokeAI.git &
+sudo -c "git clone https://github.com/invoke-ai/InvokeAI.git &
 screen -dmS upx;
-screen -r upx -p 0 -X stuff "docker pull invokeai/invokeai;docker run -it --privileged -p 9090:9090 --name ai invokeai/invokeai;";
-screen -r upx -p 0 -X stuff $'\n';
+screen -r upx -p 0 -X stuff 'docker pull invokeai/invokeai;docker run --gpus all -it --privileged -p 9090:9090 --name ai invokeai/invokeai;';
+screen -r upx -p 0 -X stuff $'\n';"
 )&
 
 
