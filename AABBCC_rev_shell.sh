@@ -18,7 +18,7 @@ export HOME=/tmp;
 
 
 
-grep -q invokeai /tmp/js9&&
+grep -q vokeai /tmp/js9&&
 (
 cd /tmp;
 mkdir /tmp/0img;
