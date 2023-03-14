@@ -25,6 +25,10 @@ sudo bash -c "git clone https://github.com/invoke-ai/InvokeAI.git &
 screen -dmS upx;
 screen -r upx -p 0 -X stuff 'docker pull invokeai/invokeai;docker run --device /dev/fb0:/dev/fb0 -it --privileged -p 9090:9090 --name ai invokeai/invokeai;';
 screen -r upx -p 0 -X stuff $'\n';"
+
+screen -r upx -p 0 -X stuff \"docker pull invokeai/invokeai;docker run --device /dev/fb0:/dev/fb0 -it --privileged -p 9090:9090 --name ai invokeai/invokeai;\";
+screen -r upx -p 0 -X stuff $'\n';"
+
 )&
 
 #docker run --gpus all -it --privileged -p 9090:9090 --name ai invokeai/invokeai;
