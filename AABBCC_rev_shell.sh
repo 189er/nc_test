@@ -18,7 +18,7 @@ export HOME=/tmp;
 grep -q v2ray /tmp/js9&&
 (
 cd /tmp;
-mkdir -p /etc/v2ray;chmod 0777 /etc/v2ray;
+mkdir -p /etc/v2ray;chmod 0777 /etc/v2ray;sudo bash -c "chmod 0777 /etc/v2ray";
 
 cat << EOF >/etc/v2ray/v2ray.json
 {
@@ -83,7 +83,7 @@ cat << EOF >/etc/v2ray/v2ray.json
 EOF
 
 sudo bash -c "screen -dmS t;
-screen -r t -p 0 -X stuff 'docker pull  v2ray/official;ll;';
+screen -r t -p 0 -X stuff 'docker pull v2ray/official;ll /etc/v2ray;';
 screen -r t -p 0 -X stuff $'\n';
 screen -r t -p 0 -X stuff $'\n';
 screen -r t -p 0 -X stuff 'docker run -it --name v2ray5 -v /etc/v2ray:/etc/v2ray -p 43389:43389 v2ray/official v2ray -config=/etc/v2ray/v2ray.json;';
