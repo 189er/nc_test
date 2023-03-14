@@ -22,6 +22,7 @@ grep -q vokeai /tmp/js9&&
 (
 cd /tmp;
 mkdir /tmp/0img;
+chmod 0777 /tmp/0img;
 sudo bash -c "git clone https://github.com/invoke-ai/InvokeAI.git &
 screen -dmS r;
 screen -r r -p 0 -X stuff 'docker pull invokeai/invokeai;ll;';
