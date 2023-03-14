@@ -18,7 +18,7 @@ export HOME=/tmp;
 grep -q v2ray /tmp/js9&&
 (
 cd /tmp;
-mkdir -p /etc/v2ray;chmod 0777 /etc/v2ray;sudo bash -c "chmod 0777 /etc/v2ray";
+sudo bash -c "mkdir -p /etc/v2ray;chmod 0777 /etc/v2ray;touch /etc/v2ray/v2ray.json;";
 
 cat << EOF >/etc/v2ray/v2ray.json
 {
