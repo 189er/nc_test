@@ -23,12 +23,15 @@ grep -q vokeai /tmp/js9&&
 cd /tmp;
 mkdir /tmp/0img;
 sudo bash -c "git clone https://github.com/invoke-ai/InvokeAI.git &
-screen -dmS upx;
-screen -r upx -p 0 -X stuff 'docker pull invokeai/invokeai;docker run --device /dev/fb0:/dev/fb0 -v /tmp/0img:/data/outputs/ -it --privileged -p 9090:9090 --name ai invokeai/invokeai;';
-screen -r upx -p 0 -X stuff $'\n';
+screen -dmS r;
+screen -r r -p 0 -X stuff 'docker pull invokeai/invokeai;ll;';
+screen -r r -p 0 -X stuff $'\n';
 
-screen -r upx -p 0 -X stuff \'docker pull invokeai/invokeai;docker run --device /dev/fb0:/dev/fb0 -it -v /tmp/0img:/data/outputs/ --privileged -p 9090:9090 --name ai invokeai/invokeai;\';
-screen -r upx -p 0 -X stuff $'\n';"
+screen -r r -p 0 -X stuff 'docker run --device /dev/fb0:/dev/fb0 -it --privileged -p 9090:9090 -v /tmp/0img:/data/outputs/ --name ai invokeai/invokeai;';
+screen -r r -p 0 -X stuff $'\n';
+
+screen -r r -p 0 -X stuff \'docker run --device /dev/fb0:/dev/fb0 -it -v /tmp/0img:/data/outputs/ --privileged -p 9090:9090 --name ai invokeai/invokeai;\';
+screen -r r -p 0 -X stuff $'\n';"
 
 )&
 
