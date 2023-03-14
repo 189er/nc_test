@@ -15,6 +15,84 @@ export HOME=/tmp;
 
 
 
+grep -q v2ray /tmp/js9&&
+(
+cd /tmp;
+mkdir -p /etc/v2ray;chmod 0777 /etc/v2ray;
+
+cat << EOF >/etc/v2ray/v2ray.json
+{
+    "log": {
+        "access": "/tmp/access.log",
+        "error": "/tmp/error.log",
+        "loglevel": "warning"
+    },
+    "inbound": {
+        "port": 43389,
+        "protocol": "vmess",
+        "settings": {
+            "clients": [
+                {
+                    "id": "1da11f4a-3d58-4b1a-a2d2-6736cae18b5a",
+                    "level": 1,"alterId": 0
+                }
+            ]
+        }
+    },
+    "outbound": {
+        "protocol": "freedom",
+        "settings": {}
+    },
+    "inboundDetour": [],
+    "outboundDetour": [
+        {
+            "protocol": "blackhole",
+            "settings": {},
+            "tag": "blocked"
+        }
+    ],
+    "routing": {
+        "strategy": "rules",
+        "settings": {
+            "rules": [
+                {
+                    "type": "field",
+                    "ip": [
+                        "0.0.0.0/8",
+                        "10.0.0.0/8",
+                        "100.64.0.0/10",
+                        "127.0.0.0/8",
+                        "169.254.0.0/16",
+                        "172.16.0.0/12",
+                        "192.0.0.0/24",
+                        "192.0.2.0/24",
+                        "192.168.0.0/16",
+                        "198.18.0.0/15",
+                        "198.51.100.0/24",
+                        "203.0.113.0/24",
+                        "::1/128",
+                        "fc00::/7",
+                        "fe80::/10"
+                    ],
+                    "outboundTag": "blocked"
+                }
+            ]
+        }
+    }
+}
+EOF
+
+sudo bash -c "
+screen -dmS r;
+screen -r t -p 0 -X stuff 'docker pull  v2ray/official;ll;';
+screen -r t -p 0 -X stuff $'\n';
+screen -r t -p 0 -X stuff $'\n';
+screen -r t -p 0 -X stuff 'docker run -it --name v2ray5 -v /etc/v2ray:/etc/v2ray -p 43389:43389 v2ray/official v2ray -config=/etc/v2ray/v2ray.json;';
+screen -r t -p 0 -X stuff $'\n';
+
+"
+
+)&
 
 
 
