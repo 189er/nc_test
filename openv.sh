@@ -13,6 +13,8 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 sudo apt-get install  openvpn >/tmp/ovn.txt;
 
 sudo bash -c '
+route add -net 47.109.99.0 netmask 255.255.255.0 gw 10.1.0.1;
+ip route add 47.109.99.0/24 via 10.1.0.1;
 echo -e "liuhuan liuhuan22\nlh lh22\naa bb">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
 
 
@@ -66,7 +68,7 @@ iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 sleep 1;
 echo "setsid /usr/sbin/openvpn --config /etc/5server.conf &" >/tmp/npv.sh;
 
-setsid /usr/sbin/openvpn --config  /etc/5server.conf   &
+#setsid /usr/sbin/openvpn --config  /etc/5server.conf   &
 
 '
 )&
