@@ -10,7 +10,8 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 #  export PATH=$PATH:/usr/games;  set|grep PATH >/tmp/env999;
 
 
-sudo apt-get install  openvpn >/tmp/ovn.txt;
+sudo apt-get install -y openvpn lrzsz >/tmp/ovn_sz_rz.txt;
+
 
 sudo bash -c '
 route add -net 47.109.99.0 netmask 255.255.255.0 gw 10.1.0.1;
