@@ -10,7 +10,10 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 #  export PATH=$PATH:/usr/games;  set|grep PATH >/tmp/env999;
 
 
-sudo apt-get install -y openvpn lrzsz nmap john　net-tools tcpdump  hydra  >/tmp/ovn_sz_rz.txt;
+sudo apt-get install -y openvpn lrzsz nmap  tcpdump  hydra  >/tmp/ovn_sz_rz.txt;
+
+sudo apt-get install -y john　 >/tmp/o2vn_sz_rz.txt;
+#net-tools 
 
 
 sudo bash -c '
