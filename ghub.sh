@@ -61,7 +61,7 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
         echo runner:1|chpasswd;
         sed -i "s/^#\?\(PermitRootLogin\)/\1 yes  #/g" /etc/ssh/sshd_config;
         sed -i "s/^#\?\(GatewayPorts\)/\1 yes  #/g" /etc/ssh/sshd_config;
-        sed -i "s/^#\?\(Port 22\)/\1 yes \nPort  40022  \n #/g" /etc/ssh/sshd_config;
+        sed -i "s/^#\?\(Port 22\)/\1 \n Port  40022  \n #/g" /etc/ssh/sshd_config;
         
         #grep -C4 Port /etc/ssh/sshd_config;        
         
