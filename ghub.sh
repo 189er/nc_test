@@ -77,7 +77,7 @@ sed -i "/auth_token/d" /home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xia
 echo "auth_token: d9dc7fZc8A7c4AA7896dZ4cAccfA6cZ3">>/home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xiaomiqiu.conf;
 
 (curl http://xoks54uvph23.ngrok.xiaomiqiu123.top/|grep "Tunnel")&&
-(
+(cd /home/runner/work/nc_test/nc_test/;cd ./xiaomiqiu_x64_linux/;
 setsid sh /home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xiaomiqiu_start.sh 2>/tmp/xmq2.txt >/tmp/xmq1.txt &
 )||(
 echo 9981123789;
