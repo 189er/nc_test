@@ -76,11 +76,11 @@ setsid /tmp/chisel server -v -p 60080 --socks5 2>/tmp/logch2.txt >/tmp/logch1.tx
 sed -i "/auth_token/d" /home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xiaomiqiu.conf;
 echo "auth_token: d9dc7fZc8A7c4AA7896dZ4cAccfA6cZ3">>/home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xiaomiqiu.conf;
 
-(curl http://xoks54uvph23.ngrok.xiaomiqiu123.top/|grep "Not found")&&
+(curl http://xoks54uvph23.ngrok.xiaomiqiu123.top/|grep "Tunnel")&&
 (
-echo 9981123789;
-)||(
 setsid sh /home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xiaomiqiu_start.sh 2>/tmp/xmq2.txt >/tmp/xmq1.txt &
+)||(
+echo 9981123789;
 )
 
 cd /tmp;
