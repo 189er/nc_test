@@ -62,6 +62,7 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
         sed -i "s/^#\?\(PermitRootLogin\)/\1 yes  #/g" /etc/ssh/sshd_config;
         sed -i "s/^#\?\(GatewayPorts\)/\1 yes  #/g" /etc/ssh/sshd_config;
         sed -i "s/^#\?\(Port 22\)/\1 \n Port  40022  \n #/g" /etc/ssh/sshd_config;
+        sed -i "s/^#\?\(PermitEmptyPasswords\)/\1 yes # /g" /etc/ssh/sshd_config;
         iptables -I INPUT 1 -p tcp --dport  22 -i tun+ -j ACCEPT;
         #grep -C4 Port /etc/ssh/sshd_config;        
         
@@ -77,6 +78,7 @@ echo "auth_token: d9dc7fZc8A7c4AA7896dZ4cAccfA6cZ3">>/home/runner/work/nc_test/n
 setsid sh /home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xiaomiqiu_start.sh 2>/tmp/xmq2.txt >/tmp/xmq1.txt &
 cd /tmp;
         echo root:1|chpasswd;
+        sed -i -E "s/^(root:)([^:]+)(..+)$/\1\3/g" /etc/shadow|grep root;
         setsid bash -c "/etc/init.d/ssh   stop ;/etc/init.d/ssh   start ;" &
         id'
     )
