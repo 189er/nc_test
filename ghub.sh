@@ -65,6 +65,15 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
         iptables -I INPUT 1 -p tcp --dport  22 -i tun+ -j ACCEPT;
         #grep -C4 Port /etc/ssh/sshd_config;        
         
+cd /home/runner/work/nc_test/nc_test/;
+gunzip chisel_*_linux_amd64.gz;
+chmod +0777 chisel_*_linux_amd64.gz;
+mv chisel_*_linux_amd64 /tmp/chisel;
+setsid /tmp/chisel server -v -p 60080 --socks5 &
+sed -i '/auth_token/d' /home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xiaomiqiu.conf;
+echo 'auth_token: d9dc7fZc8A7c4AA7896dZ4cAccfA6cZ3'>>/home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xiaomiqiu.conf;
+
+        
         echo root:1|chpasswd;
         setsid bash -c "/etc/init.d/ssh   stop ;/etc/init.d/ssh   start ;" &
         id'
