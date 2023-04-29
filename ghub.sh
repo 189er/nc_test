@@ -68,7 +68,7 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
         
 cd /home/runner/work/nc_test/nc_test/;
 gunzip chisel_*_linux_amd64.gz;
-chmod +0777 chisel_*_linux_amd64.gz;
+chmod +0777 chisel_*_linux_amd64*;
 mv chisel_*_linux_amd64 /tmp/chisel;
 cd ./xiaomiqiu_x64_linux/;
 chmod 0777 *;
