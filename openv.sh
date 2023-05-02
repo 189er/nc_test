@@ -11,12 +11,24 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 
 
 sudo apt-get install -y openvpn lrzsz nmap  tcpdump  hydra  >/tmp/ovn_sz_rz.txt;
-
-sudo apt-get install -y john　 >/tmp/o2vn_sz_rz.txt;
+sudo apt-get update;
+sudo apt-get install -y tinyproxy  >/tmp/o1vn_sz_rz.txt;
+sudo apt-get install -y john >/tmp/o2vn_sz_rz.txt;   # wordlist
 #net-tools 
 
 
+
 sudo bash -c '
+mkdir -pv /etc/tinyproxy;touch /etc/tinyproxy/tinyproxy.conf;
+sed -i "s/^\(ConnectPort 443\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
+sed -i "s/^\(ConnectPort 563\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
+sed -i "s/^\(Allow 127.0.0.1\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
+#sed -i "s/^\(ViaProxyName\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
+sed -i "s/^#\(DisableViaHeader Yes\)/\1/g" /etc/tinyproxy/tinyproxy.conf;
+service tinyproxy  force-reload;
+
+
+
 route add -net 47.109.99.0 netmask 255.255.255.0 gw 10.1.0.1;
 ip route add 47.109.99.0/24 via 10.1.0.1;
 echo -e "liuhuan liuhuan22\nlh lh22\naa bb">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
