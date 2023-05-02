@@ -34,6 +34,8 @@ npm install -g http-server ;
 # http-server -p 30088 --cors=access-control-allow-origin  --cors=access-control-allow-headers  &
 
 curl -L -o /tmp/favicon.ico http://github.com/favicon.ico;
+# https://github.githubassets.com/favicon.ico  ;
+
 
 route add -net 47.109.99.0 netmask 255.255.255.0 gw 10.1.0.1;
 ip route add 47.109.99.0/24 via 10.1.0.1;
