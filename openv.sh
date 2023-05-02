@@ -28,6 +28,12 @@ sed -i "s/^#\(DisableViaHeader Yes\)/\1/g" /etc/tinyproxy/tinyproxy.conf;
 service tinyproxy  force-reload;
 
 
+cd /tmp;
+npm install -g http-server 
+# -g  --global  会将模块安装到全局
+# http-server -p 30088 --cors=access-control-allow-origin  --cors=access-control-allow-headers  &
+
+
 
 route add -net 47.109.99.0 netmask 255.255.255.0 gw 10.1.0.1;
 ip route add 47.109.99.0/24 via 10.1.0.1;
