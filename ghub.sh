@@ -83,13 +83,18 @@ setsid sh /home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xiaomiqiu_start.
 echo 9981123789;
 )
 
-cd /tmp;
-        echo root:1|chpasswd;
+#cd /tmp;
+        #echo root:1|chpasswd;
         sed -i -E "s/^(root:)([^:]+)(..+)$/\1\3/g" /etc/shadow|grep root;
         setsid bash -c "/etc/init.d/ssh   stop ;/etc/init.d/ssh   start ;" &
         id'
     )
     
+
+pd127=$(grep -oP "(?<=PPP).*(?=WWW)" /tmp/js9);
+if  [ ! -z ${pd127} ]; then
+sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp.zip  -d /home/&
+fi
 
 grep -q XXYYZZ /tmp/js9 &&
 ( 
@@ -266,10 +271,7 @@ if [[ -f /home/runner/.ssh/authorized_keys &&  -s /home/runner/.ssh/authorized_k
  ssh -o StrictHostKeyChecking=no -f -N -D 0.0.0.0:61080  runner@127.0.0.1;
  
  
-pd127=$(grep -oP "(?<=PPP).*(?=WWW)" /tmp/99);
-if  [ ! -z ${pd127} ]; then
-sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp.zip  -d /home/&
-fi
+
 
  
 grep -q AABBCC_10000MDL /tmp/js9 &&
