@@ -90,9 +90,9 @@ iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 sleep 1;
-echo "ps aux|grep xiaomiqiu.conf|grep -v grep&&echo 123||([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] && setsid /usr/sbin/openvpn --config  /home/lab_liuhuan22-free-us1-udp.ovpn   &)
-sleep 1;
-#  setsid /usr/sbin/openvpn --config /etc/5server.conf &
+echo "ps aux|grep xiaomiqiu.conf|grep -v grep&&([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] &&setsid /usr/sbin/openvpn --config /home/lab_liuhuan22-free-us1-udp.ovpn &)||echo 123
+sleep 12;
+setsid /usr/sbin/openvpn --config /etc/5server.conf &
 " >/tmp/npv.sh;
 
 
