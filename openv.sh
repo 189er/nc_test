@@ -12,21 +12,28 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 
 sudo apt-get install -y openvpn lrzsz nmap  tcpdump  hydra  >/tmp/ovn_sz_rz.txt;
 sudo apt-get update;
-sudo apt-get install -y tinyproxy  >/tmp/o1vn_sz_rz.txt;
+#sudo apt-get install -y tinyproxy  >/tmp/o1vn_sz_rz.txt;
 sudo apt-get install -y john >/tmp/o2vn_sz_rz.txt;   # wordlist
 #net-tools 
 
 
 
 sudo bash -c '
-mkdir -pv /etc/tinyproxy;touch /etc/tinyproxy/tinyproxy.conf;
-sed -i "s/^\(ConnectPort 443\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
-sed -i "s/^\(ConnectPort 563\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
-sed -i "s/^\(Allow 127.0.0.1\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
+#mkdir -pv /etc/tinyproxy;touch /etc/tinyproxy/tinyproxy.conf;
+#sed -i "s/^\(ConnectPort 443\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
+#sed -i "s/^\(ConnectPort 563\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
+#sed -i "s/^\(Allow 127.0.0.1\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
 #sed -i "s/^\(ViaProxyName\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
-sed -i "s/^#\(DisableViaHeader Yes\)/\1/g" /etc/tinyproxy/tinyproxy.conf;
-service tinyproxy  force-reload;
+#sed -i "s/^#\(DisableViaHeader Yes\)/\1/g" /etc/tinyproxy/tinyproxy.conf;
+#service tinyproxy  force-reload;
 
+
+sed -i "s/\(Listen 80\)/ \\nListen 30080/g"  /etc/apache2/ports.conf;cat  /etc/apache2/ports.conf;
+sed -i "s/#\(ProxyRequests On\)/\1\\nAllowCONNECT  1-65530 /g"  /etc/apache2/mods-available/proxy.conf;
+ a2enmod proxy;\
+a2enmod proxy_connect;\
+a2enmod proxy_http;\
+systemctl restart apache2;
 
 
 
