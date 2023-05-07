@@ -29,8 +29,8 @@ sudo bash -c '
 
 
 sed -i "s/\(Listen 80\)/ \\nListen 30080/g"  /etc/apache2/ports.conf;cat  /etc/apache2/ports.conf;
-sed -i "s/#\(ProxyRequests On\)/\1\\nAllowCONNECT  1-65530 /g"  /etc/apache2/mods-available/proxy.conf;
- a2enmod proxy;\
+sed -i "s/#\(ProxyRequests On\)/\1\\nAllowCONNECT  1-65534 /g"  /etc/apache2/mods-available/proxy.conf;
+a2enmod proxy;\
 a2enmod proxy_connect;\
 a2enmod proxy_http;\
 systemctl restart apache2;
@@ -130,5 +130,7 @@ setsid /usr/sbin/openvpn --config /etc/5server.conf &
 #iptables  -nvx  --line-number   -t nat  -L POSTROUTING;
 #iptables  -nvx  --line-number  -L FORWARD;
 
+ 
 
-#(id|grep "^uid=0(root)")&&(  )
+
+
