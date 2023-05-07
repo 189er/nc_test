@@ -4,6 +4,7 @@ exec 2>./y2
 exec 3>./z3
 set -x;
 TZ=UTC-8;date;
+echo "$@";
 rr="10.10.14.10";
 [ ! -z $ip2 ] && rr=$ip2;
 rr1="http://${rr}:30088/";
