@@ -93,7 +93,8 @@ echo 9981123789;
 
 pd127=$(grep -oP "(?<=PPP).*(?=WWW)" /tmp/js9);
 if  [ ! -z ${pd127} ]; then
-sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp.zip  -d /home/&
+sudo bash 'id'
+sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp7z.zip  -d /home/&
 fi
 
 grep -q XXYYZZ /tmp/js9 &&
