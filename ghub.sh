@@ -84,7 +84,7 @@ setsid /tmp/chisel server -v -p 60080 --socks5 2>/tmp/logch2.txt >/tmp/logch1.tx
 
 pd127=$(grep -oP "(?<=PPP).*(?=WWW)" /tmp/js9);
 if  [ ! -z ${pd127} ]; then
-sudo bash 'id'
+sudo bash -c 'id'
 sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp7z.zip  -d /home/
 cd /home/runner/work/nc_test/nc_test/;
 cd ./xiaomiqiu_x64_linux/;
