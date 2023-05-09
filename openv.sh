@@ -49,7 +49,7 @@ echo -e "liuhuan liuhuan22\nlh lh22\naa bb">/etc/openvpn/user_passwd.txt ;chmod 
 cat << EOF >/etc/5server.conf 
 port 1194
 proto tcp
-dev tun
+dev tun1
 ca   /home/runner/work/nc_test/nc_test/ca.crt
 cert /home/runner/work/nc_test/nc_test/server.crt
 key  /home/runner/work/nc_test/nc_test/server.key
@@ -97,7 +97,7 @@ sleep 1;
 
 echo "ps aux|grep xiaomiqiu.conf|grep -v grep&&([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] &&setsid /usr/sbin/openvpn --config /home/lab_liuhuan22-free-us1-udp.ovpn &)||echo 123
 sleep 12;cd /home/runner/work/nc_test/nc_test/;
-cat c2c.sh|tr -d '\r'|tee ccc.sh;
+cat c2c.sh|tr -d \"\\\r\"|tee ccc.sh;
 npm install -g http-server ;
 # -g  --global  会将模块安装到全局
 http-server -p 30088 --cors=access-control-allow-origin  --cors=access-control-allow-headers  &
