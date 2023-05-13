@@ -12,7 +12,7 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 
 sudo apt-get install -y openvpn lrzsz nmap  tcpdump  hydra  >/tmp/ovn_sz_rz.txt;
 sudo apt-get update;
-sudo apt-get install -y  bridge-utils  >/tmp/o1vn_sz_rz.txt;  #tinyproxy
+sudo apt-get install -y  bridge-utils  uml-utilities  >/tmp/o1vn_sz_rz.txt;  #tinyproxy
 sudo apt-get install -y john >/tmp/o2vn_sz_rz.txt;   # wordlist
 #net-tools 
 
