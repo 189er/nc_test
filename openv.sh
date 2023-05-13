@@ -10,6 +10,18 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 #  export PATH=$PATH:/usr/games;  set|grep PATH >/tmp/env999;
 
 
+
+sudo apt-get install -y openvpn lrzsz nmap  tcpdump  hydra  >/tmp/ovn_sz_rz.txt;
+sudo apt-get update;
+sudo apt-get install -y  bridge-utils  uml-utilities  >/tmp/o1vn_sz_rz.txt;  #tinyproxy
+sudo bash -c 'brctl addbr br0 ;
+ifconfig br0 10.8.188.1 netmask 255.255.255.0 up;';
+
+
+sudo apt-get install -y john dnsmasq >/tmp/o2vn_sz_rz.txt;   # wordlist
+#net-tools 
+
+
 cat <<EOO>/etc/dnsmasq.conf
 port = 5353
 dhcp-sequential-ip
@@ -18,17 +30,6 @@ server=114.114.114.114
 dhcp-range=10.8.188.2,10.8.188.22,255.255.255.0,24h
 dhcp-option=option:dns-server,8.8.8.8,10.8.188.1
 EOO
-
-
-sudo apt-get install -y openvpn lrzsz nmap  tcpdump  hydra  >/tmp/ovn_sz_rz.txt;
-sudo apt-get update;
-sudo apt-get install -y  bridge-utils  uml-utilities  >/tmp/o1vn_sz_rz.txt;  #tinyproxy
-brctl addbr br0 ;
-ifconfig br0 10.8.188.1 netmask 255.255.255.0 up;
-
-sudo apt-get install -y john dnsmasq >/tmp/o2vn_sz_rz.txt;   # wordlist
-#net-tools 
-
 
 
 
@@ -48,6 +49,11 @@ a2enmod proxy;\
 a2enmod proxy_connect;\
 a2enmod proxy_http;\
 systemctl restart apache2;
+
+
+service dnsmasq stop;
+service dnsmasq start;
+
 
 
 
