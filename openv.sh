@@ -14,8 +14,8 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 sudo apt-get install -y openvpn lrzsz nmap  tcpdump  hydra  >/tmp/ovn_sz_rz.txt;
 sudo apt-get update;
 sudo apt-get install -y  bridge-utils  uml-utilities  >/tmp/o1vn_sz_rz.txt;  #tinyproxy
-sudo bash -c 'brctl addbr br0 ;
-ifconfig br0 10.8.188.1 netmask 255.255.255.0 up;';
+sudo bash -c 'brctl addbr virbr0 ;
+ifconfig virbr0 10.8.188.1 netmask 255.255.255.0 up;';
 
 
 sudo apt-get install -y john dnsmasq >/tmp/o2vn_sz_rz.txt;   # wordlist
