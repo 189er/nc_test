@@ -5,6 +5,7 @@
 
 
 export HOME=/tmp;
+# curl -o /dev/null -s -w "http_code %{http_code}\ntime_namelookup %{time_namelookup}\ntime_connect %{time_connect}\ntime_starttransfer %{time_starttransfer}\ntime_total %{time_total}" "http://www.qq.com"
 
 #setsid docker pull  metasploitframework/metasploit-framework &
 #setsid docker pull   idoall/ubuntu16.04-sshd &
