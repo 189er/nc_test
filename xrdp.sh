@@ -15,24 +15,6 @@ stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
 echo "xterm -bg black -fg white -geometry 150x50+20+10  ;">~/.xsession;
 chmod 777 ~/.xsession;  cat ~/.xsession;
 
-mkdir -pv /etc/X11/Xresources/;
-cat << EOF >/etc/X11/Xresources/qq5201314
-xterm*ScrollBar: true
-xterm.geometry: 60x25
-xterm*VT100.geometry: 166x58
-xterm*rightScrollBar: true
-xterm*leftScrollBar: true
-XTerm*jumpScroll: true
-xterm*faceSize: 14
-xterm*allowBoldFonts: true
-xterm*foreground: green
-xterm*background: rgb:60/20/10
-XTerm*SaveLines: 4096
-xterm*printAttributes:
-xterm*printerCommand: cat > /tmp/xtermdump
-*customization: -fullscreen
-xterm*fullscreen: 2
-EOF
 
 
 
@@ -63,6 +45,28 @@ echo "$fr5";
 stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
 done
 ';
+
+
+ls -al /etc/X11/Xresources/;
+mkdir -pv /etc/X11/Xresources/;
+cat << EOF >/etc/X11/Xresources/qq5201314
+xterm*ScrollBar: true
+xterm.geometry: 60x25
+xterm*VT100.geometry: 166x58
+xterm*rightScrollBar: true
+xterm*leftScrollBar: true
+XTerm*jumpScroll: true
+xterm*faceSize: 14
+xterm*allowBoldFonts: true
+xterm*foreground: green
+xterm*background: rgb:60/20/10
+XTerm*SaveLines: 4096
+xterm*printAttributes:
+xterm*printerCommand: cat > /tmp/xtermdump
+*customization: -fullscreen
+xterm*fullscreen: 2
+EOF
+
 
 #  service  xrdp start; # 自动启动
 
