@@ -38,6 +38,8 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;\
 sudo apt install -y ./google-chrome-stable_current_amd64.deb;
 
 echo "chromium-browser \"https://drive.google.com/u/0/uc?id=1Hp0RLikJ-B6el_qGNYOFn0nrL2BJyLZQ&export=download\"">/tmp/qq.sh
+echo "chromium-browser \"https://drive.google.com/file/d/1Fe7N0CAUDP3UPdZPsJI23SgK19aoJr6O/view\"">/tmp/aa.sh
+
 
 #sudo apt install -y xfce4 xfce4-goodies ;
 #sudo systemctl restart xrdp;
