@@ -32,7 +32,7 @@ apt-get install -y xfonts-wqy ttf-wqy-zenhei;
 
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;\
-apt install -y ./google-chrome-stable_current_amd64.deb;
+sudo apt install -y ./google-chrome-stable_current_amd64.deb;
 
 echo "chromium-browser \"https://drive.google.com/u/0/uc?id=1Hp0RLikJ-B6el_qGNYOFn0nrL2BJyLZQ&export=download\"">/tmp/qq.sh
 
@@ -46,7 +46,7 @@ stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
 done
 ';
 
-
+sudo bash -c '
 ls -al /etc/X11/Xresources/;
 mkdir -pv /etc/X11/Xresources/;
 cat << EOF >/etc/X11/Xresources/qq5201314
@@ -66,6 +66,7 @@ xterm*printerCommand: cat > /tmp/xtermdump
 *customization: -fullscreen
 xterm*fullscreen: 2
 EOF
+'
 
 
 #  service  xrdp start; # 自动启动
