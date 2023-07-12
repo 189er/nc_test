@@ -45,7 +45,8 @@ sudo apt install -y xorg dbus-x11 x11-xserver-utils xterm xinit xorgxrdp >/tmp/x
 
 which Xorg&&sudo apt install -y xrdp >/tmp/xz.txt;
 
- apt-get install -y xfonts-wqy ttf-wqy-zenhei
+
+apt-get install -y xfonts-wqy ttf-wqy-zenhei;
 
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;\
@@ -65,5 +66,5 @@ done
 
 #  service  xrdp start; # 自动启动
 
-# && sudo bash -c "echo exec startxfce4 >>/etc/xrdp/xrdp.ini;
+#    && sudo bash -c "echo exec startxfce4 >>/etc/xrdp/xrdp.ini;
 #    setsid /usr/sbin/xrdp-sesman --nodaemon ;  setsid /usr/sbin/xrdp  --nodaemon ;
