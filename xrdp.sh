@@ -5,7 +5,7 @@
 # /var/cache/apt/archives/lock
 #  /usr/bin/dpkg --force-confdef --force-confold --status-fd 47 --configure --pending
 # /usr/bin/perl -w /usr/share/debconf/frontend /var/lib/dpkg/info/openvpn.postinst configure
-
+#  sh /home/runner/work/nc_test/nc_test/xrdp.sh ;
 
 cd /tmp;
 sudo bash -c '
@@ -34,6 +34,8 @@ echo "$fr5";
 stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
 done
 ';
+
+#  service  xrdp start;
 
 # && sudo bash -c "echo exec startxfce4 >>/etc/xrdp/xrdp.ini;
 #    setsid /usr/sbin/xrdp-sesman --nodaemon ;  setsid /usr/sbin/xrdp  --nodaemon ;
