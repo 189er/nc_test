@@ -8,7 +8,8 @@
 #  sh /home/runner/work/nc_test/nc_test/xrdp.sh ;
 
 cd /tmp;
-ls -al  /usr/lib/firefox/firefox;
+ls -al  /usr/lib/firefox/firefox  /opt/microsoft/msedge/msedge;
+
 
 sudo bash -c '
 ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep >>/tmp/x0.c;
