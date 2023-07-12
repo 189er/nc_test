@@ -28,7 +28,7 @@ sudo apt install -y xorg dbus-x11 x11-xserver-utils xterm xinit xorgxrdp >/tmp/x
 which Xorg&&sudo apt install -y xrdp >/tmp/xz.txt;
 
 
-apt-get install -y xfonts-wqy ttf-wqy-zenhei;
+sudo apt-get install -y xfonts-wqy ttf-wqy-zenhei;
 
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;\
