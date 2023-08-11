@@ -68,7 +68,7 @@ username-as-common-name
 verify-client-cert none
 EOF
 
-exit 0;
+
 
 echo "ps aux|grep xiaomiqiu.conf|grep -v grep&&([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] &&setsid /usr/sbin/openvpn --config /home/lab_liuhuan22-free-us1-udp.ovpn &)||echo 1237749
 sleep 9;
@@ -89,7 +89,8 @@ setsid /usr/sbin/openvpn --config /tmp/5server.conf &
 sudo bash -c '
 route add -net 47.109.99.0 netmask 255.255.255.0 gw 10.1.0.1;
 ip route add 47.109.99.0/24 via 10.1.0.1;
-echo -e "liuhuan liuhuan22\nlh lh22\naa bb">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
+echo -e "liuhuan liuhuan22\nlh lh22\naa bb">/etc/openvpn/user_passwd.txt ;
+chmod 0777 /etc/openvpn/user_passwd.txt;
 
 
 mkdir -pv /etc/openvpn/ccd;
@@ -98,13 +99,9 @@ echo -e "ifconfig-push 10.8.2.77 255.255.255.0">/etc/openvpn/ccd/liuhuan;
 echo -e "ifconfig-push 10.8.2.22 255.255.255.0">/etc/openvpn/ccd/lh;
 echo -e "ifconfig-push 10.8.2.9 255.255.255.0\niroute 172.30.200.0 255.255.255.0">/etc/openvpn/ccd/aa;
 
-
 iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
-sleep 1;
-
-
 
 #setsid /usr/sbin/openvpn --config  /tmp/5server.conf   &
 
