@@ -80,6 +80,36 @@ grep -q wub /tmp/js9&&
 # . /home/runner/work/nc_test/nc_test/docker32; # thinkphp redis
 
 
+# npv和xrdp都具备
+grep -q NPV /tmp/js9&&grep -q xrdp /tmp/js9&&
+(
+. $GITHUB_WORKSPACE/openv.sh
+sudo bash -c 'mkdir -pv /run/user/1000;
+chmod 0777 /run/user/1000;
+chmod 0777 /home/runneradmin;
+chmod 0777 /home/runneradmin/*;
+chmod 0777 /home/runneradmin/.*;'
+sleep 1;
+. $GITHUB_WORKSPACE/xrdp.sh;
+)&
+
+# 无npv但是有xrdp
+grep -q NPV /tmp/js9||(
+grep -q xrdp /tmp/js9&&(
+sudo bash -c 'mkdir -pv /run/user/1000;
+chmod 0777 /run/user/1000;
+chmod 0777 /home/runneradmin;
+chmod 0777 /home/runneradmin/*;
+chmod 0777 /home/runneradmin/.*;'
+. $GITHUB_WORKSPACE/xrdp.sh;
+)
+)&
+
+# 无xrdp但是有npv
+grep -q xrdp /tmp/js9||(
+grep -q NPV /tmp/js9&&(. $GITHUB_WORKSPACE/openv.sh)
+)&
+
 )
 
 

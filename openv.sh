@@ -14,6 +14,7 @@ tmpFunc1(){
     sudo apt-get install -y openvpn lrzsz;
     rm /tmp/aB/{openvpn,lrzsz};
 }
+exit 0;
 
 while true
 do
