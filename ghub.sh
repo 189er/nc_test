@@ -141,18 +141,29 @@ sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp7z.zip  -d
 #. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
 fi
 
+
+#基本不用了 upx-ssh反弹至xiaomiQ
+grep -q AABBCC_10000MDL /tmp/js9 &&
+(        
+#. /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh
+) 
+
 #如下代码在本机依靠sshd产生socks5-61080代理，就不依赖别的软件了
 mkdir ~/.ssh;
 cd ~/.ssh;
 
 (
     (
-        echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\ncp id_rsa.pub authorized_keys4;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";
+        echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\nls -al;cp id_rsa.pub authorized_keys4;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";
     )|script /tmp/nul2
 ) 2>&1 >/tmp/nu2 &
 
 if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
  cp id_rsa.pub authorized_keys;
+fi
+#-s file　　　　　文件大小非0时为真
+if [[ -f /home/runner/.ssh/authorized_keys &&  -s /home/runner/.ssh/authorized_keys ]];then
+    ssh -o StrictHostKeyChecking=no -f -N -D 0.0.0.0:61080  runner@127.0.0.1;
 fi
 
 

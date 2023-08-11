@@ -88,7 +88,7 @@ setsid /usr/sbin/openvpn --config /tmp/5server.conf &
 
 sudo bash -c '
 route add -net 47.109.99.0 netmask 255.255.255.0 gw 10.1.0.1;
-ip route add 47.109.99.0/24 via 10.1.0.1;
+#ip route add 47.109.99.0/24 via 10.1.0.1; #RTNETLINK answers: File exists
 echo -e "liuhuan liuhuan22\nlh lh22\naa bb">/etc/openvpn/user_passwd.txt ;
 chmod 0777 /etc/openvpn/user_passwd.txt;
 
