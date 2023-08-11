@@ -29,7 +29,7 @@ grep -q htb /tmp/js9&&
 . $GITHUB_WORKSPACE/htb.sh;
 )&
 
-exit 0;
+
 
 cat << EOF >/tmp/5server.conf 
 port 1194
@@ -68,6 +68,7 @@ username-as-common-name
 verify-client-cert none
 EOF
 
+exit 0;
 
 echo "ps aux|grep xiaomiqiu.conf|grep -v grep&&([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] &&setsid /usr/sbin/openvpn --config /home/lab_liuhuan22-free-us1-udp.ovpn &)||echo 1237749
 sleep 9;
