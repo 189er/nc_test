@@ -146,7 +146,7 @@ fi
 grep -q AABBCC_10000MDL /tmp/js9 &&
 (  
     echo 123rt5;      
-    bash /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh &
+    #bash /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh &
 ) 
 
 (while true; do
