@@ -10,6 +10,33 @@
 cd /tmp;
 ls -al  /usr/lib/firefox/firefox  /opt/microsoft/msedge/msedge;
 
+tmpFunc6(){ 
+    touch /tmp/aB/{xorg,dbus-x11,x11-xserver-utils,xterm,xinit,xorgxrdp};
+    sudo apt-get install -y xorg dbus-x11 x11-xserver-utils xterm xinit xorgxrdp;
+    rm /tmp/aB/{xorg,dbus-x11,x11-xserver-utils,xterm,xinit,xorgxrdp};
+}
+
+while true
+do
+    [ "`ls -A /tmp/aB/`" = "" ] &&tmpFunc6&&break;
+    sleep 1;
+done
+
+
+
+tmpFunc8(){ 
+    touch /tmp/aB/{xrdp,xfonts-wqy,ttf-wqy-zenhei};
+    which Xorg&&sudo apt-get install -y xrdpxfonts-wqy ttf-wqy-zenhei;
+    rm /tmp/aB/{xrdp,xfonts-wqy,ttf-wqy-zenhei};
+}
+
+while true
+do
+    [ "`ls -A /tmp/aB/`" = "" ] &&tmpFunc8&&break;
+    sleep 1;
+done
+
+
 
 sudo bash -c '
 ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep >>/tmp/x0.c;
@@ -26,13 +53,6 @@ do
 fr5=$(sudo ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep);
 [ -z "$fr5" ]&&{
 sudo apt-get update;
-sudo apt install -y xorg dbus-x11 x11-xserver-utils xterm xinit xorgxrdp >/tmp/xa.txt
-
-which Xorg&&sudo apt install -y xrdp >/tmp/xz.txt;
-
-
-sudo apt-get install -y xfonts-wqy ttf-wqy-zenhei;
-
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;\
 sudo apt install -y ./google-chrome-stable_current_amd64.deb;

@@ -29,8 +29,8 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 export HOME=/tmp;
 chmod 0777 $GITHUB_WORKSPACE/*;
 #sudo 不重置环境变量
-sudo bash -c ' mkdir /tmp/A;
-chmod 0777 /tmp/A;
+sudo bash -c ' mkdir /tmp/{A,aB};
+chmod 0777 /tmp/{A,aB};
 sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g" /etc/sudoers;
 grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
 '
@@ -120,8 +120,20 @@ grep -q vokeai /tmp/js9&&
 #docker run --gpus all -it --privileged -p 9090:9090 --name ai invokeai/invokeai;
 
 
+(
+sed -i "s/\(Listen 80\)/ \\nListen 30080/g"  /etc/apache2/ports.conf;
+cat  /etc/apache2/ports.conf;
+sed -i "s/#\(ProxyRequests On\)/\1\\nAllowCONNECT  1-65534 /g" /etc/apache2/mods-available/proxy.conf;
+a2enmod proxy;\
+a2enmod proxy_connect;\
+a2enmod proxy_http;\
+systemctl restart apache2;
+)&
 
-#使用密码解压zip，启动小米球客户端 ，以便正向连接
+
+
+
+#使用密码解压zip，#启动小米球客户端 ，以便正向连接
 cd /tmp;
 pd127=$(grep -oP "(?<=PPP).*(?=WWW)" /tmp/js9);
 if  [ ! -z ${pd127} ]; then

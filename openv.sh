@@ -1,7 +1,5 @@
-# apt-get install  openvpn;
-
-
-(id | grep "^uid=[0-9]\{1,9\}(runner)") && (
+(id | grep "^uid=[0-9]\{1,9\}(runner)") &&
+(
 #export PATH="$PATH":/tmp/AAAABBBB;
 export P566="/tmp/ABFFT0;\$PATH";
 export Z566="/tmp/ACCDD1;$PATH";
@@ -9,64 +7,29 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 #set|grep PATH >/tmp/env77722;
 #  export PATH=$PATH:/usr/games;  set|grep PATH >/tmp/env999;
 
-
-
-sudo apt-get install -y openvpn lrzsz nmap  tcpdump  hydra  >/tmp/ovn_sz_rz.txt;
 sudo apt-get update;
-sudo apt-get install -y  bridge-utils  uml-utilities  >/tmp/o1vn_sz_rz.txt;  #tinyproxy
-sudo bash -c 'brctl addbr virbr0 ;
-ifconfig virbr0 10.8.188.1 netmask 255.255.255.0 up;';
 
+tmpFunc1(){ 
+    touch /tmp/aB/{openvpn,lrzsz};
+    sudo apt-get install -y openvpn lrzsz;
+    rm /tmp/aB/{openvpn,lrzsz};
+}
 
-sudo apt-get install -y john dnsmasq >/tmp/o2vn_sz_rz.txt;   # wordlist
-#net-tools 
-
-
-cat <<EOO>/etc/dnsmasq.conf
-port = 5353
-dhcp-sequential-ip
-interface=br0
-server=114.114.114.114 
-dhcp-range=10.8.188.2,10.8.188.22,255.255.255.0,24h
-dhcp-option=option:dns-server,8.8.8.8,10.8.188.1
-EOO
+while true
+do
+    [ "`ls -A /tmp/aB/`" = "" ] &&tmpFunc1&&break;
+    sleep 1;
+done
 
 
 
-sudo bash -c '
-#mkdir -pv /etc/tinyproxy;touch /etc/tinyproxy/tinyproxy.conf;
-#sed -i "s/^\(ConnectPort 443\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
-#sed -i "s/^\(ConnectPort 563\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
-#sed -i "s/^\(Allow 127.0.0.1\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
-#sed -i "s/^\(ViaProxyName\)/#\1/g" /etc/tinyproxy/tinyproxy.conf;
-#sed -i "s/^#\(DisableViaHeader Yes\)/\1/g" /etc/tinyproxy/tinyproxy.conf;
-#service tinyproxy  force-reload;
+grep -q htb /tmp/js9&&
+(
+. $GITHUB_WORKSPACE/htb.sh;
+)&
 
 
-sed -i "s/\(Listen 80\)/ \\nListen 30080/g"  /etc/apache2/ports.conf;cat  /etc/apache2/ports.conf;
-sed -i "s/#\(ProxyRequests On\)/\1\\nAllowCONNECT  1-65534 /g"  /etc/apache2/mods-available/proxy.conf;
-a2enmod proxy;\
-a2enmod proxy_connect;\
-a2enmod proxy_http;\
-systemctl restart apache2;
-
-
-service dnsmasq stop;
-service dnsmasq start;
-
-
-
-
-curl -L -o /tmp/favicon.ico http://github.com/favicon.ico;
-# https://github.githubassets.com/favicon.ico  ;
-
-
-route add -net 47.109.99.0 netmask 255.255.255.0 gw 10.1.0.1;
-ip route add 47.109.99.0/24 via 10.1.0.1;
-echo -e "liuhuan liuhuan22\nlh lh22\naa bb">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
-
-
-cat << EOF >/etc/5server.conf 
+cat << EOF >/tmp/5server.conf 
 port 1194
 proto tcp
 dev tun1
@@ -103,7 +66,30 @@ username-as-common-name
 verify-client-cert none
 EOF
 
-mkdir -p /etc/openvpn/ccd;
+
+echo "ps aux|grep xiaomiqiu.conf|grep -v grep&&([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] &&setsid /usr/sbin/openvpn --config /home/lab_liuhuan22-free-us1-udp.ovpn &)||echo 1237749
+sleep 9;
+cd /home/runner/work/nc_test/nc_test/;
+#cat c2c.sh|tr -d \"\\\r\"|tee ccc.sh;
+npm install -g http-server ;
+            # -g  --global  会将模块安装到全局
+which npm http-server ;
+http-server -p 30088 --cors=access-control-allow-origin  --cors=access-control-allow-headers  &
+ curl -L -o /tmp/favicon.ico http://github.com/favicon.ico &
+ # https://github.githubassets.com/favicon.ico  ;
+cd /tmp;
+setsid /usr/sbin/openvpn --config /tmp/5server.conf &
+" >/tmp/npv.sh;
+
+
+
+sudo bash -c '
+route add -net 47.109.99.0 netmask 255.255.255.0 gw 10.1.0.1;
+ip route add 47.109.99.0/24 via 10.1.0.1;
+echo -e "liuhuan liuhuan22\nlh lh22\naa bb">/etc/openvpn/user_passwd.txt ;chmod 0777 /etc/openvpn/user_passwd.txt;
+
+
+mkdir -pv /etc/openvpn/ccd;
 chmod 0777 /etc/openvpn/ccd;
 echo -e "ifconfig-push 10.8.2.77 255.255.255.0">/etc/openvpn/ccd/liuhuan;
 echo -e "ifconfig-push 10.8.2.22 255.255.255.0">/etc/openvpn/ccd/lh;
@@ -115,18 +101,9 @@ iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 sleep 1;
 
-echo "ps aux|grep xiaomiqiu.conf|grep -v grep&&([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] &&setsid /usr/sbin/openvpn --config /home/lab_liuhuan22-free-us1-udp.ovpn &)||echo 123
-sleep 9;cd /home/runner/work/nc_test/nc_test/;
-#cat c2c.sh|tr -d \"\\\r\"|tee ccc.sh;
-npm install -g http-server ;
-# -g  --global  会将模块安装到全局
-http-server -p 30088 --cors=access-control-allow-origin  --cors=access-control-allow-headers  &
-cd /tmp;
-setsid /usr/sbin/openvpn --config /etc/5server.conf &
-" >/tmp/npv.sh;
 
 
-#setsid /usr/sbin/openvpn --config  /etc/5server.conf   &
+#setsid /usr/sbin/openvpn --config  /tmp/5server.conf   &
 
 '
 )&
@@ -150,8 +127,3 @@ setsid /usr/sbin/openvpn --config /etc/5server.conf &
 #sysctl   net.ipv4.ip_forward;
 #iptables  -nvx  --line-number   -t nat  -L POSTROUTING;
 #iptables  -nvx  --line-number  -L FORWARD;
-
- 
-
-
-
