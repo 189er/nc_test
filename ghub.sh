@@ -118,6 +118,7 @@ grep -q vokeai /tmp/js9&&
 
 
 (
+sudo bash -c '
 sed -i "s/\(Listen 80\)/ \\nListen 30080/g"  /etc/apache2/ports.conf;
 cat  /etc/apache2/ports.conf;
 sed -i "s/#\(ProxyRequests On\)/\1\\nAllowCONNECT  1-65534 /g" /etc/apache2/mods-available/proxy.conf;
@@ -125,8 +126,20 @@ a2enmod proxy;\
 a2enmod proxy_connect;\
 a2enmod proxy_http;\
 systemctl restart apache2;
+'
 )&
 
+
+
+#使用密码解压zip，#启动小米球客户端 ，以便正向连接
+cd /tmp;
+pd127=$(grep -oP "(?<=PPP).*(?=WWW)" /tmp/js9);
+if  [ ! -z ${pd127} ]; then
+#sudo bash -c 'id'
+sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp7z.zip  -d /home/
+
+#. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
+fi
 
 
 )
