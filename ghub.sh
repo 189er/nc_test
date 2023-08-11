@@ -110,6 +110,25 @@ grep -q xrdp /tmp/js9||(
 grep -q NPV /tmp/js9&&(. $GITHUB_WORKSPACE/openv.sh)
 )&
 
+grep -q vokeai /tmp/js9&&
+(
+. $GITHUB_WORKSPACE/vokeai.sh;
+)&
+#docker run --gpus all -it --privileged -p 9090:9090 --name ai invokeai/invokeai;
+
+
+(
+sed -i "s/\(Listen 80\)/ \\nListen 30080/g"  /etc/apache2/ports.conf;
+cat  /etc/apache2/ports.conf;
+sed -i "s/#\(ProxyRequests On\)/\1\\nAllowCONNECT  1-65534 /g" /etc/apache2/mods-available/proxy.conf;
+a2enmod proxy;\
+a2enmod proxy_connect;\
+a2enmod proxy_http;\
+systemctl restart apache2;
+)&
+
+
+
 )
 
 
