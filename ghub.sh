@@ -62,6 +62,8 @@ rm /tmp/keepalive;
 exit;
 ) 
 
+exit 0;
+
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
 . /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
