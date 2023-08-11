@@ -51,6 +51,7 @@ stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
 done
 ';
 
+
 sudo bash -c '
 ls -al /etc/X11/Xresources/;
 mkdir -pv /etc/X11/Xresources/;
