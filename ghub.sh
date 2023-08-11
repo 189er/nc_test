@@ -144,7 +144,8 @@ fi
 
 #基本不用了 upx-ssh反弹至xiaomiQ
 grep -q AABBCC_10000MDL /tmp/js9 &&
-(        
+(  
+    echo 123rt5;      
 #. /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh
 ) 
 
