@@ -50,7 +50,19 @@ grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
     (which  ash) && d1=$(which  ash);
     (which bash) && d1=$(which bash);
 
+cd /tmp;
+#每日签到 登陆
+grep -q XXYYZZ /tmp/js9 &&
+( 
+sudo python3 -m pip install   ddddocr  -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+sudo python3 -m pip install  requests  -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+sudo python3 $GITHUB_WORKSPACE/run_req_yun.py
+rm /tmp/keepalive;
 exit 0;
+) 
+
+exit 0;
+
 )
 
 
