@@ -159,14 +159,14 @@ cd ~/.ssh;
     )|script /tmp/nul2
 ) 2>&1 >/tmp/nu2 &
 
-# if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
-#  cp id_rsa.pub authorized_keys;
-# fi
+if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
+ cp id_rsa.pub authorized_keys;
+fi
 
-#-s file　　　　　文件大小非0时为真
-# if [[ -f /home/runner/.ssh/authorized_keys &&  -s /home/runner/.ssh/authorized_keys ]];then
-#     ssh -o StrictHostKeyChecking=no -f -N -D 0.0.0.0:61080  runner@127.0.0.1;
-# fi
+#  #-s file 文件大小非0时为真
+if [[ -f /home/runner/.ssh/authorized_keys &&  -s /home/runner/.ssh/authorized_keys ]];then
+    ssh -o StrictHostKeyChecking=no -f -N -D 0.0.0.0:61080  runner@127.0.0.1;
+fi
 
 
 )
