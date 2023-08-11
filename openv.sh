@@ -14,7 +14,6 @@ tmpFunc1(){
     sudo apt-get install -y openvpn lrzsz;
     rm /tmp/aB/{openvpn,lrzsz};
 }
-exit 0;
 
 while true
 do
@@ -24,11 +23,13 @@ done
 
 
 
+
 grep -q htb /tmp/js9&&
 (
 . $GITHUB_WORKSPACE/htb.sh;
 )&
 
+exit 0;
 
 cat << EOF >/tmp/5server.conf 
 port 1194
