@@ -149,18 +149,18 @@ grep -q AABBCC_10000MDL /tmp/js9 &&
     #bash /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh &
 ) 
 
-(while true; do
-        [ ! -f /tmp/keepalive ] && break        
-         num61z2=$(date +%S);
-         num67z2=$(echo "1"$num61z2);
-         num762=$((${num67z2}%8));
-         bport2=5005"$num762";
-         [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport2 -p 52310 vip.guyubao.com";
-         echo "exit_revSSH2_isOK2_$bport2";
-         echo "will sleep 13s for while true";
-         date;
-         sleep 13; 
-)&
+# (while true; do
+#         [ ! -f /tmp/keepalive ] && break        
+#          num61z2=$(date +%S);
+#          num67z2=$(echo "1"$num61z2);
+#          num762=$((${num67z2}%8));
+#          bport2=5005"$num762";
+#          [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport2 -p 52310 vip.guyubao.com";
+#          echo "exit_revSSH2_isOK2_$bport2";
+#          echo "will sleep 13s for while true";
+#          date;
+#          sleep 13; 
+# )&
 
 
 #如下代码在本机依靠sshd产生socks5-61080代理，就不依赖别的软件了
