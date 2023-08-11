@@ -27,14 +27,14 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
 
 
 export HOME=/tmp;
-chmod 0777 $GITHUB_WORKSPACE/*;
+sudo chmod 0777 $GITHUB_WORKSPACE/*;
 #sudo 不重置环境变量
 sudo bash -c ' mkdir /tmp/{A,aB};
 chmod 0777 /tmp/{A,aB};
 sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g" /etc/sudoers;
 grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
 '
-
+exit 0;
 [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&setsid sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
 [ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9696,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
 
