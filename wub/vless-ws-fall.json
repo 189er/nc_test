@@ -13,7 +13,7 @@
                 ],
                 "decryption": "none",
                 "fallbacks": [
-                    { "dest": 5244 }
+                    { "dest": 30080 }
                 ]
             },
             "streamSettings": 
