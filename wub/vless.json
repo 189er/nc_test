@@ -24,8 +24,8 @@
                                     "type": "http",
                                     "request": {
                                                       "version": "1.1",
-                                                      "method": "POST",
-                                                      "path": [ "/vlesstcp"],
+                                                      "method": "GET",
+                                                      "path": [ "/vtcp58080"],
                                                        "headers":{
                                                             "Host": ["9bdez39ksp30.ngrok.xiaomiqiu123.top"]
                                                             }
