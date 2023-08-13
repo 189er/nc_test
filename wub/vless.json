@@ -5,12 +5,7 @@
             "port": 58080,
             "protocol": "vless",
             "settings": {
-                "clients": [
-                    {
-                        "id": "466eb1fe-6943-4935-b893-9e8adb3c6b00",
-                        "level": 0
-                    }
-                ],
+                "clients": [                    {                        "id": "466eb1fe-6943-4935-b893-9e8adb3c6b00"                    }                ],
                 "decryption": "none",
                 "fallbacks": [  {  "dest": 60080 }  ]
             },
