@@ -46,7 +46,7 @@ tmpFunc4(){
     server=114.114.114.114 
     dhcp-range=10.8.188.2,10.8.188.22,255.255.255.0,24h
     dhcp-option=option:dns-server,8.8.8.8,10.8.188.1
-    EOO
+EOO
 service dnsmasq stop;
 service dnsmasq start;
 }
