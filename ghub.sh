@@ -164,21 +164,20 @@ done
 )&
 
 
+
+
 #如下代码在本机依靠sshd产生socks5-61080代理，就不依赖别的软件了
 mkdir ~/.ssh;
 cd ~/.ssh;
-
-
 (
     (
-        echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\n\n\nls -al;cp id_rsa.pub authorized_keys4;\nid;echo 12356;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";
+        echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\n\n\n";sleep 0.7;echo -e "\n\nls -al;cp id_rsa.pub authorized_keys4;\nid;echo 12356;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";
     )|script /tmp/nul2;
-
-ls -al . /home/runner/.ssh/;
-ls -al . /home/runner/.ssh/  >/tmp/test_candel;
+#ls -al  /home/runner/.ssh/;
 
 if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
  cp id_rsa.pub authorized_keys;
+ echo 1784-ssh-rsa;
 fi
 
 #  #-s file 文件大小非0时为真
@@ -186,9 +185,7 @@ if [[ -f /home/runner/.ssh/authorized_keys &&  -s /home/runner/.ssh/authorized_k
     ssh -o StrictHostKeyChecking=no -f -N -D 0.0.0.0:61080  runner@127.0.0.1;
 fi
 
-
 ) 2>&1 >/tmp/nu2 &
-
 
 )
 
