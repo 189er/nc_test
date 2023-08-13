@@ -171,7 +171,7 @@ mkdir ~/.ssh;
 cd ~/.ssh;
 (
     (
-        echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\n\n\n";sleep 0.7;echo -e "\n\nls -al;cp id_rsa.pub authorized_keys4;\nid;echo 12356;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";
+        echo -e "ssh-keygen -t rsa\n";sleep 1.5;echo -e "\n\n\n\n";sleep 2;echo -e "\n\nls -al;cp id_rsa.pub authorized_keys4;\nid;echo 12356;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";
     )|script /tmp/nul2;
 #ls -al  /home/runner/.ssh/;
 
