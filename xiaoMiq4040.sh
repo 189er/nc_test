@@ -8,6 +8,7 @@ sed -i "/auth_token/d" /home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xia
 #如果文件/home/liuhuan77.txt存在就追加新令牌
 [ -f /home/liuhuan77.txt ]&&(echo "auth_token: "`cat /home/liuhuan77.txt` >>/home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xiaomiqiu.conf)
 
+# https://9bdez39ksp30.ngrok.xiaomiqiu123.top
 
 (
 (curl --connect-timeout 2 -m 4 http://xoks54uvph23.ngrok.xiaomiqiu123.top/|grep "Tunnel")&&
