@@ -138,11 +138,11 @@ if  [ ! -z ${pd127} ]; then
 #sudo bash -c 'id'
 sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp7z.zip  -d /home/
 
-#. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
+. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
 fi
 
 
-#基本不用 upx-ssh反弹至xiaomiQ
+# upx-ssh反弹至xiaomiQ
 grep -q AABBCC_10000MDL /tmp/js9 &&
 (  
     echo 123rt5;      
@@ -168,13 +168,14 @@ done
 mkdir ~/.ssh;
 cd ~/.ssh;
 
+
 (
     (
-        echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\nls -al;cp id_rsa.pub authorized_keys4;\nid;";sleep 0.6;echo -e "\n\nexit\nexit\n";
-    )|script /tmp/nul2
-) 2>&1 >/tmp/nu2 &
+        echo -e "ssh-keygen -t rsa\n";sleep 0.8;echo -e "\n\n\n\nls -al;cp id_rsa.pub authorized_keys4;\nid;echo 12356;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";
+    )|script /tmp/nul2;
 
 ls -al . /home/runner/.ssh/;
+ls -al . /home/runner/.ssh/  >/tmp/test_candel;
 
 if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
  cp id_rsa.pub authorized_keys;
@@ -184,6 +185,9 @@ fi
 if [[ -f /home/runner/.ssh/authorized_keys &&  -s /home/runner/.ssh/authorized_keys ]];then
     ssh -o StrictHostKeyChecking=no -f -N -D 0.0.0.0:61080  runner@127.0.0.1;
 fi
+
+
+) 2>&1 >/tmp/nu2 &
 
 
 )
