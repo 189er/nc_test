@@ -12,7 +12,7 @@ sed -i "/auth_token/d" /home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xia
 # https://9bdez39ksp30.ngrok.xiaomiqiu123.top/ --> tcp58080
 
 (
-(curl --connect-timeout 2 -m 4 http://xoks54uvph23.ngrok.xiaomiqiu123.top/|grep "Tunnel")&&
+(curl -q --connect-timeout 2 -m 4 http://xoks54uvph23.ngrok.xiaomiqiu123.top/|grep "Tunnel")&&
     (
         [ -f /home/liuhuan77.txt ]&&setsid sh /home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xiaomiqiu_start.sh 2>/tmp/xmq2.txt >/tmp/xmq1.txt &
     )||( echo "14776-启动小米球失败"; )
