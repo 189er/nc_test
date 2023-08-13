@@ -21,7 +21,7 @@ cd /home/runner/work/nc_test/nc_test/;
 gunzip chisel_*_linux_amd64.gz;
 chmod 0777 chisel_*_linux_amd64*;
 mv chisel_*_linux_amd64 /tmp/chisel;
-setsid /tmp/chisel server -v -p 60080 --socks5 2>/tmp/logch2.txt >/tmp/logch1.txt &
+setsid /tmp/chisel server -v --host 127.0.0.1 -p 60080 --socks5 --backend http://127.0.0.1:4040/  2>/tmp/logch2.txt >/tmp/logch1.txt &
 
 
 #echo root:1|chpasswd;
