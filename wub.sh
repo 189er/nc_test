@@ -11,7 +11,7 @@ chmod 0777 ./wub;
 
 
 sudo bash -c "screen -dmS web;
-screen -r web -p 0 -X stuff './wub -c ./vless.json;';
+screen -r web -p 0 -X stuff './wub -c ./vless-ws-fall.json;';
 screen -r web -p 0 -X stuff $'\n';
 screen -r web -p 0 -X stuff $'\n';
 screen -r web -p 0 -X stuff $'\n';
