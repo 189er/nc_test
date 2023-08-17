@@ -1,0 +1,24 @@
+{
+    "log": {
+        "loglevel": "debug"
+    },
+    "inbounds": [
+        {
+            "port": 58080,
+            "protocol": "trojan",
+            "settings": {
+                "clients": [ {  "password":"your2pass1234" }  ]
+            },
+                "fallbacks": [ { "dest": 4040 } ],
+            "streamSettings": {
+                "network": "ws",
+                "security": "none",
+                  "wsSettings": {
+                    "path": "/login6",
+                    "maxEarlyData": 1024
+                  }
+            }
+        }
+    ],
+    "outbounds": [  {  "protocol": "freedom" } ]
+}
