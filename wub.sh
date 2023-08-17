@@ -10,9 +10,17 @@ chmod 0777 ./wub;
 #(setsid ./wub -c ./vless.json & )
 
 
-sudo bash -c "screen -dmS tweb;
-screen -r tweb -p 0 -X stuff './wub -c ./vless.json;';
-screen -r tweb -p 0 -X stuff $'\n';
-screen -r tweb -p 0 -X stuff $'\n';
-screen -r tweb -p 0 -X stuff $'\n';
+sudo bash -c "screen -dmS web;
+screen -r web -p 0 -X stuff './wub -c ./vless.json;';
+screen -r web -p 0 -X stuff $'\n';
+screen -r web -p 0 -X stuff $'\n';
+screen -r web -p 0 -X stuff $'\n';
+"
+
+
+sudo bash -c "screen -dmS so;
+screen -r so -p 0 -X stuff './socat.bin udp4-l:60514,fork,reuseaddr   -';
+screen -r so -p 0 -X stuff $'\n';
+screen -r so -p 0 -X stuff $'\n';
+screen -r so -p 0 -X stuff $'\n';
 "
