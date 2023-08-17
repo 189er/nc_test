@@ -7,7 +7,9 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 #set|grep PATH >/tmp/env77722;
 #  export PATH=$PATH:/usr/games;  set|grep PATH >/tmp/env999;
 
-sudo apt-get update;
+
+[ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
+
 
 tmpFunc1(){ 
     touch /tmp/aB/{openvpn,lrzsz};

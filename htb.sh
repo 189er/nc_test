@@ -2,6 +2,8 @@ is_empty_dir(){
     return `ls -A $1|wc -w`
 }
 
+# 本节不在进行apt-update,因为前置条件为openv.sh
+
 tmpFunc2(){ 
     touch /tmp/aB/{nmap,tcpdump,hydra,bridge-utils,uml-utilities};
     sudo apt-get install -y nmap tcpdump hydra bridge-utils uml-utilities;

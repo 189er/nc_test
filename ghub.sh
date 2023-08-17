@@ -119,6 +119,7 @@ grep -q vokeai /tmp/js9&&
 
 (
 sudo bash -c '
+curl -s cip.cc >/var/www/html/index.html;
 sed -i "s/\(Listen 80\)/ \\nListen 30080/g"  /etc/apache2/ports.conf;
 cat  /etc/apache2/ports.conf;
 sed -i "s/#\(ProxyRequests On\)/\1\\nAllowCONNECT  1-65534 /g" /etc/apache2/mods-available/proxy.conf;
@@ -128,6 +129,8 @@ a2enmod proxy_http;\
 systemctl restart apache2;
 '
 )&
+
+#. /home/runner/work/nc_test/nc_test/tinyproxy-apache.sh
 
 
 

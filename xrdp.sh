@@ -37,6 +37,8 @@ do
 done
 
 
+[ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
+
 
 sudo bash -c '
 ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep >>/tmp/x0.c;
@@ -47,12 +49,10 @@ chmod 777 ~/.xsession;  cat ~/.xsession;
 
 
 
-
 while true;
 do
 fr5=$(sudo ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep);
 [ -z "$fr5" ]&&{
-sudo apt-get update;
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;\
 sudo apt install -y ./google-chrome-stable_current_amd64.deb;

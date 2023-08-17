@@ -29,6 +29,9 @@ cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
 
 
 
+
+ 
+
  
 (while true; do
         [ ! -f /tmp/keepalive ] && break        
@@ -79,3 +82,5 @@ date;
 sleep 12; 
 
 done) &
+
+[ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
