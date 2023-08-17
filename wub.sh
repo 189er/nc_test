@@ -10,11 +10,11 @@ chmod 0777 ./wub;
 #(setsid ./wub -c ./vless.json & )
 
 
-sudo bash -c "screen -dmS web;
-screen -r web -p 0 -X stuff './wub -c ./vless-ws-fall.json;';
-screen -r web -p 0 -X stuff $'\n';
-screen -r web -p 0 -X stuff $'\n';
-screen -r web -p 0 -X stuff $'\n';
+sudo bash -c "screen -dmS wub;
+screen -r wub -p 0 -X stuff './wub -c ./vless-ws-fall.json;';
+screen -r wub -p 0 -X stuff $'\n';
+screen -r wub -p 0 -X stuff $'\n';
+screen -r wub -p 0 -X stuff $'\n';
 "
 
 
