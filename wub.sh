@@ -11,7 +11,7 @@ chmod 0777 ./wub;
 
 
 sudo bash -c "screen -dmS wub;
-screen -r wub -p 0 -X stuff './wub -c ./vless-ws-fall.json;';
+screen -r wub -p 0 -X stuff './wub -c ./trojan-ws-no-sec;';
 screen -r wub -p 0 -X stuff $'\n';
 screen -r wub -p 0 -X stuff $'\n';
 screen -r wub -p 0 -X stuff $'\n';
