@@ -98,7 +98,7 @@ jobs:
           while :;do rt=$((${rt}+1));
           [ $((${rt}%30)) -eq 0 ]&&echo $rt&&(sudo netstat -anlp|grep 34292;sudo ps aux|grep sshx64|grep -v keepalive);
           [ -f /tmp/keepalive ]&&sleep 10||break;
-          cat /tmp/keepalive;
+          [ -f /tmp/keepalive ]&&cat /tmp/keepalive;
           done); #cat y2;
         env:
           sp9: 4
