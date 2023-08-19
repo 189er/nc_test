@@ -30,7 +30,7 @@ cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
 
 
 
- 
+[ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
 
  
 (while true; do
@@ -83,4 +83,3 @@ sleep 12;
 
 done) &
 
-[ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
