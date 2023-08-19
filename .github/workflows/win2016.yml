@@ -93,13 +93,15 @@ jobs:
           
       - name: Run a 4rd script #[ ${rt} -gt 15 ]&&whoami&&break;  #[ $((${rt}%80)) -eq 0 ]&&  #rt=$((${rt}+1));
         run: |
+          cd /tmp;
           rt=0;
           while true
           do 
             date;
             uptime;
             rt=$((${rt}+1));
-            sudo id|grep ro;
+            #sudo id|grep ro;
+            [ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo netstat -anlp|grep 9696;
             sudo ps aux|grep sshx64|grep -v keepalive;
             #sudo busybox netstat -anlp|grep 34292;
             [ -f /tmp/keepalive ]&&sleep 10||break;

