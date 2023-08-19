@@ -10,6 +10,8 @@
 cd /tmp;
 ls -al  /usr/lib/firefox/firefox  /opt/microsoft/msedge/msedge;
 
+[ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
+
 tmpFunc6(){ 
     touch /tmp/aB/{xorg,dbus-x11,x11-xserver-utils,xterm,xinit,xorgxrdp};
     sudo apt-get install -y xorg dbus-x11 x11-xserver-utils xterm xinit xorgxrdp;
@@ -18,7 +20,7 @@ tmpFunc6(){
 
 while true
 do
-    [ "`ls -A /tmp/aB/`" = "" ] &&tmpFunc6&&break;
+    [ "`ls -A /tmp/aB/`" = "" ] && [ -f /tmp/ubuntu_update ] && tmpFunc6&&break;
     sleep 1;
 done
 
@@ -32,12 +34,11 @@ tmpFunc8(){
 
 while true
 do
-    [ "`ls -A /tmp/aB/`" = "" ] &&tmpFunc8&&break;
+    [ "`ls -A /tmp/aB/`" = "" ] && [ -f /tmp/ubuntu_update ] && tmpFunc8&&break;
     sleep 1;
 done
 
 
-[ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
 
 
 sudo bash -c '

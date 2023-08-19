@@ -103,7 +103,7 @@ jobs:
             echo $rt;
             sudo netstat -anlp|grep 34292;sudo ps aux|grep sshx64|grep -v keepalive;
             date;uptime;
-            [ -f /tmp/keepalive ]&&sleep 40||break;
+            [ -f /tmp/keepalive ]&&sleep 10||break;
             [ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo netstat -anlp|grep 9696;
           done; #cat y2;
           echo 13459

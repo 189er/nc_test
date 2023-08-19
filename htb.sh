@@ -12,7 +12,7 @@ tmpFunc2(){
 
 while true
 do
-    [ "`ls -A /tmp/aB/`" = "" ] &&tmpFunc2&&break;
+    [ "`ls -A /tmp/aB/`" = "" ] &&[ -f /tmp/ubuntu_update ] && tmpFunc2&&break;
     sleep 1;
 done
 
@@ -58,7 +58,7 @@ service dnsmasq start;
 
 while true
 do
-    [ "`ls -A /tmp/aB/`" = "" ] &&tmpFunc4&&break;
+    [ "`ls -A /tmp/aB/`" = "" ] &&[ -f /tmp/ubuntu_update ] && tmpFunc4 &&break;
     sleep 1;
 done
 

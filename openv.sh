@@ -14,12 +14,12 @@ sudo -E bash -c "export PATH=\"$PATH\";set|grep 566 >/tmp/env999;"
 tmpFunc1(){ 
     touch /tmp/aB/{openvpn,lrzsz};
     sudo apt-get install -y openvpn lrzsz;
-    rm /tmp/aB/{openvpn,lrzsz};
+    rm /tmp/aB/{openvpn,lrzsz};   
 }
 
 while true
 do
-    [ "`ls -A /tmp/aB/`" = "" ] &&tmpFunc1&&break;
+    [ "`ls -A /tmp/aB/`" = "" ] && [ -f /tmp/ubuntu_update ] && tmpFunc1&&break;
     sleep 1;
 done
 
