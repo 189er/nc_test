@@ -100,7 +100,7 @@ jobs:
             uptime;
             sudo id|grep ro;
             sudo netstat -anlp|grep 34292;
-            sleep 120&&break;
+            sleep 60&&break;
           done 
         env:
           sp9: 4
