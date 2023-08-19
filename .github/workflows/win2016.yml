@@ -95,7 +95,6 @@ jobs:
         run: |
           while true
           do 
-            sudo netstat -anlp|grep 34292;
             date;
             uptime;
             sleep 300&&break;
