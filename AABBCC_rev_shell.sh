@@ -41,7 +41,7 @@ sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 
 [ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
 
-ip_port7pxy2=$(echo "\$PATH");
+ip_port7pxy2=$(echo "$PATH");
 echo "flag_9832q";
 
 
