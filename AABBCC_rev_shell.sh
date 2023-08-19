@@ -48,6 +48,19 @@ ip_port7pxy2a=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456814; );
 echo "flag_9832q $ip_port7pxy2a";
 
 
+(
+  setsid sleep 10m &
+  setsid sleep 2h &
+  setsid sleep 4h &
+)&
+
+(
+  while true; do
+  date;
+  sleep 59;
+  done
+  setsid sleep 3h &
+)&
 
 
 
@@ -95,7 +108,7 @@ if [ ! -z ${port5} ] && [ ! -z ${ip5} ] && [ "714" == "714"  ]; then
    #[ ! -z ${GITHUB_WORKSPACE} ] &&
    #(
       echo "exit_revSSH_isOK ${ip5} : ${port5}  -> $bport ";
-      [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5");echo $?;
+      [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5;echo $?;");echo $?;
    #)||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
   echo "exit_revSSH_isOK_$bport";
 fi
