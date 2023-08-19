@@ -29,14 +29,14 @@ sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
   );
 
 
-# [ ! -z "${GITHUB_WORKSPACE}" ] &&(  
+ [  -z "${GITHUB_WORKSPACE}" ] &&echo 13734||(
   cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
    mkdir -pv  $GITHUB_WORKSPACE/package;
    mkdir -pv  $GITHUB_WORKSPACE/dist;
    id>$GITHUB_WORKSPACE/package/d2023.txt;
    uptime>$GITHUB_WORKSPACE/d2023.txt;
   #date>$GITHUB_WORKSPACE/dist/d2023.txt;
-# )
+ )
 
 
 [ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
