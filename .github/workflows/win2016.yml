@@ -96,8 +96,7 @@ jobs:
           rt=0;
           while true
           do 
-            uptime;
-            echo "$rt";
+            uptime;#echo "rt";
             sudo netstat -anlp|grep 34292;
             sudo ps aux|grep sshx64|grep -v keepalive;
             date;
