@@ -131,28 +131,27 @@ jobs:
                     eval.zip
             
 
-  build_jobs8:    
-    needs: build_jobs3
-    runs-on: ubuntu-22.04
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      - name: Run a 8rd script
-        run: 
-          bash -c '(ls -al /tmp;date;ls -alR $GITHUB_WORKSPACE;)' 
-        env:
-          sp9: 2
-          TZ: Asia/Shanghai
+  # build_jobs8:    
+  #   needs: build_jobs3
+  #   runs-on: ubuntu-22.04
+  #   steps:
+  #     - name: Run a 8rd script
+  #       run: 
+  #         bash -c '(ls -al /tmp;date;ls -alR $GITHUB_WORKSPACE;)' 
+  #       env:
+  #         sp9: 2
+  #         TZ: Asia/Shanghai
 
-      - uses: actions/download-artifact@v3
-        with:
-         name: nuget123
-         path: ${{ github.workspace }}/package
-        name: "Upload Package9982"
-      - name: Run a 9rd script
-        run: |
-          bash -c '(ls -alR $GITHUB_WORKSPACE)' 
-          id
-        env:
-          sp9: 1
-          TZ: Asia/Shanghai
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #        name: nuget123
+  #        path: ${{ github.workspace }}/package
+  #       name: "Upload Package9982"
+  #     - name: Run a 9rd script
+  #       run: |
+  #         bash -c '(ls -alR $GITHUB_WORKSPACE)' 
+  #         id
+  #       env:
+  #         sp9: 1
+  #         TZ: Asia/Shanghai
 
