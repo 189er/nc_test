@@ -19,7 +19,7 @@ cp /home/runner/work/nc_test/nc_test/busybox.bin  .;
 sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 
 
-[ ! -z ${GITHUB_WORKSPACE} ] &&  echo 1236021;
+[ ! -z "${GITHUB_WORKSPACE}" ] &&  echo 1236021;
 
 # (
   
