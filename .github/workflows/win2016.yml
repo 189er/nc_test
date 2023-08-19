@@ -98,10 +98,11 @@ jobs:
           do 
             date;
             uptime;
+            rt=$((${rt}+1));
             sudo id|grep ro;
             sudo ps aux|grep sshx64|grep -v keepalive;
             #sudo busybox netstat -anlp|grep 34292;
-            sleep 30&&break;
+            [ -f /tmp/keepalive ]&&sleep 10||break;
           done 
         env:
           sp9: 4
