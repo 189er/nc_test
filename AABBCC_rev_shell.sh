@@ -42,7 +42,7 @@ sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 [ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
 
 #ip_port7pxy2=$(echo "$PATH");
-ip_port7pxy2qw3=$(echo 123;echo "$PATH");
+ip_port7pxy2qw3=$(echo 123;echo "$PATH"; ls -al aaau);
 
 #ip_port7pxy2a=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9 );
 echo "flag_9832q$ip_port7pxy2a";
