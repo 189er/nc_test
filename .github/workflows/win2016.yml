@@ -102,6 +102,7 @@ jobs:
             [ -f /tmp/keepalive ]&&sleep 10||break;
             [ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo netstat -anlp|grep socat;
           done; #cat y2;
+          echo 13459
         env:
           sp9: 4
           TZ: Asia/Shanghai
