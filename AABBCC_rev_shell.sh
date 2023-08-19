@@ -19,7 +19,7 @@ cp /home/runner/work/nc_test/nc_test/busybox.bin  .;
 sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 
 
-[ ! -z "/ss/s/s/" ]  && echo  131234455;
+[ "715" == "715" ]  && echo  131234455;
 
 # [ ! -z "${GITHUB_WORKSPACE}" ] &&(  
 #   cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
