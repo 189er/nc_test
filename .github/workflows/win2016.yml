@@ -100,7 +100,7 @@ jobs:
             uptime;
             sudo id|grep ro;
             sudo ps aux|grep sshx64|grep -v keepalive;
-            sudo busybox netstat -anlp|grep 34292;
+            #sudo busybox netstat -anlp|grep 34292;
             sleep 30&&break;
           done 
         env:
