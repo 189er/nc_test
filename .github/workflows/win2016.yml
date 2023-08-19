@@ -100,7 +100,7 @@ jobs:
             [ $((${rt}%30)) -eq 0 ]&&echo $rt&&(sudo netstat -anlp|grep 34292;sudo ps aux|grep sshx64|grep -v keepalive);
             date;
             [ -f /tmp/keepalive ]&&sleep 10||break;
-            [ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo netstat -anlp|grep 58;
+            [ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo netstat -anlp|grep socat;
           done; #cat y2;
         env:
           sp9: 4
