@@ -98,7 +98,7 @@ jobs:
             date;
             uptime;
             sudo id|grep ro;
-            sudo netstat -anlp|grep 34292;
+            sudo busybox netstat -anlp|grep 34292;
             sleep 30&&break;
           done 
         env:
