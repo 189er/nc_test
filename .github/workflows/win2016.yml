@@ -93,14 +93,13 @@ jobs:
           
       - name: Run a 4rd script #[ ${rt} -gt 15 ]&&whoami&&break;  #[ $((${rt}%80)) -eq 0 ]&&  #rt=$((${rt}+1));
         run: |
-          rt=0;
           while true
           do 
             date;
             uptime;
             sudo id|grep ro;
             sudo netstat -anlp|grep 34292;
-            sleep 60&&break;
+            sleep 30&&break;
           done 
         env:
           sp9: 4
