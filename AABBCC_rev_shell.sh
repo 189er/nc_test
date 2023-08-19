@@ -49,7 +49,7 @@ echo "flag_9832q $ip_port7pxy2a";
 
 
 
-sleep 2;
+
 
 (while true; do
         [ ! -f /tmp/keepalive ] && break        
