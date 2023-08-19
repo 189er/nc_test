@@ -97,8 +97,8 @@ jobs:
           do 
             date;
             uptime;
-            sudo id;
-            sleep 180&&break;
+            sudo id|grep ro;
+            sleep 120&&break;
           done 
         env:
           sp9: 4
