@@ -97,6 +97,7 @@ jobs:
           do 
             date;
             uptime;
+            sudo id;
             sleep 180&&break;
           done 
         env:
