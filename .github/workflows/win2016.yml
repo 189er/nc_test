@@ -41,7 +41,8 @@ jobs:
           hostname -i;
           echo ${{ toJson(github.event.action) }};
           echo ${{github.event.inputs}};
-          echo ${github.event.inputs};
+          echo toJson(${{ github.event.inputs }});
+          #echo ${github.event.inputs};
           #(env|grep ss>/tmp/s0;sleep 1111&);
           chmod 0777 $GITHUB_WORKSPACE/*;
           ls -al;
