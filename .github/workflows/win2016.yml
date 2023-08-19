@@ -97,7 +97,7 @@ jobs:
           do 
             date;
             uptime;
-            sleep 300&&break;
+            sleep 180&&break;
           done 
         env:
           sp9: 4
