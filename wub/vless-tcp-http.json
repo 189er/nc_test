@@ -2,6 +2,7 @@
     "log": {"loglevel": "debug"},
     "inbounds": [
         {
+            "listen": "127.0.0.1",
             "port": 58080,
             "protocol": "vless",
             "settings": {

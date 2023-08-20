@@ -12,12 +12,10 @@
             },
             "streamSettings": 
             {
-                  "network": "ws",
+                  "network": "grpc",
                   "security": "none",
-                  "wsSettings": {
-                    "path": "/login2",
-                    "maxEarlyData": 1024,
-                    "headers":{"Host": "9bdez39ksp30.ngrok.xiaomiqiu123.top"}
+                  "grpcSettings": {
+                    "serviceName": "a.189.cn"
                   }
             }
         } 
