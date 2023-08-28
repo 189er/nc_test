@@ -19,7 +19,7 @@
                     "header": {
                                     "type": "http",
                                     "request": {
-                                                "path": [ "/login4"],
+                                                "path": [ "/tcpip-58080/"],
                                                 "version": "1.1",
                                                 "headers":{
                                                     "Host": ["9bdez39ksp30.ngrok.xiaomiqiu123.top"]

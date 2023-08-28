@@ -141,30 +141,30 @@ if  [ ! -z ${pd127} ]; then
 #sudo bash -c 'id'
 sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp7z.zip  -d /home/
 
-. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
+#. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
 fi
 
 
-# upx-ssh反弹至xiaomiQ
+# frp大带宽 upx-ssh反弹至xiaomiQ
 grep -q AABBCC_10000MDL /tmp/js9 &&
 (  
     echo 123rt5;      
-    bash /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh &
+    #bash /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh &
 ) 
 
-(while true; do
-        [ ! -f /tmp/keepalive ] && break        
-         num61z2=$(date +%S);
-         num67z2=$(echo "1"$num61z2);
-         num762=$((${num67z2}%8));
-         bport2=5005"$num762";
-         [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport2 -p 52310 vip.guyubao.com";
-         echo "exit_revSSH2_isOK2_$bport2";
-         echo "will sleep 13s for while true";
-         date;
-         sleep 13; 
-done
-)&
+# (while true; do
+#         [ ! -f /tmp/keepalive ] && break        
+#          num61z2=$(date +%S);
+#          num67z2=$(echo "1"$num61z2);
+#          num762=$((${num67z2}%8));
+#          bport2=5005"$num762";
+#          [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&sudo sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport2 -p 52310 vip.guyubao.com";
+#          echo "exit_revSSH2_isOK2_$bport2";
+#          echo "will sleep 13s for while true";
+#          date;
+#          sleep 13; 
+# done
+# )&
 
 
 
