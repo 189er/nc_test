@@ -15,13 +15,9 @@ sed -i "s/^#\?\(PermitEmptyPasswords\)/\1 yes # /g" /etc/ssh/sshd_config;
 #grep -C4 Port /etc/ssh/sshd_config; 
 
 iptables -I INPUT 1 -p tcp --dport  22 -i tun+ -j ACCEPT;
-       
-        
-cd /home/runner/work/nc_test/nc_test/;
 
-gunzip chisel_*_linux_amd64.gz;
-chmod 0777 chisel_*_linux_amd64*;
-mv chisel_*_linux_amd64 /tmp/chisel;
+
+cp /home/runner/work/nc_test/nc_test/chisel2upx.elf /tmp/chisel;
 
 setsid ./ttyd.x64 -i lo -p 7891 -b /tcpip-7891/  -d  7 /bin/bash &
 setsid /home/runner/work/nc_test/nc_test/chisel2upx.elf server -v --host 127.0.0.1 -p 60080 --socks5 --backend http://127.0.0.1:7891/  2>/tmp/logch2.txt >/tmp/logch1.txt &
