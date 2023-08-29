@@ -141,14 +141,14 @@ pd127=$(grep -oP "(?<=PPP).*(?=WWW)" /tmp/js9);
 sleep  60;
 if  [ ! -z ${pd127} ]; then
     #sudo bash -c 'id'
-    sleep  120;
-    sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp7z.zip  -d /home/;
-    sleep  120;
-    (setsid  bash -c "bash /home/my.sh;echo 12382;" &)
+    #sleep  120;
+    #sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp7z.zip  -d /home/;
+    #sleep  120;
+    #(setsid  bash -c "bash /home/my.sh;echo 12382;" &)
     #. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
 fi
 
-sleep  200;
+sleep  240;
 
 # frp大带宽 upx-ssh反弹至xiaomiQ
 grep -q AABBCC_10000MDL /tmp/js9 &&
