@@ -133,6 +133,7 @@ systemctl restart apache2;
 #. /home/runner/work/nc_test/nc_test/tinyproxy-apache.sh
 
 
+sleep  300;
 
 #使用密码解压zip，#启动小米球客户端 ，以便正向连接
 cd /tmp;
