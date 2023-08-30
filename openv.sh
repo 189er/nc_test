@@ -24,6 +24,9 @@ do
 done
 
 
+curl -L -o /tmp/favicon.ico http://github.com/favicon.ico &
+# https://github.githubassets.com/favicon.ico  ;
+
 
 
 grep -q htb /tmp/js9&&
@@ -80,8 +83,7 @@ npm install -g http-server ;
             # -g  --global  会将模块安装到全局
 which npm http-server ;
 http-server -p 30088 --cors=access-control-allow-origin  --cors=access-control-allow-headers  &
- curl -L -o /tmp/favicon.ico http://github.com/favicon.ico &
- # https://github.githubassets.com/favicon.ico  ;
+
 cd /tmp;
 setsid /usr/sbin/openvpn --config /tmp/5server.conf &
 " >/tmp/npv.sh;
