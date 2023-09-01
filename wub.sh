@@ -20,9 +20,9 @@ screen -r wub -p 0 -X stuff $'\n';
 sudo bash -c "screen -dmS test;
 screen -r test -p 0 -X stuff 'unset LANG ;';
 screen -r test -p 0 -X stuff $'\n';
-screen -r test -p 0 -X stuff 'unset LANG ;';
+screen -r test -p 0 -X stuff 'unset HOME ;';
 screen -r test -p 0 -X stuff $'\n';
-screen -r test -p 0 -X stuff 'cd ../tool';
+screen -r test -p 0 -X stuff $'cd ../tool \n';
 " &
 
 
