@@ -18,9 +18,12 @@ screen -r wub -p 0 -X stuff $'\n';
 "&
 
 sudo bash -c "screen -dmS test;
+screen -r test -p 0 -X stuff 'unset LANG';
 screen -r test -p 0 -X stuff $'\n';
-"
+" &
 
+
+#sudo bash -c "screen -dmS t2est;screen -r t2est -p 0 -X stuff $'\n';"&
 
 
 sudo bash -c "screen -dmS so;
