@@ -22,6 +22,7 @@ screen -r test -p 0 -X stuff 'unset LANG ;';
 screen -r test -p 0 -X stuff $'\n';
 screen -r test -p 0 -X stuff 'unset LANG ;';
 screen -r test -p 0 -X stuff $'\n';
+screen -r test -p 0 -X stuff 'cd ../tool';
 " &
 
 
