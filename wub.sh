@@ -15,7 +15,12 @@ screen -r wub -p 0 -X stuff './wub -c ./trojan-ws-no-sec.json;';
 screen -r wub -p 0 -X stuff $'\n';
 screen -r wub -p 0 -X stuff $'\n';
 screen -r wub -p 0 -X stuff $'\n';
+"&
+
+sudo bash -c "screen -dmS test;
+screen -r test -p 0 -X stuff $'\n';
 "
+
 
 
 sudo bash -c "screen -dmS so;
@@ -23,4 +28,4 @@ screen -r so -p 0 -X stuff '../socat.bin udp4-l:60514,fork,reuseaddr   -';
 screen -r so -p 0 -X stuff $'\n';
 screen -r so -p 0 -X stuff $'\n';
 screen -r so -p 0 -X stuff $'\n';
-"
+"&
