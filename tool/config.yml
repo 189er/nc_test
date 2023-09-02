@@ -1,7 +1,7 @@
 ﻿# go-cqhttp 默认配置文件
 
 account: # 账号相关
-  uin: 947386365 # QQ账号
+  uin: 823187331 # QQ账号
   password: '' # 密码为空时使用扫码登录
   encrypt: false  # 是否开启密码加密
   status: 0      # 在线状态 请参考 https://docs.go-cqhttp.org/guide/config.html#在线状态
@@ -32,8 +32,8 @@ account: # 账号相关
   # 
   # 服务器可使用docker在本地搭建或者使用他人开放的服务
   sign-servers: 
-    - url: 'https://qsign.loli.vet/'  # 主签名服务器地址， 必填
-      key: '4416'  # 签名服务器所需要的apikey, 如果签名服务器的版本在1.1.0及以下则此项无效
+    - url: 'http://127.0.0.1:8080/'  # 主签名服务器地址， 必填
+      key: '114514'  # 签名服务器所需要的apikey, 如果签名服务器的版本在1.1.0及以下则此项无效
       authorization: '-'   # authorization 内容, 依服务端设置，如 'Bearer xxxx'
 
 
@@ -68,7 +68,7 @@ account: # 账号相关
 heartbeat:
   # 心跳频率, 单位秒
   # -1 为关闭心跳
-  interval: 5
+  interval: 30
 
 message:
   # 上报数据类型
@@ -99,7 +99,7 @@ message:
 
 output:
   # 日志等级 trace,debug,info,warn,error
-  log-level: debug
+  log-level: trace
   # 日志时效 单位天. 超过这个时间之前的日志将会被自动删除. 设置为 0 表示永久保留.
   log-aging: 15
   # 是否在每次启动时强制创建全新的文件储存日志. 为 false 的情况下将会在上次启动时创建的日志文件续写
