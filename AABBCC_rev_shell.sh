@@ -16,7 +16,7 @@ cp /home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin . &
 cp /home/runner/work/nc_test/nc_test/busybox.bin  . &
 
 
-sudo bash -c 'ln -s /bin/bash /bin/idn;echo -e "\nls -al /tmp/nu*;">>/root/.bash_profile';
+sudo bash -c 'ln -s /bin/bash /bin/idn;echo -e "\nls -al /tmp/nu*;echo 中文模式 ;">>/root/.bash_profile';
 
 
 
