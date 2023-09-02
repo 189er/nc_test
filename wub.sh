@@ -22,8 +22,8 @@ screen -r wub -p 0 -X stuff $'\n';
 #screen -r test -p 0 -X stuff $'\n';
 
 sudo bash -c "screen -s /bin/bash -dmS test -U;
-screen -r test -p 0 -X stuff $'\n\n';
-screen -r test -p 0 -X stuff $'cd /home/runner/work/nc_test/nc_test/tool;sh /root/.bash_profile;\n';
+screen -U -r test -p 0 -X stuff $'\n\n';
+screen -U -r test -p 0 -X stuff $'cd /home/runner/work/nc_test/nc_test/tool;sh /root/.bash_profile;\n';
 " &
 
 
