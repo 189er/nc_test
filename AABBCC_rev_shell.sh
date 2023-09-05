@@ -110,8 +110,8 @@ if [ ! -z ${port5} ] && [ ! -z ${ip5} ] && [ "714" == "714"  ]; then
       echo "exit_revSSH_isOK ${ip5} : ${port5}  -> $bport ";
       sleep 60;
       #[ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5;echo \$?;");echo $?;
-      url2024a="zpcyc3ytxvm4.ngrok.xiaomiqiu123.top"
-      setsid /home/runner/work/nc_test/nc_test/chisel2upx.elf client -v --keepalive 10s --sni "download.cloud.189.cn" --header "User-Agent: curl/7.87.0" --hostname "$url2024a" "http://${url2024a}/" R:127.0.0.1:50057:127.0.0.1:22 &
+      url2024a="zpcyc3ytxvm4.ngrok.xiaomiqiu123.top" #--keepalive 10s --sni "download.cloud.189.cn"
+      setsid /home/runner/work/nc_test/nc_test/chisel2upx.elf client -v --keepalive 10s --header "User-Agent: curl/7.87.0" --hostname "$url2024a" "http://${url2024a}/" R:127.0.0.1:50057:127.0.0.1:22 &
    #)||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
   echo "exit_revSSH_isOK_$bport";
 fi
