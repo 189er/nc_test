@@ -108,7 +108,8 @@ if [ ! -z ${port5} ] && [ ! -z ${ip5} ] && [ "714" == "714"  ]; then
    #[ ! -z ${GITHUB_WORKSPACE} ] &&
    #(
       echo "exit_revSSH_isOK ${ip5} : ${port5}  -> $bport ";
-      [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5;echo \$?;");echo $?;
+      sleep 60;
+      #[ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5;echo \$?;");echo $?;
    #)||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
   echo "exit_revSSH_isOK_$bport";
 fi
