@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: revSSH_2023_0805
+name: revSSH_2023_0805-nogit
 
 # Controls when the workflow will run
 on:
@@ -19,7 +19,7 @@ jobs:
   # This workflow contains a single job called "build"
   build_jobs3:
     # The type of runner that the job will run on
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     #ubuntu-latest  18.04 20.04  22.04
     #container: 'centos:latest'
     #services:
@@ -31,10 +31,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-
       - name: Run a one-line script
         run: |
           cat /etc/hostname;
