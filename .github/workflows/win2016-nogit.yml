@@ -19,7 +19,7 @@ jobs:
   # This workflow contains a single job called "build"
   build_jobs3:
     # The type of runner that the job will run on
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     #ubuntu-latest  18.04 20.04  22.04
     #container: 'centos:latest'
     #services:
@@ -91,9 +91,27 @@ jobs:
           sp9: 4
           TZ: Asia/Shanghai
           
+      - name: Run a 4rd script #[ ${rt} -gt 15 ]&&whoami&&break;  #[ $((${rt}%80)) -eq 0 ]&&  #rt=$((${rt}+1));
+          run: |
+            cd /tmp;
+            rt=0;
+            while true
+            do 
+              date;
+              uptime;
+              rt=$((${rt}+1));
+              #sudo id|grep ro;
+              [ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo netstat -anlp|grep upx_reverse;
+              sudo ps aux|grep sshx64|grep -v keepalive;
+              #sudo busybox netstat -anlp|grep 34292;
+              [ -f /tmp/keepalive ]&&sleep 10||break;
+            done 
+          env:
+            sp9: 4
+            TZ: Asia/Shanghai   
 
 
-          
+
   # build_jobs8:    
   #   needs: build_jobs3
   #   runs-on: ubuntu-22.04
