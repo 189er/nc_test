@@ -28,7 +28,7 @@ done
 
 tmpFunc8(){ 
     touch /tmp/aB/{xrdp,xfonts-wqy,ttf-wqy-zenhei};
-    which Xorg&&sudo apt-get install -y xrdpxfonts-wqy ttf-wqy-zenhei;
+    which Xorg&&sudo apt-get install -y xrdp xfonts-wqy ttf-wqy-zenhei;
     rm /tmp/aB/{xrdp,xfonts-wqy,ttf-wqy-zenhei};
 }
 
@@ -42,7 +42,7 @@ done
 
 
 sudo bash -c '
-ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep >>/tmp/x0.c;
+ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg" >>/tmp/x0.c;
 stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
 
 echo "xterm -bg black -fg white -geometry 150x50+20+10  ;">~/.xsession;
