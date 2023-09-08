@@ -52,7 +52,7 @@ chmod 777 ~/.xsession;  cat ~/.xsession;
 
 while true;
 do
-fr5=$(sudo ps aux|grep -E "wget|apt|curl|dpkg"|grep -v grep);
+fr5=$(sudo ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg");
 [ -z "$fr5" ]&&{
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;\
