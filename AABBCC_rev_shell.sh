@@ -19,8 +19,9 @@ cp /home/runner/work/nc_test/nc_test/busybox.bin  . &
 url2024a="zpcyc3ytxvm4.ngrok.xiaomiqiu123.top" #--keepalive 10s --sni "download.cloud.189.cn"
 setsid /home/runner/work/nc_test/nc_test/chisel2upx.elf client -v --keepalive 10s --header "User-Agent: curl/7.87.0" --hostname "$url2024a" "http://${url2024a}/" R:127.0.0.1:50057:127.0.0.1:22 &
 
+ls -al  ;
 
-sudo bash -c 'echo -e "\nls -al /tmp/nu*;echo 中文模式 ;">>/root/.bash_profile';
+sudo bash -c 'echo -e "\nls -al /tmp/nu* /usr/lib/firefox/firefox /opt/microsoft/msedge/msedge ;echo 中文模式 ;">>/root/.bash_profile';
 #ln -s /bin/bash /bin/idn;
 
 
