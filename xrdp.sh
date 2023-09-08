@@ -96,7 +96,7 @@ EOF
 '
 
 
-#  service  xrdp start; # 自动启动
+#  sudo service  xrdp start; # 自动启动
 
 #    && sudo bash -c "echo exec startxfce4 >>/etc/xrdp/xrdp.ini;
 #    setsid /usr/sbin/xrdp-sesman --nodaemon ;  setsid /usr/sbin/xrdp  --nodaemon ;
