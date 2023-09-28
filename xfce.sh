@@ -12,10 +12,9 @@ export LANG=en_US.UTF-8
 export DEBIAN_FRONTEND=noninteractive
 export APT_LISTCHANGES_FRONTEND=none
 
-
-ln -s /opt/microsoft/msedge/msedge /bin/edge;
+sudo ln -s /opt/microsoft/msedge/msedge /bin/edge;
 echo 'edge "https://www.microsoft.com/en-us/bing" & ' >/tmp/111.sh 
-
+chmod 0777 /tmp/111.sh;
 
 [ ! -f /tmp/ubuntu_update ]&&touch /tmp/ubuntu_update&&sudo apt-get update;
 
