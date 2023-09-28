@@ -153,6 +153,8 @@ if  [ ! -z ${pd127} ]; then
     #. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
 fi
 
+sudo mkdir -pv /tmp/cs45/;
+sudo unzip   /home/runner/work/nc_test/nc_test/tool/Z.zip  -d /tmp/cs45/;
 
 
 # frp大带宽 upx-ssh反弹至xiaomiQ
