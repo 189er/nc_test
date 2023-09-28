@@ -116,6 +116,10 @@ grep -q vokeai /tmp/js9&&
 )&
 #docker run --gpus all -it --privileged -p 9090:9090 --name ai invokeai/invokeai;
 
+grep -q xfce /tmp/js9&&
+(
+. $GITHUB_WORKSPACE/xfce.sh;
+)&
 
 (
 sudo bash -c '
