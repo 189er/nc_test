@@ -4,6 +4,9 @@ sudo unzip   /home/runner/work/nc_test/nc_test/tool/Z.zip  -d /tmp/cs45/;
 
 (
 gunzip  /home/runner/work/nc_test/nc_test/tool/ecapture.gz;
+chown 0.0 /home/runner/work/nc_test/nc_test/tool/ecapture;
+chmod 0777 /home/runner/work/nc_test/nc_test/tool/ecapture;
+
 sudo bash -c "
 alias tmux='/tmp/tmux.elf -u'
 tmux new -s cs45 -d  ;
