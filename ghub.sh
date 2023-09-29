@@ -121,6 +121,12 @@ grep -q xfce /tmp/js9&&
 . $GITHUB_WORKSPACE/xfce.sh;
 )&
 
+
+
+. $GITHUB_WORKSPACE/cs45.sh  &
+
+
+
 (
 sudo bash -c '
 curl -s cip.cc >/var/www/html/index.html;
@@ -152,17 +158,6 @@ if  [ ! -z ${pd127} ]; then
     (setsid  bash -c "bash /home/my.sh" &)
     #. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
 fi
-
-sudo mkdir -pv /tmp/cs45/;
-sudo unzip   /home/runner/work/nc_test/nc_test/tool/Z.zip  -d /tmp/cs45/;
-gunzip  /home/runner/work/nc_test/nc_test/tool/ecapture.gz &
-(slepp 3;
-
-alias tmux='/tmp/tmux.elf -u'
-tmux new -s cs45 -d  ;
-tmux send -t cs45 "cd /tmp" ENTER ;
-sudo ln -s  /home/runner/work/nc_test/nc_test/tool/ecapture /bin/ecapture;)&
-
 
 # frp大带宽 upx-ssh反弹至xiaomiQ
 grep -q AABBCC_10000MDL /tmp/js9 &&
