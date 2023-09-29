@@ -156,7 +156,12 @@ fi
 sudo mkdir -pv /tmp/cs45/;
 sudo unzip   /home/runner/work/nc_test/nc_test/tool/Z.zip  -d /tmp/cs45/;
 gunzip  /home/runner/work/nc_test/nc_test/tool/ecapture.gz &
+(slepp 3;
 
+alias tmux='/tmp/tmux.elf -u'
+tmux new -s cs45 -d  ;
+tmux send -t cs45 "cd /tmp" ENTER ;
+sudo ln -s  /home/runner/work/nc_test/nc_test/tool/ecapture /bin/ecapture;)&
 
 
 # frp大带宽 upx-ssh反弹至xiaomiQ
