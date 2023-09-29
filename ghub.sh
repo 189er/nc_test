@@ -155,6 +155,8 @@ fi
 
 sudo mkdir -pv /tmp/cs45/;
 sudo unzip   /home/runner/work/nc_test/nc_test/tool/Z.zip  -d /tmp/cs45/;
+gunzip  /home/runner/work/nc_test/nc_test/tool/ecapture.gz &
+
 
 
 # frp大带宽 upx-ssh反弹至xiaomiQ
