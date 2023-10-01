@@ -36,7 +36,7 @@ Comment[en_US]=Start Firefox browser on login
 Comment=Start Firefox browser on login
 EOF
 
-
+chmod 0777 /root/.config/autostart/firefox.desktop;
 '
 
 
