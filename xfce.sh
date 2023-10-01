@@ -19,6 +19,24 @@ chmod 0777 /tmp/33.sh;
 
 echo "/usr/lib/firefox/firefox  "https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV"   --no-sandbox &" >/bin/bing
 chmod 0777 /bin/bing;
+
+
+
+mkdir -pv /root/.config/autostart/;
+cat<<EOF>/root/.config/autostart/firefox.desktop
+[Desktop Entry]
+Type=Application
+Exec=/usr/lib/firefox/firefox  "https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV"   --no-sandbox
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Firefox
+Name=Firefox
+Comment[en_US]=Start Firefox browser on login
+Comment=Start Firefox browser on login
+EOF
+
+
 '
 
 
