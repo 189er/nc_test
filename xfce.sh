@@ -15,8 +15,8 @@ export APT_LISTCHANGES_FRONTEND=none
 
 sudo bash -c '
 ln -s /opt/microsoft/msedge/msedge /bin/edge;
-echo \'edge  "https://www.microsoft.com/en-us/bing"   --no-sandbox & \' >/bin/33.sh 
-chmod 0777 /tmp/33.sh;
+echo "edge  \"https://www.microsoft.com/en-us/bing\"   --no-sandbox & " >/bin/33.sh 
+chmod 0777 /bin/33.sh;
 
 echo "/usr/lib/firefox/firefox  \"https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV\"   --no-sandbox &" >/bin/bing
 chmod 0777 /bin/bing;
@@ -56,6 +56,7 @@ do
     sleep 1;
 done
 
+echo 123123rty;
 
 
 tmpFunc8_xfce(){ 
@@ -73,6 +74,9 @@ done
 # has tcp 3389
 
 # systemctl status xrdp ;
+
+echo zzr5yty129;
+
 
 sudo bash -c '
 ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg" >>/tmp/x0.c;
@@ -103,6 +107,7 @@ done
 ';
 
 
+echo yhu7887;
 
 
 # sudo bash -c '
