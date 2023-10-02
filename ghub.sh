@@ -209,7 +209,7 @@ fi
 )
 
 
-
+cp /tmp/busybox.bin /tmp/busybox &
 
 
 # 依据环境变量sleep
