@@ -6,6 +6,7 @@
 #  /usr/bin/dpkg --force-confdef --force-confold --status-fd 47 --configure --pending
 # /usr/bin/perl -w /usr/share/debconf/frontend /var/lib/dpkg/info/openvpn.postinst configure
 #  sh /home/runner/work/nc_test/nc_test/xrdp.sh ;
+set -x;
 
 cd /tmp; 
 export LANG=en_US.UTF-8
@@ -17,7 +18,7 @@ ln -s /opt/microsoft/msedge/msedge /bin/edge;
 echo \'edge  "https://www.microsoft.com/en-us/bing"   --no-sandbox & \' >/bin/33.sh 
 chmod 0777 /tmp/33.sh;
 
-echo "/usr/lib/firefox/firefox  "https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV"   --no-sandbox &" >/bin/bing
+echo "/usr/lib/firefox/firefox  \"https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV\"   --no-sandbox &" >/bin/bing
 chmod 0777 /bin/bing;
 
 
@@ -71,6 +72,7 @@ done
 
 # has tcp 3389
 
+# systemctl status xrdp ;
 
 sudo bash -c '
 ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg" >>/tmp/x0.c;
@@ -80,8 +82,8 @@ stat /var/lib/dpkg/lock-frontend >>/tmp/x02.c;
 
 echo " exec startxfce4 ">~/.xsession;
 echo " exec startxfce4 ">/root/.xsession;
-chmod 777 /root/.xsession;
-chmod 777 ~/.xsession;  cat ~/.xsession;
+chmod 0777 /root/.xsession;
+chmod 0777 ~/.xsession;  cat ~/.xsession;
 
 
 while true;
@@ -89,8 +91,8 @@ do
 fr5=$(sudo ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg");
 [ -z "$fr5" ]&&{
  
-sudo apt install -y xfce4  ; #xfce4-goodies
-(sleep 1;sudo systemctl restart xrdp;)&
+apt install -y xfce4  ; #xfce4-goodies
+(sleep 1;systemctl restart xrdp;)&
 echo okok29;
 break;
 
@@ -99,6 +101,8 @@ echo "$fr5";
 stat /var/lib/dpkg/lock-frontend >>/tmp/x0_xfce.c;
 done
 ';
+
+
 
 
 # sudo bash -c '
