@@ -10,7 +10,7 @@ gunzip  /home/runner/work/nc_test/nc_test/tool/ecapture.gz;
 sudo bash -c "
 alias tmux='/tmp/tmux.elf -u'
 tmux new -s cs45 -d  ;
-tmux send -t cs45 'cd /tmp;echo /bin/ts45;' ENTER ;
+tmux send -t cs45 'cd /tmp;echo /bin/ts45;cat /bin/ts45' ENTER ;
 
 cat<<EOF>/bin/ts45
 cd /tmp/cs45/;
