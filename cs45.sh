@@ -10,11 +10,11 @@ gunzip  /home/runner/work/nc_test/nc_test/tool/ecapture.gz;
 sudo bash -c "
 alias tmux='/tmp/tmux.elf -u'
 tmux new -s cs45 -d  ;
-tmux send -t cs45 'cd /tmp' ENTER ;
+tmux send -t cs45 'cd /tmp;echo /bin/ts45;' ENTER ;
 
 cat<<EOF>/bin/ts45
 cd /tmp/cs45/;
-java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=8001 -Dcobaltstrike.server_bindto=0.0.0.0 \
+java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=9090 -Dcobaltstrike.server_bindto=0.0.0.0 \
 -Djavax.net.ssl.keyStore=./cobaltstrike.store -Djavax.net.ssl.keyStorePassword=admin888  -server -XX:+AggressiveHeap -XX:+UseParallelGC \
 -classpath ./cobaltstrike.jar \
 -javaagent:CSAgent.jar=f38eb3d1a335b252b58bc2acde81b542 -Duser.language=en server.TeamServer  127.1.2.3 admin888
