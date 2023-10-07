@@ -20,7 +20,15 @@ java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=9090 -Dcobaltstrike.serv
 -javaagent:CSAgent.jar=f38eb3d1a335b252b58bc2acde81b542 -Duser.language=en server.TeamServer  127.1.2.3 admin888
 EOF
 
-chmod 0777 /bin/ts45;
+
+
+cat<<EOF>/bin/ccc45
+cd /tmp/cs45/;
+java  -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -javaagent:CSAgent.jar=f38eb3d1a335b252b58bc2acde81b542 -Duser.language=en -jar cobaltstrike.jar
+EOF
+
+chmod 0777 /bin/ts45 /bin/ccc45;
+
 
 chown 0.0 /home/runner/work/nc_test/nc_test/tool/ecapture;
 chmod 0777 /home/runner/work/nc_test/nc_test/tool/ecapture;
