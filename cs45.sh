@@ -20,12 +20,12 @@ EOF
 
 
 
-cat<<EOF>/bin/ccc45
+cat<<EOF>/bin/cc45
 cd /tmp/cs45/;
 java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -javaagent:CSAgent.jar=f38eb3d1a335b252b58bc2acde81b542 -Duser.language=en -jar cobaltstrike.jar
 EOF
 
-chmod 0777 /bin/ts45 /bin/ccc45;
+chmod 0777 /bin/ts45 /bin/cc45;
 
 
 chown 0.0 /home/runner/work/nc_test/nc_test/tool/ecapture;
