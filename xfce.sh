@@ -14,10 +14,10 @@ export DEBIAN_FRONTEND=noninteractive
 export APT_LISTCHANGES_FRONTEND=none
 
 sudo bash -c '
-echo "/opt/microsoft/msedge/msedge  \"https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV\"   --no-sandbox & " >/bin/edge.sh 
+echo "/opt/microsoft/msedge/msedge  \"https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV\"   --no-sandbox & " >/bin/edge
 
 echo "/usr/lib/firefox/firefox  \"https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV\"   --no-sandbox &" >/bin/bing
-chmod 0777 /bin/bing /bin/edge.sh ;
+chmod 0777 /bin/bing /bin/edge ;
 
 
 
