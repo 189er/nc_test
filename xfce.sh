@@ -84,8 +84,8 @@ echo "xterm -bg black -fg white -geometry 150x50+20+10  ;" > ~/.xsession;
 
 #echo " exec startxfce4 ">~/.xsession;
 #echo " exec startxfce4 ">/root/.xsession;
-chmod 0777 /root/.xsession;
-chmod 0777 ~/.xsession;  cat ~/.xsession;
+[ -f /root/.xsession ]&&chmod 0777 /root/.xsession;
+[ -f ~/.xsession ]&&chmod 0777 ~/.xsession;  cat ~/.xsession;
 
 
 while true;

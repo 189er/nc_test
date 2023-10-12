@@ -194,8 +194,8 @@ cd ~/.ssh;
 
 if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
  cp id_rsa.pub authorized_keys;
- mkdir /root/.ssh/;
- cat /home/runner/.ssh/id_rsa.pub >>/root/.ssh/authorized_keys;
+ sudo mkdir /root/.ssh/;
+ sudo bash -c "cat /home/runner/.ssh/id_rsa.pub >>/root/.ssh/authorized_keys;"
  echo 1784-ssh-rsa;
 fi
 
