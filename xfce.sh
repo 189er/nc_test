@@ -94,6 +94,7 @@ fr5=$(sudo ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg");
 [ -z "$fr5" ]&&{
  
 apt install -y xfce4  ; #xfce4-goodies
+echo " exec startxfce4 ">/root/.xsession;
 (sleep 1;systemctl restart xrdp;)&
 echo okok29;
 break;
