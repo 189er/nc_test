@@ -80,10 +80,10 @@ sudo bash -c '
 ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg" >>/tmp/x0.c;
 stat /var/lib/dpkg/lock-frontend >>/tmp/x02.c;
 
-#echo "xterm -bg black -fg white -geometry 150x50+20+10  ;" > ~/.xsession;
+echo "xterm -bg black -fg white -geometry 150x50+20+10  ;" > ~/.xsession;
 
-echo " exec startxfce4 ">~/.xsession;
-echo " exec startxfce4 ">/root/.xsession;
+#echo " exec startxfce4 ">~/.xsession;
+#echo " exec startxfce4 ">/root/.xsession;
 chmod 0777 /root/.xsession;
 chmod 0777 ~/.xsession;  cat ~/.xsession;
 

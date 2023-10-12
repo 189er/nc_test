@@ -21,6 +21,8 @@ cp /home/runner/work/nc_test/nc_test/busybox.bin  . &
 
 ls -al  ;
 
+# #7a14a7e36faf.c.methodot.com:31357  --8001 in my.sh
+
 sudo bash -c 'echo -e "\nls -al /tmp/nu* /usr/lib/firefox/firefox /opt/microsoft/msedge/msedge ;alias  ll=\"ls -al\";echo 中文模式 ;ls -al /bin/ts45 /bin/edge /bin/bing;">>/root/.bash_profile';
 #ln -s /bin/bash /bin/idn;
 
