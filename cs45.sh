@@ -23,7 +23,7 @@ tmux send -t cs45 'cd /tmp;echo /bin/ts45;cat /bin/ts45' ENTER ;
 cat<<EOF>/bin/ts45
 cd /tmp/cs45/;
 export HOME=/tmp/cs45/;
-ip addr  add 192.168.50.1/24 dev eth0
+ip addr  add 192.168.50.1/24 dev eth0;
 java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=50050 -Dcobaltstrike.server_bindto=0.0.0.0 -Djavax.net.ssl.keyStore=./cobaltstrike.store -Djavax.net.ssl.keyStorePassword=123456  -server -XX:+AggressiveHeap -XX:+UseParallelGC -classpath ./cobaltstrike.jar -javaagent:CSAgent.jar=f38eb3d1a335b252b58bc2acde81b542 -Duser.language=en server.TeamServer  192.168.50.1  12345678
 EOF
 
