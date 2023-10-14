@@ -13,7 +13,7 @@ gunzip  /home/runner/work/nc_test/nc_test/tool/ecapture.gz;
 sudo bash -c "
 #cd /tmp/cs45/;
 #rm ./cobaltstrike.store;
-#keytool -keystore ./cobaltstrike.store -storepass 12345678 -keypass 12345678 -genkey -keyalg RSA -alias cobaltstrike -validity 360 -dname 'CN=*.microsoft.com, OU=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=WA, C=US' ;
+#keytool -keystore ./cobaltstrike.store -storepass 12345678 -keypass 12345678 -genkey -keyalg RSA -alias microsoft -validity 360 -dname 'CN=*.microsoft.com, OU=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=WA, C=US' ;
 cd /tmp;
 
 alias tmux='/tmp/tmux.elf -u'
