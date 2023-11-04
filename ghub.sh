@@ -125,6 +125,23 @@ grep -q xfce /tmp/js9&&
 
 . $GITHUB_WORKSPACE/cs45.sh  &
 
+# apachectl   -l
+# apachectl   -L
+# apachectl   -M   ; apt install -y libapache2-mod-php7.4
+#  libapache2-mod-php7.4 : Depends: php7.4-common (= 7.4.3-4ubuntu2.19) but 1:7.4.33-8+ubuntu20.04.1+deb.sury.org+1 is to be installed
+#  sudo apt-get install php7.4-common=7.4.3-4ubuntu2.19
+# root@fv-az1492-145:/tmp# sudo apt-cache   search libapache2-mod-php
+# libapache2-mod-php - server-side, HTML-embedded scripting language (Apache 2 module) (default)
+# libapache2-mod-php7.4 - server-side, HTML-embedded scripting language (Apache 2 module)
+# php7.4-fpm - server-side, HTML-embedded scripting language (FPM-CGI binary)
+# php8.0-fpm - server-side, HTML-embedded scripting language (FPM-CGI binary)
+# php8.1-fpm - server-side, HTML-embedded scripting language (FPM-CGI binary)
+# php8.2-fpm - server-side, HTML-embedded scripting language (FPM-CGI binary)
+# root@fv-az1492-145:/tmp# 
+
+# https://mirrors.aliyun.com/ubuntu/pool/main/p/php7.4/libapache2-mod-php7.4_7.4.3-4ubuntu2.19_amd64.deb?spm=a2c6h.25603864.0.0.6b9421e3yMgFVN
+
+
 
 
 (
@@ -135,10 +152,12 @@ cat  /etc/apache2/ports.conf;
 sed -i "s/#\(ProxyRequests On\)/\1\\nAllowCONNECT  1-65534 /g" /etc/apache2/mods-available/proxy.conf;
 a2enmod proxy;\
 a2enmod proxy_connect;\
-a2enmod proxy_http;\
+a2enmod proxy_http;a2enmod proxy_fcgi;a2enconf php8.1-fpm;\
 systemctl restart apache2;
 '
 )&
+
+#  ls -al /etc/apache2/conf-enabled/php7.4-fpm.conf*;
 
 #. /home/runner/work/nc_test/nc_test/tinyproxy-apache.sh
 
