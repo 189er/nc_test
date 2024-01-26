@@ -104,7 +104,7 @@ jobs:
             [ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo netstat -anlp|grep upx_reverse;
             sudo ps aux|grep sshx64|grep -v keepalive;
             #sudo busybox netstat -anlp|grep 34292;
-            [ -f /tmp/keepalive ]&&sleep 10||break;
+            [ -f /tmp/keepalive ]&&sleep 25||break;
           done 
         env:
           sp9: 4
