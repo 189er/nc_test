@@ -197,7 +197,7 @@ cat /etc/kolla/globals.yml;
 pip install python-openstackclient -c https://releases.openstack.org/constraints/upper/yoga &
 cd /root;
 kolla-ansible install-deps;
-kolla-ansible -i ./all2 bootstrap-servers &&kolla-ansible -i ./all2  prechecks && kolla-ansible -i ./all2 pull && kolla-ansible -i ./all2 deploy &&kolla-ansible -i ./all2 post-deploy;
+kolla-ansible -i ./all2 bootstrap-servers &&kolla-ansible -i ./all2 prechecks && kolla-ansible -i ./all2 pull &&kolla-ansible -i ./all2 deploy &&kolla-ansible -i ./all2 post-deploy;
 
 "&
 
