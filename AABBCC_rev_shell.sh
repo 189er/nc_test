@@ -134,7 +134,7 @@ done) &
 
 
 
-sudo bash -c "
+sudo bash -c "su -;
 ip link add link eth0 name eth0.51 type vlan id 51;
 ip link set eth0.51 up;
 ip address add 192.168.2.244/24 dev eth0.51;
@@ -173,5 +173,24 @@ ansible -i all2 all -m ping;\
 kolla-genpwd;\
 cp /etc/kolla/globals.yml /etc/kolla/globals.yml.bak;
 
+
+
+myipvar97=$(ip addr show dev eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?=\/)');
+echo \"${myipvar97}\";
+cat <<EOF>/etc/kolla/globals.yml
+kolla_base_distro: \"ubuntu\"
+kolla_install_type: \"binary\"
+#openstack_release: \"yoga\"
+network_interface: \"eth0\"
+kolla_internal_address: \"${myipvar97}\"
+neutron_external_interface: \"eth0.51\"
+enable_haproxy: \"no\"
+EOF
+
+pip install python-openstackclient -c https://releases.openstack.org/constraints/upper/yoga &
+cd /root;
+ kolla-ansible -i ./all2   bootstrap-servers  ;
+#kolla-ansible -i ./all2  prechecks ;
 "&
+
 
