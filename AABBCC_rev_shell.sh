@@ -135,7 +135,7 @@ done) &
 
 myipvar97=$(ip addr show dev eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?=\/)');
 
-sudo  docker rmi `docker images -q` &
+#sudo  docker rmi `docker images -q` &
 
 
 
