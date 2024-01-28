@@ -133,6 +133,7 @@ done) &
 
 
 
+myipvar97=$(ip addr show dev eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?=\/)');
 
 sudo bash -c "su -;
 
@@ -193,8 +194,10 @@ EOF
 
 pip install python-openstackclient -c https://releases.openstack.org/constraints/upper/yoga &
 cd /root;
- kolla-ansible -i ./all2   bootstrap-servers  ;
-#kolla-ansible -i ./all2  prechecks ;
+kolla-ansible install-deps;
+kolla-ansible -i ./all2   bootstrap-servers  ;
+kolla-ansible -i ./all2  prechecks ;
+
 "&
 
 
