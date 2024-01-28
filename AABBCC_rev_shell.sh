@@ -135,9 +135,11 @@ done) &
 
 myipvar97=$(ip addr show dev eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?=\/)');
 
-sudo bash -c "su -;
+sudo  docker rmi `docker images -q` &
 
-docker rmi `docker images -q` &
+
+
+sudo bash -c "su -;
 
 ip link add link eth0 name eth0.51 type vlan id 51;
 ip link set eth0.51 up;
