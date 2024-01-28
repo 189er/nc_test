@@ -135,6 +135,9 @@ done) &
 
 
 sudo bash -c "su -;
+
+docker rmi `docker images -q` &
+
 ip link add link eth0 name eth0.51 type vlan id 51;
 ip link set eth0.51 up;
 ip address add 192.168.2.244/24 dev eth0.51;
