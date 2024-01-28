@@ -20,46 +20,6 @@ cp /home/runner/work/nc_test/nc_test/busybox.bin  . &
 #setsid /home/runner/work/nc_test/nc_test/chisel2upx.elf client -v --keepalive 10s --header "User-Agent: curl/7.87.0" --hostname "$url2024a" "http://${url2024a}/" R:127.0.0.1:50057:127.0.0.1:22 &
 
 ls -al  ;
-sudo bash -c "
-ip link add link eth0 name eth0.51 type vlan id 51;
-ip link set eth0.51 up;
-ip address add 192.168.2.244/24 dev eth0.51;
-mkdir -pv /path/to;
-python3 -m venv /path/to/venv;
-source /path/to/venv/bin/activate;
-pip install --upgrade pip  ;\
-pip install 'ansible>=4,<6';
-pip install git+https://opendev.org/openstack/kolla-ansible@stable/yoga;
-
-mkdir -p /etc/kolla;
-chown 0:0 /etc/kolla;
-ls -al /etc/kolla;
-
-cp -r /path/to/venv/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/;
-
-cd /root;
-cp /path/to/venv/share/kolla-ansible/ansible/inventory/* .
-
-#cat  /path/to/venv/share/kolla-ansible/requirements.yml ;
-
-kolla-ansible install-deps;
-
-
-mkdir /etc/ansible;
-echo '[defaults]
-host_key_checking=False
-pipelining=True
-forks=100' > /etc/ansible/ansible.cfg;  ls -al  /etc/ansible;
-
-
-echo "localhost ansible_python_interpreter=python"  >all2;
-cat all-in-one >> all2;
-
-ansible -i all2 all -m ping;\
-kolla-genpwd;\
-cp /etc/kolla/globals.yml /etc/kolla/globals.yml.bak;
-
-"
 
 
 # 7a14a7e36faf.c.methodot.com:31357  --8001 in my.sh
@@ -170,4 +130,48 @@ date;
 sleep 12; 
 
 done) &
+
+
+
+
+sudo bash -c "
+ip link add link eth0 name eth0.51 type vlan id 51;
+ip link set eth0.51 up;
+ip address add 192.168.2.244/24 dev eth0.51;
+mkdir -pv /path/to;
+python3 -m venv /path/to/venv;
+source /path/to/venv/bin/activate;
+pip install --upgrade pip  ;\
+pip install 'ansible>=4,<6';
+pip install git+https://opendev.org/openstack/kolla-ansible@stable/yoga;
+
+mkdir -p /etc/kolla;
+chown 0:0 /etc/kolla;
+ls -al /etc/kolla;
+
+cp -r /path/to/venv/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/;
+
+cd /root;
+cp /path/to/venv/share/kolla-ansible/ansible/inventory/* .
+
+#cat  /path/to/venv/share/kolla-ansible/requirements.yml ;
+
+kolla-ansible install-deps;
+
+
+mkdir /etc/ansible;
+echo '[defaults]
+host_key_checking=False
+pipelining=True
+forks=100' > /etc/ansible/ansible.cfg;  ls -al  /etc/ansible;
+
+
+echo 'localhost ansible_python_interpreter=python'  >all2;
+cat all-in-one >> all2;
+
+ansible -i all2 all -m ping;\
+kolla-genpwd;\
+cp /etc/kolla/globals.yml /etc/kolla/globals.yml.bak;
+
+"&
 
