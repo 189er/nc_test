@@ -93,7 +93,7 @@ echo "flag 1122334";
 
 if [ ! -z ${port7pxy} ] && [ ! -z ${ip7pxy} ]; then
   setsid /home/runner/work/nc_test/nc_test/socat.bin TCP4-LISTEN:50022,reuseaddr,fork  proxy:${ip7pxy}:127.0.0.1:2244,proxyport=${port7pxy}  &
-  # 基本不用
+  # 基本不用 代理连接127.0.0.1:2244
   (
   (ps aux|grep -v grep|grep "40022:127.0.0.1:22")&& echo 40022_ok ||(sleep 1;
     (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 40022:127.0.0.1:22   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;
@@ -101,7 +101,7 @@ if [ ! -z ${port7pxy} ] && [ ! -z ${ip7pxy} ]; then
   )
   )&
 
-  # 基本不用 反弹1194给远端
+  # 基本不用 反弹1194给远端(127.0.0.1)
   (
   (ps aux|grep -v grep|grep "51194:127.0.0.1:1194")&& echo 51194_ok ||(sleep 1;
     (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 40022:127.0.0.1:22   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;
@@ -115,12 +115,12 @@ fi
 if [ ! -z ${port5} ] && [ ! -z ${ip5} ] && [ "714" == "714"  ]; then 
   #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
   #sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
-   #[ ! -z ${GITHUB_WORKSPACE} ] &&
-   #(
+   [ ! -z ${GITHUB_WORKSPACE} ] &&
+   (
       echo "exit_revSSH_isOK ${ip5} : ${port5}  -> $bport ";
       sleep 60;
-      #[ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5;echo \$?;");echo $?;      
-   #)||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
+      [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5;echo \$?;");echo $?;      
+   )||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
   echo "exit_revSSH_isOK_$bport";
 fi
 
