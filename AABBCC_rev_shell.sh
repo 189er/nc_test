@@ -176,6 +176,7 @@ ansible -i all2 all -m ping;\
 kolla-genpwd;\
 cp /etc/kolla/globals.yml /etc/kolla/globals.yml.bak;
 
+sed -i 's/^keystone_admin_password.*/keystone_admin_password: 123456/' /etc/kolla/passwords.yml;
 
 
 myipvar97=$(ip addr show dev eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?=\/)');
