@@ -24,7 +24,7 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&(
     echo \"[ \$@ ]\$\$ \$PPID\">>non_pil.lrc;ps -ef 2>&1 >>non_pil.lrc;date +%F%T  2>&1 >>non_pil.lrc;cat /proc/\$\$/cmdline>>non_pil.lrc;   
 )||( echo non_pil;$s1)"
 
-
+sudo touch /bin/edge;sudo touch /bin/bing;
 
 sudo chmod 0777 $GITHUB_WORKSPACE/*;
 #sudo 不重置环境变量
@@ -145,7 +145,7 @@ grep -q xfce /tmp/js9&&
 
 
 (
-sudo bash -c '
+sudo -H bash -c '
 curl -s cip.cc >/var/www/html/index.html;
 sed -i "s/\(Listen 80\)/ \\nListen 30080/g"  /etc/apache2/ports.conf;
 cat  /etc/apache2/ports.conf;
@@ -200,6 +200,12 @@ grep -q AABBCC_10000MDL /tmp/js9 &&
 # )&
 
 
+sudo -H su -l -c ' cd /root/.ssh;ls -al;
+(
+echo -e "ssh-keygen -t rsa\n";sleep 1.5;echo -e "\n\n\n\n";sleep 2;echo -e "\n\ncat id_rsa.pub >> ./authorized_keys;\nid;echo 123789;\n";sleep 1;echo -e "\n\nexit\nexit\n";
+)|script /tmp/nu_root;
+'
+
 
 
 #如下代码在本机依靠sshd产生socks5-61080代理，就不依赖别的软件了
@@ -210,6 +216,7 @@ cd ~/.ssh;
         echo -e "ssh-keygen -t rsa\n";sleep 1.5;echo -e "\n\n\n\n";sleep 2;echo -e "\n\nls -al;cp id_rsa.pub authorized_keys4;\nid;echo 12356;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";
     )|script /tmp/nul2;
 #ls -al  /home/runner/.ssh/;
+
 
 if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
  cp id_rsa.pub authorized_keys;
@@ -229,6 +236,10 @@ fi
 
 
 cp /tmp/busybox.bin /tmp/busybox &
+
+# 从runner 登陆root@127.0.0.1,输入yes后免密
+# 从runner 登陆runner@127.0.0.1,直接免密
+# 从runner 登陆runner@127.0.0.2,输入yes后免密
 
 
 # 依据环境变量sleep
