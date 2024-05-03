@@ -59,7 +59,8 @@ sudo bash -c 'echo -e "\nls -al /tmp/nu* /usr/lib/firefox/firefox /opt/microsoft
 #ip_port7pxy2=$(echo "$PATH");
 #ip_port7pxy2qw3=$(echo 123;echo "$PATH"; ls -al aaau 2>&1 >/dev/null;echo 4568;);
 
-ip_port7pxy2a=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9;echo 456814; );
+ip_port7pxy2a=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9);
+echo 456814t7; 
 echo "flag_9832q_20240425 $ip_port7pxy2a";
 
 
@@ -80,7 +81,7 @@ echo "flag_9832q_20240425 $ip_port7pxy2a";
 
 
 (while true; do
-        date;
+        echo `date`;
         [ ! -f /tmp/keepalive ] && break        
          num61z=$(date +%S);
          num67z=$(echo "1"$num61z);
@@ -134,6 +135,7 @@ fi
 
 echo "will sleep 12s for while true";
 date;
+echo $(date);
 sleep 12; 
 
 done) &
