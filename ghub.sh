@@ -174,6 +174,7 @@ if  [ ! -z ${pd127} ]; then
     sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/free-us1-udp7z.zip  -d /home/;
     #sleep  120;
     echo qwertyi;
+    #  echo 'id;'|sudo -H bash  
     (setsid  bash -c "sudo -H su -c 'bash /home/my.sh'" &)
     #. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
 fi
