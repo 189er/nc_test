@@ -41,6 +41,9 @@ done
 
 
 
+
+
+
 sudo bash -c '
 ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg" >>/tmp/x0.c;
 stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
@@ -48,6 +51,11 @@ stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
 echo "xterm -bg black -fg white -geometry 150x50+20+10  ;">~/.xsession;
 chmod 777 ~/.xsession;  cat ~/.xsession;
 
+
+
+echo "/opt/microsoft/msedge/msedge  \"https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV\"   --no-sandbox & " >/bin/edge
+echo "/usr/lib/firefox/firefox  \"https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV\"   --no-sandbox &" >/bin/bing
+chmod 0777 /bin/bing /bin/edge ;
 
 
 while true;
