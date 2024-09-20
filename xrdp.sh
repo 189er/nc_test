@@ -10,11 +10,11 @@
 cd /tmp;
 ls -al  /usr/lib/firefox/firefox  /opt/microsoft/msedge/msedge;
 
-[ ! -f /tmp/ubuntu_update ]&&sudo apt-get update&&touch /tmp/ubuntu_update;
+[ ! -f /tmp/ubuntu_update ]&&sudo apt-get update --wait &&touch /tmp/ubuntu_update;
 
 tmpFunc6(){ 
     touch /tmp/aB/{xorg,dbus-x11,x11-xserver-utils,xterm,xinit,xorgxrdp};
-    sudo apt-get install -y xorg dbus-x11 x11-xserver-utils xterm xinit xorgxrdp;
+    sudo apt-get install -y --wait xorg dbus-x11 x11-xserver-utils xterm xinit xorgxrdp;
     rm /tmp/aB/{xorg,dbus-x11,x11-xserver-utils,xterm,xinit,xorgxrdp};
 }
 
@@ -28,7 +28,7 @@ done
 
 tmpFunc8(){ 
     touch /tmp/aB/{xrdp,xfonts-wqy,ttf-wqy-zenhei};
-    which Xorg&&sudo apt-get install -y xrdp xfonts-wqy ttf-wqy-zenhei;
+    which Xorg&&sudo apt-get install -y --wait xrdp xfonts-wqy ttf-wqy-zenhei;
     rm /tmp/aB/{xrdp,xfonts-wqy,ttf-wqy-zenhei};
 }
 
