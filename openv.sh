@@ -94,6 +94,8 @@ setsid /usr/sbin/openvpn --config /tmp/5server.conf &
 
 
 
+#  如下建立openVPN-S的账号密码。nat出局
+
 sudo bash -c '
 route add -net 47.109.99.0 netmask 255.255.255.0 gw 10.1.0.1;
 #ip route add 47.109.99.0/24 via 10.1.0.1; #RTNETLINK answers: File exists

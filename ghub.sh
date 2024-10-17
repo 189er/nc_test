@@ -1,8 +1,10 @@
 cd /tmp
-exec 1>./y1
-exec 2>./y2
+exec 1>./gh-y1
+exec 2>./gh-y2
 set -x
+
 TZ=UTC-8;
+
 s1="export PATH=\$PATH:/tmp;TZ=UTC-8;
 uptime;grep NA /etc/os-release 2>&1;
 alias ll='ls -al';
@@ -20,22 +22,32 @@ PS10=\${sp//\\\\\[u]/\\\$(TZ=UTC-8 date +%F_%T)_\\\$\{USER:-\\\\u\}}
 PS11=\${sp//\\\\\[u]/\\\$(TZ=UTC-8 date +%F_%T)_\\\$\{USER:-\\\\\u\}}
 "
 
-s2="grep -q sftp-server /proc/\$\$/cmdline&&(
+s2="grep -q sftp-server /proc/\$\$/cmdline&&
+(
     echo \"[ \$@ ]\$\$ \$PPID\">>non_pil.lrc;ps -ef 2>&1 >>non_pil.lrc;date +%F%T  2>&1 >>non_pil.lrc;cat /proc/\$\$/cmdline>>non_pil.lrc;   
 )||( echo non_pil;$s1)"
 
-sudo touch /bin/edge;sudo touch /bin/bing;
 
-sudo chmod 0777 $GITHUB_WORKSPACE/*;
-#sudo 不重置环境变量
+sudo touch /bin/edge;
+sudo touch /bin/bing;
+cp /tmp/busybox.bin /tmp/busybox &
+
+if [ ! -z ${$GITHUB_WORKSPACE} ]; then 
+sudo chmod 0777 -R $GITHUB_WORKSPACE/;
+[ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&busybox setsid sudo -H $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
+[ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9898,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
+fi
+
+
+
+
 sudo bash -c ' mkdir /tmp/{A,aB};
 chmod 0777 /tmp/{A,aB};
 sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g" /etc/sudoers;
-grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
+grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9_sudo.txt
 '
 
-[ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&busybox setsid sudo $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
-[ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9898,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
+
 
 
 
@@ -60,11 +72,16 @@ grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9a.txt
     exit 0;
     ) 
 
-    grep -q AABBCC_rev_shell /tmp/js9 &&
-    (
-    export HOME=/tmp;
-    sudo -H su -l -c /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
-    )
+
+grep -q AABBCC_rev_shell /tmp/js9 &&
+(
+export HOME=/tmp;
+sudo -H su -l -c /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
+)
+
+# 无条件执行 
+. $GITHUB_WORKSPACE/cs45.sh  &
+
 
 #修改系统密码 添加系统账户tee chisel-60080  ttyd.x64
 grep -q "tee" /etc/passwd ||
@@ -93,17 +110,19 @@ sleep 1;
 . $GITHUB_WORKSPACE/xrdp.sh;
 )&
 
+
+
 # 无npv但是有xrdp
+# mkdir -pv /run/user/1000;
+# chmod 0777 /run/user/1000;
+
 grep -q NPV /tmp/js9||(
 grep -q xrdp /tmp/js9&&(
-sudo bash -c 'mkdir -pv /run/user/1000;
-chmod 0777 /run/user/1000;
-chmod 0777 /home/runneradmin;
-chmod 0777 /home/runneradmin/*;
-chmod 0777 /home/runneradmin/.*;'
-. $GITHUB_WORKSPACE/xrdp.sh;
+. $GITHUB_WORKSPACE/xrdp.sh;   #chrome
 )
 )&
+
+
 
 # 无xrdp但是有npv
 grep -q xrdp /tmp/js9||(
@@ -123,7 +142,11 @@ grep -q xfce /tmp/js9&&
 
 
 
-. $GITHUB_WORKSPACE/cs45.sh  &
+
+
+
+
+
 
 # apachectl   -l
 # apachectl   -L
@@ -146,7 +169,7 @@ grep -q xfce /tmp/js9&&
 
 (
 sudo -H bash -c '
-curl -s cip.cc >/var/www/html/index.html;
+curl -s cip.cc >/var/www/html/index.html &
 sed -i "s/\(Listen 80\)/ \\nListen 30080/g"  /etc/apache2/ports.conf;
 cat  /etc/apache2/ports.conf;
 sed -i "s/#\(ProxyRequests On\)/\1\\nAllowCONNECT  1-65534 /g" /etc/apache2/mods-available/proxy.conf;
@@ -157,8 +180,8 @@ systemctl restart apache2;
 '
 )&
 
-#  ls -al /etc/apache2/conf-enabled/php7.4-fpm.conf*;
 
+#  ls -al /etc/apache2/conf-enabled/php7.4-fpm.conf*;
 #. /home/runner/work/nc_test/nc_test/tinyproxy-apache.sh
 
 
@@ -179,12 +202,16 @@ if  [ ! -z ${pd127} ]; then
     #. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
 fi
 
+
+
+
+
 # frp大带宽 upx-ssh反弹至xiaomiQ
-grep -q AABBCC_10000MDL /tmp/js9 &&
-(  
-    echo 123rt5;      
+#grep -q AABBCC_10000MDL /tmp/js9 &&
+#(  
+    #echo 123rt5;      
     #bash /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh &
-) 
+#) 
 
 # (while true; do
 #         [ ! -f /tmp/keepalive ] && break        
@@ -201,42 +228,45 @@ grep -q AABBCC_10000MDL /tmp/js9 &&
 # )&
 
 
-sudo -H su -l -c ' cd /root/.ssh;ls -al;
-(
-echo -e "ssh-keygen -t rsa\n";sleep 1.5;echo -e "\n\n\n\n";sleep 2;echo -e "\n\ncat id_rsa.pub >> ./authorized_keys;\nid;echo 123789;\n";sleep 1;echo -e "\n\nexit\nexit\n";
-)|script /tmp/nu_root;
-'
+#sudo -H su -l -c ' #cd /root/.ssh;ls -al;
+#(
+#echo -e "ssh-keygen -t rsa\n";sleep 1.5;echo -e "\n\n\n\n";sleep 2;echo -e "\n\ncat id_rsa.pub >> ./authorized_keys;\nid;echo 123789;\n";sleep 1;echo -e "\n\nexit\nexit\n";
+#)|script /tmp/nu_root;
+#'
 
 
 
 #如下代码在本机依靠sshd产生socks5-61080代理，就不依赖别的软件了
 mkdir ~/.ssh;
 cd ~/.ssh;
-(
-    (
-        echo -e "ssh-keygen -t rsa\n";sleep 1.5;echo -e "\n\n\n\n";sleep 2;echo -e "\n\nls -al;cp id_rsa.pub authorized_keys4;\nid;echo 12356;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";
-    )|script /tmp/nul2;
+
+
+#(
+#    (
+#        echo -e "ssh-keygen -t rsa\n";sleep 1.5;echo -e "\n\n\n\n";sleep 2;echo -e "\n\nls -al;cp id_rsa.pub authorized_keys4;\nid;echo 12356;\n";sleep 0.6;echo -e "\n\nexit\nexit\n";
+#    )|script /tmp/nul2;
 #ls -al  /home/runner/.ssh/;
 
 
-if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
- cp id_rsa.pub authorized_keys;
- sudo mkdir /root/.ssh/;
- sudo bash -c "cat /home/runner/.ssh/id_rsa.pub >>/root/.ssh/authorized_keys;"
- echo 1784-ssh-rsa;
-fi
+#if [[ -f /home/runner/.ssh/id_rsa.pub &&  -s /home/runner/.ssh/id_rsa.pub ]];then
+ #cp id_rsa.pub authorized_keys;
+ #sudo mkdir /root/.ssh/;
+ #sudo bash -c "cat /home/runner/.ssh/id_rsa.pub >>/root/.ssh/authorized_keys;"
+ #echo 1784-ssh-rsa;
+#fi
 
 #  #-s file 文件大小非0时为真
-if [[ -f /home/runner/.ssh/authorized_keys &&  -s /home/runner/.ssh/authorized_keys ]];then
-    ssh -o StrictHostKeyChecking=no -f -N -D 0.0.0.0:61080  runner@127.0.0.1;
-fi
+#if [[ -f /home/runner/.ssh/authorized_keys &&  -s /home/runner/.ssh/authorized_keys ]];then
+#    ssh -o StrictHostKeyChecking=no -f -N -D 0.0.0.0:61080  runner@127.0.0.1;
+#fi
 
-) 2>&1 >/tmp/nu2 &
+#) 2>&1 >/tmp/nu2 &
+
+
 
 )
 
 
-cp /tmp/busybox.bin /tmp/busybox &
 
 # 从runner 登陆root@127.0.0.1,输入yes后免密
 # 从runner 登陆runner@127.0.0.1,直接免密

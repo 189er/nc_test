@@ -30,21 +30,27 @@ ls -al  ;
 # 7a14a7e36faf.c.methodot.com:31357  --8001 in my.sh
 # /usr/bin/ssh-agent /usr/bin/im-launch /root/.xsession
 
-sudo bash -c 'echo -e "\nls -al /tmp/nu* /usr/lib/firefox/firefox /opt/microsoft/msedge/msedge ;alias  ll=\"ls -al\";echo 中文模式 ;ls -al /bin/ts45 /bin/edge /bin/bing;">>/root/.bash_profile';
+sudo bash -c 'echo -e "\nls -al /tmp/nu* /usr/lib/firefox/firefox /opt/microsoft/msedge/msedge ;alias  ll=\"ls -al\";
+echo 中文模式 ;
+ls -al /bin/ts45 /bin/edge /bin/bing;">>/root/.bash_profile';
 #ln -s /bin/bash /bin/idn;
+
+
+
 
 
 
 # [ "715" == "715" ]  && sleep 1;
 
-[ -z "${GITHUB_WORKSPACE}" ]  && (
+[ -z "${GITHUB_WORKSPACE}" ]  && 
+(
   sleep 2
-)||(
-  echo 234691
-  );
+)||(  echo 234691 );
 
 
- [  -z "${GITHUB_WORKSPACE}" ] &&echo 13734||(
+
+#  如下用做打包
+[  -z "${GITHUB_WORKSPACE}" ] &&echo 13734||(
   cp /tmp/js9 $GITHUB_WORKSPACE/js9.txt;
    mkdir -pv  $GITHUB_WORKSPACE/package;
    mkdir -pv  $GITHUB_WORKSPACE/dist;
@@ -59,9 +65,13 @@ sudo bash -c 'echo -e "\nls -al /tmp/nu* /usr/lib/firefox/firefox /opt/microsoft
 #ip_port7pxy2=$(echo "$PATH");
 #ip_port7pxy2qw3=$(echo 123;echo "$PATH"; ls -al aaau 2>&1 >/dev/null;echo 4568;);
 
+
+
+
 ip_port7pxy2a=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9);
 echo 456814t7; 
 echo "flag_9832q_20240425 $ip_port7pxy2a";
+
 
 
 # (
@@ -137,6 +147,7 @@ echo "will sleep 12s for while true";
 date;
 echo $(date);
 sleep 12; 
+
 
 done) &
 

@@ -18,6 +18,8 @@ tmpFunc6(){
     rm /tmp/aB/{xorg,dbus-x11,x11-xserver-utils,xterm,xinit,xorgxrdp};
 }
 
+
+
 while true
 do
     [ "`ls -A /tmp/aB/`" = "" ] && [ -f /tmp/ubuntu_update ] && tmpFunc6&&break;
@@ -31,6 +33,7 @@ tmpFunc8(){
     which Xorg&&sudo apt-get install -y   xrdp xfonts-wqy ttf-wqy-zenhei;
     rm /tmp/aB/{xrdp,xfonts-wqy,ttf-wqy-zenhei};
 }
+
 
 while true
 do
@@ -49,41 +52,46 @@ ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg" >>/tmp/x0.c;
 stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
 
 echo "xterm -bg black -fg white -geometry 150x50+20+10  ;">~/.xsession;
-chmod 777 ~/.xsession;  cat ~/.xsession;
+chmod 0777 ~/.xsession;  cat ~/.xsession;
 
 
 
 set +H
 echo "#!/bin/bash
-/opt/microsoft/msedge/msedge  \"https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV\"   --no-sandbox  &" >/bin/edge
+/opt/microsoft/msedge/msedge  \"https://www.bing.com/\"   --no-sandbox  &" >/bin/edge
 
 echo "#!/bin/bash
-/usr/lib/firefox/firefox  \"https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV\"   --no-sandbox &" >/bin/bing
+/usr/lib/firefox/firefox  \"https://www.bing.com/\"   --no-sandbox &" >/bin/bing
 set -H
 chmod 0777 /bin/bing /bin/edge ;
 
 
-while true;
-do
-fr5=$(sudo ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg");
-[ -z "$fr5" ]&&{
+echo "chromium-browser \"https://drive.google.com/u/0/uc?id=1Hp0RLikJ-B6el_qGNYOFn0nrL2BJyLZQ&export=download\"">/tmp/chrqq.sh
+echo "chromium-browser \"https://drive.google.com/file/d/1Fe7N0CAUDP3UPdZPsJI23SgK19aoJr6O/view\"">/tmp/chraa.sh
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;\
-sudo apt install -y ./google-chrome-stable_current_amd64.deb;
 
-echo "chromium-browser \"https://drive.google.com/u/0/uc?id=1Hp0RLikJ-B6el_qGNYOFn0nrL2BJyLZQ&export=download\"">/tmp/qq.sh
-echo "chromium-browser \"https://drive.google.com/file/d/1Fe7N0CAUDP3UPdZPsJI23SgK19aoJr6O/view\"">/tmp/aa.sh
+
+#while true;
+#do
+#fr5=$(sudo ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg");
+#[ -z "$fr5" ]&&{
+
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;\
+#sudo apt install -y ./google-chrome-stable_current_amd64.deb;
+
 
 
 #sudo apt install -y xfce4 xfce4-goodies ;
 #sudo systemctl restart xrdp;
-break;
+#break;
 
-}||sleep 5;
-echo "$fr5";
-stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
-done
+#}||sleep 5;
+#echo "$fr5";
+#stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
+#done
 ';
+
+
 
 
 sudo bash -c '
@@ -107,6 +115,8 @@ xterm*printerCommand: cat > /tmp/xtermdump
 xterm*fullscreen: 2
 EOF
 '
+
+
 
 
 #  sudo service  xrdp start; # 自动启动

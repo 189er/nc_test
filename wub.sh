@@ -37,3 +37,6 @@ screen -r so -p 0 -X stuff $'\n';
 screen -r so -p 0 -X stuff $'\n';
 screen -r so -p 0 -X stuff $'\n';
 "&
+
+
+cd /tmp;
