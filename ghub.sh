@@ -97,6 +97,8 @@ grep -q wub /tmp/js9&&
 # . /home/runner/work/nc_test/nc_test/docker32; # thinkphp redis
 
 
+sleep 360;
+
 # npv和xrdp都具备
 grep -q NPV /tmp/js9&&grep -q xrdp /tmp/js9&&
 (
