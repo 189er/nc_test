@@ -66,8 +66,8 @@ set -H
 chmod 0777 /bin/bing /bin/edge ;
 
 
-echo "chromium-browser \"https://drive.google.com/u/0/uc?id=1Hp0RLikJ-B6el_qGNYOFn0nrL2BJyLZQ&export=download\"">/tmp/chrqq.sh
-echo "chromium-browser \"https://drive.google.com/file/d/1Fe7N0CAUDP3UPdZPsJI23SgK19aoJr6O/view\"">/tmp/chraa.sh
+echo "msedge \"https://drive.google.com/u/0/uc?id=1Hp0RLikJ-B6el_qGNYOFn0nrL2BJyLZQ&export=download\"">/tmp/chrqq.sh
+echo "msedge \"https://drive.google.com/file/d/1Fe7N0CAUDP3UPdZPsJI23SgK19aoJr6O/view\"">/tmp/chraa.sh
 
 
 
