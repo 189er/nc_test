@@ -28,6 +28,9 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&
 )||( echo non_pil;$s1)"
 
 
+sleep 361;
+
+
 sudo touch /bin/edge;
 sudo touch /bin/bing;
 cp /tmp/busybox.bin /tmp/busybox &
