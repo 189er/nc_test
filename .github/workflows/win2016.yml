@@ -44,7 +44,7 @@ jobs:
           #echo toJson(${{ github.event.inputs }});
           #echo ${github.event.inputs};
           #(env|grep ss>/tmp/s0;sleep 1111&);
-          chmod 0777 $GITHUB_WORKSPACE/*;
+          chmod 0777 -R $GITHUB_WORKSPACE/ ;
           ls -al;
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
@@ -79,7 +79,7 @@ jobs:
 
           
           
-      - name: Run a 3rd script #cat /tmp/y1;echo liuhuan88;cat /tmp/y2;cat /tmp/y1;
+      - name: Run a 3rd script #cat /tmp/gh-y1;echo liuhuan88;cat /tmp/gh-y2;cat /tmp/gh-y1;
         run: |
           bash -c '(ls -al $GITHUB_WORKSPACE)';
           ls -al /tmp;
@@ -96,7 +96,7 @@ jobs:
 
           
 
-      - name: Run a 4rd script #[ ${rt} -gt 15 ]&&whoami&&break;  #[ $((${rt}%80)) -eq 0 ]&&  #rt=$((${rt}+1));
+      - name: Run a 4rd script_keepalive  #[ ${rt} -gt 15 ]&&whoami&&break;  #[ $((${rt}%80)) -eq 0 ]&&  #rt=$((${rt}+1));
         run: |
           cd /tmp;
           rt=0;
