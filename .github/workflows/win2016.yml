@@ -60,7 +60,7 @@ jobs:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc8"
       # Runs a set of commands using the runners shell
 
-      - name: Run a 2-5-multi-line script
+      - name: Run a 2-5-multi-line js8_script_ghub-sh
         run: |
           cd /tmp;
           echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;
