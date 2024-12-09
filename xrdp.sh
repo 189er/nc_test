@@ -97,6 +97,7 @@ echo "msedge \"https://drive.google.com/file/d/1Fe7N0CAUDP3UPdZPsJI23SgK19aoJr6O
 sudo bash -c '
 ls -al /etc/X11/Xresources/;
 mkdir -pv /etc/X11/Xresources/;
+
 cat << EOF >/etc/X11/Xresources/qq5201314
 xterm*ScrollBar: true
 xterm.geometry: 60x25
