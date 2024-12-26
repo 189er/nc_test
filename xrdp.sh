@@ -54,41 +54,23 @@ stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
 echo "xterm -bg black -fg white -geometry 150x50+20+10  ;">~/.xsession;
 chmod 0777 ~/.xsession;  cat ~/.xsession;
 
-
-
 set +H
 echo "#!/bin/bash
 /opt/microsoft/msedge/msedge  \"https://www.bing.com/\"   --no-sandbox  &" >/bin/edge
 
 echo "#!/bin/bash
+echo in xrdp.sh
+/usr/bin/chromium-browser  \"https://www.baidu.com/\"   --no-sandbox  &" >/bin/baidu
+
+
+echo "#!/bin/bash
+echo in xrdp.sh
 /usr/lib/firefox/firefox  \"https://www.bing.com/\"   --no-sandbox &" >/bin/bing
 set -H
-chmod 0777 /bin/bing /bin/edge ;
-
+chmod 0777 /bin/bing /bin/edge /bin/baidu ;
 
 echo "msedge \"https://drive.google.com/u/0/uc?id=1Hp0RLikJ-B6el_qGNYOFn0nrL2BJyLZQ&export=download\"">/tmp/chrqq.sh
 echo "msedge \"https://drive.google.com/file/d/1Fe7N0CAUDP3UPdZPsJI23SgK19aoJr6O/view\"">/tmp/chraa.sh
-
-
-
-#while true;
-#do
-#fr5=$(sudo ps aux|grep -v chisel|grep -v grep|grep -E "wget|apt|curl|dpkg");
-#[ -z "$fr5" ]&&{
-
-#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;\
-#sudo apt install -y ./google-chrome-stable_current_amd64.deb;
-
-
-
-#sudo apt install -y xfce4 xfce4-goodies ;
-#sudo systemctl restart xrdp;
-#break;
-
-#}||sleep 5;
-#echo "$fr5";
-#stat /var/lib/dpkg/lock-frontend >>/tmp/x0.c;
-#done
 ';
 
 
