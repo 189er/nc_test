@@ -107,7 +107,10 @@ jobs:
             rt=$((${rt}+1));
             echo "==$rt==";
             #sudo id|grep ro;
-            [ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo echo netstat -anlp|grep upx_reverse;
+            id;
+            ls -al /tmp;
+            cat /tmp/keepalive;
+            #[ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo echo netstat -anlp|grep upx_reverse;
             id;
             ps aux;
             sudo ps aux|grep sshx64|grep -v keepalive;
