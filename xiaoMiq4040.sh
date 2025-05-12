@@ -12,7 +12,7 @@ sed -i "/auth_token/d" /home/runner/work/nc_test/nc_test/xiaomiqiu_x64_linux/xia
 # https://9bdez39ksp30.ngrok.xiaomiqiu123.top/ --> tcp58080
 
 (
-(curl -s --connect-timeout 2 -m 4 http://xoks54uvph23.ngrok.xiaomiqiu123.top/|grep "Tunnel")&&
+(curl -s --connect-timeout 2 -m 4 http://xoks54uvph23.ngrok.xiaomiqiu123.top/|grep "location.origin")&&
     (
         [ -f /home/liuhuan77.txt ]&&(
         /tmp/tmux new -s xiaomiqiu64 -d;
