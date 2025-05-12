@@ -57,7 +57,7 @@ keepalive 10 120
 persist-key
 persist-tun
 status /tmp/opvpn_status_liu.log
-log /tmp/o_penvpnlog99.log
+log /tmp/o_penvpnlog1194.log
 verb 4
 script-security 3
 
@@ -70,7 +70,7 @@ client-config-dir /etc/openvpn/ccd
 ;push "compress lz4-v2"
 #auth_user_pass_file = "[UNDEF]"
 auth-user-pass-verify /home/runner/work/nc_test/nc_test/checkpsw.sh via-env
-client-cert-not-required  
+#client-cert-not-required   #OpenVPN 2.5.11 x86_64-pc-linux-gnu
 username-as-common-name 
 verify-client-cert none
 EOF
