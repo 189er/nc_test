@@ -63,7 +63,7 @@ remote 127.0.0.1 15074
 dev tun2
 ifconfig 10.8.128.2 255.255.255.0
 secret /etc/openvpn/static.key
-route 180.76.198.77 255.255.255.255 vpn_gateway
+route 180.76.198.77 255.255.255.255
 keepalive 10 60
 verb 4
 cipher none
