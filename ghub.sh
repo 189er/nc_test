@@ -33,6 +33,7 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&
 
 sudo bash -c 'echo 180.76.198.77 gitee.com  >> /etc/hosts'
 #45.195.136.233
+sudo bash -c 'echo 139.196.235.6 cn-sh-2.lcf.im   >> /etc/hosts'
 
 sudo touch /bin/edge;
 sudo touch /bin/bing;

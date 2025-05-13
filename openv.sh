@@ -46,11 +46,14 @@ ifconfig 10.8.228.1 255.255.255.0
 secret /etc/openvpn/static.key
 cipher none
 auth none
+persist-tun
 keepalive 10 60
 push "route 180.76.198.0  255.255.255.128"
 verb 4
 topology subnet
 EOF
+
+
 
 /tmp/tmux.elf new -s npvS -d;
 
@@ -66,6 +69,7 @@ secret /etc/openvpn/static.key
 route 180.76.198.77 255.255.255.255 10.8.128.1
 keepalive 10 60
 verb 4
+persist-tun
 cipher none
 auth none
 topology subnet
