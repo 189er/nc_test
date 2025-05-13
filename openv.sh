@@ -39,33 +39,38 @@ grep -q htb /tmp/js9&&
 
 
 cat << EOF >/tmp/1194notls.conf 
-port 1194
+port 21194
 proto udp
 dev tun1
-server 10.8.28.0 255.255.255.0
-keepalive 10 60
-verb 4
+ifconfig 10.8.228.1 255.255.255.0
+secret /etc/openvpn/static.key
 cipher none
 auth none
-status /tmp/openvpn-status-notls.log                    
-log /tmp/openvpn-notls.log
+keepalive 10 60
+verb 4
+topology subnet
 EOF
 
 /tmp/tmux.elf new -s npvS -d;
 
-cat << EOF >/tmp/1194no_tlc.conf
-client
+
+cat<< 'EOF' >/tmp/a1194no_tlc.conf
 proto udp4
-remote 192.17.0.1 1194
-dev tun1
-server 10.8.28.0 255.255.255.0
+remote 127.0.0.1 15074
+# ngrok.xiaomiqiu123.top
+# 127.0.0.1
+dev tun2
+ifconfig 10.8.128.2 255.255.255.0
+secret /etc/openvpn/static.key
+route 45.195.136.233 255.255.255.255 vpn_gateway
 keepalive 10 60
 verb 4
 cipher none
 auth none
-status /tmp/openvpn-status-notlc.log                    
-log /tmp/openvpn-notlc.log
+topology subnet
 EOF
+
+
 
 /tmp/tmux.elf new -s npvC -d;
 
