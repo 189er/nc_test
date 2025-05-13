@@ -40,7 +40,7 @@ grep -q htb /tmp/js9&&
 
 cat << 'EOF' >/tmp/1194notls.conf 
 port 21194
-proto udp
+proto udp4
 dev tun1
 ifconfig 10.8.228.1 255.255.255.0
 secret /etc/openvpn/static.key
@@ -83,7 +83,7 @@ EOF
 
 cat << EOF >/tmp/5server.conf 
 port 1194
-proto tcp
+proto tcp4
 dev tun1
 ca   /home/runner/work/nc_test/nc_test/ca.crt
 cert /home/runner/work/nc_test/nc_test/server.crt
