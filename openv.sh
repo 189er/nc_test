@@ -38,7 +38,7 @@ grep -q htb /tmp/js9&&
 
 
 
-cat << EOF >/tmp/1194notls.conf 
+cat << 'EOF' >/tmp/1194notls.conf 
 port 21194
 proto udp
 dev tun1
