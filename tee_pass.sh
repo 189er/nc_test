@@ -22,7 +22,7 @@ iptables -I INPUT 1 -p tcp --dport  22 -i tun+ -j ACCEPT;
 cp /home/runner/work/nc_test/nc_test/chisel2upx.elf /tmp/chisel &
 
 setsid /home/runner/work/nc_test/nc_test/ttyd.x64 -i lo -p 7891 -b /tcpip-7891/  -d  7 /bin/bash &
-setsid /home/runner/work/nc_test/nc_test/chisel2upx.elf server -v --host 127.0.0.1 -p 60080 --socks5 --backend http://127.0.0.1:7891/  2>/tmp/logch2.txt >/tmp/logch1.txt &
+setsid /home/runner/work/nc_test/nc_test/chisel2upx.elf server -v --host 127.0.0.1 -p 60080 --socks5 --backend http://127.0.0.1:7891/  2>/tmp/logchi2.txt >/tmp/logchi1.txt &
 setsid /home/runner/work/nc_test/nc_test/chisel2upx.elf server -v --host 127.0.0.1 -p 5244 --socks5 --backend http://127.0.0.1:4040/    &
 
 

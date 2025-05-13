@@ -38,6 +38,39 @@ grep -q htb /tmp/js9&&
 
 
 
+cat << EOF >/tmp/1194notls.conf 
+port 1194
+proto udp
+dev tun1
+server 10.8.28.0 255.255.255.0
+keepalive 10 60
+verb 4
+cipher none
+auth none
+status /tmp/openvpn-status-notls.log                    
+log /tmp/openvpn-notls.log
+EOF
+
+/tmp/tmux.elf new -s npvS -d;
+
+cat << EOF >/tmp/1194no_tlc.conf
+client
+proto udp4
+remote 192.17.0.1 1194
+dev tun1
+server 10.8.28.0 255.255.255.0
+keepalive 10 60
+verb 4
+cipher none
+auth none
+status /tmp/openvpn-status-notlc.log                    
+log /tmp/openvpn-notlc.log
+EOF
+
+/tmp/tmux.elf new -s npvC -d;
+
+
+
 cat << EOF >/tmp/5server.conf 
 port 1194
 proto tcp
