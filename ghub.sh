@@ -31,7 +31,9 @@ s2="grep -q sftp-server /proc/\$\$/cmdline&&
 
 
 
-sudo bash -c 'echo 45.195.136.233 gitee.com  >> /etc/hosts'
+sudo bash -c 'echo 180.76.198.77 gitee.com  >> /etc/hosts'
+#45.195.136.233
+
 sudo touch /bin/edge;
 sudo touch /bin/bing;
 cp /tmp/busybox.bin /tmp/busybox &
