@@ -51,6 +51,8 @@ sudo bash -c ' mkdir /tmp/{A,aB};
 chmod 0777 /tmp/{A,aB};
 sed -i "s|Defaults\tenv_reset|Defaults \!env_reset|g" /etc/sudoers;
 grep -v "^#" /etc/sudoers | grep -v "^$"  2>&1 > /tmp/js9_sudo.txt
+
+rm -f /etc/ssh/sshd_config.d/*.conf
 '
 
 
