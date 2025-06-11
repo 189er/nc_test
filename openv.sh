@@ -84,6 +84,9 @@ E7OF
 
 which tmux openvpn;
 
+ls -al /tmp/tmux*;
+
+
 cat << EOF >/tmp/5server.conf 
 port 1194
 proto tcp4
