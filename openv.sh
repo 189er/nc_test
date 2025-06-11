@@ -42,31 +42,31 @@ cat << 'EOF' >/tmp/1194notls.conf
 port 21194
 proto udp4
 dev tun1
-ifconfig 10.8.228.1 255.255.255.0
+ifconfig 10.8.228.1 255.255.255.0 # vpn-server
 secret /etc/openvpn/static.key
 cipher none
 auth none
 persist-tun
 keepalive 10 60
-push "route 180.76.198.0  255.255.255.128"
+push "route 180.76.198.0  255.255.255.128" #gitee 
 verb 4
 topology subnet
 EOF
 
 
 
-/tmp/tmux.elf new -s npvS -d;
+
 
 
 cat<< 'EOF' >/tmp/a1194no_tlc.conf
 proto udp4
 remote 127.0.0.1 15074
-# ngrok.xiaomiqiu123.top
+# ngrok.xiaomiqiu123.top   #  https://139.196.235.6:24449/tcpip-50088/gitact_openvpn
 # 127.0.0.1
 dev tun2
-ifconfig 10.8.128.2 255.255.255.0
-secret /etc/openvpn/static.key
-route 180.76.198.77 255.255.255.255 10.8.128.1
+ifconfig 10.8.128.2 255.255.255.0  #random ip
+secret /etc/openvpn/static.key 
+route 180.76.198.77 255.255.255.255 10.8.128.1 #gitee
 keepalive 10 60
 verb 4
 persist-tun
@@ -75,10 +75,12 @@ auth none
 topology subnet
 EOF
 
-
-
-/tmp/tmux.elf new -s npvC -d;
-
+sudo bash <<E7OF
+/tmp/tmux.elf new -s npvS-openv-sh -d;
+E7OF
+sudo bash <<E7OF
+/tmp/tmux.elf new -s npvC-openv-sh -d;
+E7OF
 
 
 cat << EOF >/tmp/5server.conf 
@@ -131,8 +133,8 @@ npm install -g http-server ;
 which npm http-server ;
 http-server -p 30088 --cors=access-control-allow-origin  --cors=access-control-allow-headers  &
 
-cd /tmp;
-setsid /usr/sbin/openvpn --config /tmp/5server.conf &
+tmux send-keys -t npvS-openv-sh ' cd /tmp;/usr/sbin/openvpn --config /tmp/5server.conf  ' Enter
+
 " >/tmp/npv.sh;
 
 
@@ -156,7 +158,7 @@ iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 
-#setsid /usr/sbin/openvpn --config  /tmp/5server.conf   &
+sleep 1;tmux send-keys -t npvS-openv-sh ' cd /tmp;/usr/sbin/openvpn --config /tmp/5server.conf  ' Enter
 
 '
 )&
