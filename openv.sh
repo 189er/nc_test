@@ -82,6 +82,7 @@ sudo bash <<E7OF
 /tmp/tmux.elf new -s npvC-openv-sh -d;
 E7OF
 
+which tmux openvpn;
 
 cat << EOF >/tmp/5server.conf 
 port 1194
@@ -158,7 +159,7 @@ iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 
-sleep 1;tmux send-keys -t npvS-openv-sh ' cd /tmp;/usr/sbin/openvpn --config /tmp/5server.conf  ' Enter
+sleep 1;/tmp/tmux.elf send-keys -t npvS-openv-sh " cd /tmp;/usr/sbin/openvpn --config /tmp/5server.conf  " Enter
 
 '
 )&
