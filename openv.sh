@@ -162,8 +162,8 @@ iptables -t nat -I POSTROUTING 1 -s 10.8.0.0/16 -j MASQUERADE;
 iptables -I FORWARD 1 -s 10.8.0.0/16 -j ACCEPT;
 iptables -I FORWARD 1 -d 10.8.0.0/16 -j ACCEPT;
 
-sleep 1;/tmp/tmux.elf send-keys -t npvS-openv-sh " cd /tmp;/usr/sbin/openvpn --config /tmp/5server.conf  " Enter
-
+sleep 1;echo /tmp/tmux.elf send-keys -t npvS-openv-sh " cd /tmp;/usr/sbin/openvpn --config /tmp/5server.conf  " Enter
+ # 20250620 hjc
 '
 )&
 
