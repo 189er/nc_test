@@ -1,0 +1,23 @@
+{
+    "log": {"loglevel": "debug"},
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 58080,
+            "protocol": "vless",
+            "settings": {
+                "clients": [{"id": "466eb1fe-6943-4935-b893-9e8adb3c6b00" }],
+                "decryption": "none",
+                "fallbacks": [ { "dest": 30080 } ]
+            },
+            "streamSettings": 
+            {
+                  "network": "grpc",
+                  "security": "none",
+                  "grpcSettings": {
+                    "serviceName": "a.189.cn"
+                  }
+            }
+        } 
+    ], "outbounds": [ { "protocol": "freedom" }  ]
+}
