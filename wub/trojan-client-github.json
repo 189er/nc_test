@@ -1,0 +1,104 @@
+{
+  "log": {
+    "access": "",
+    "error": "",
+    "loglevel": "debug"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 4080,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": false
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
+    },
+    {
+      "tag": "http",
+      "port": 1080,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": false
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "127.0.0.1",
+            "port": 58080,
+            "password":"your2pass1234"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/tcpip-58080/",
+          "headers":{},
+          "maxEarlyData": 1024
+        }
+      },
+      "mux": {
+        "enabled": false,
+        "concurrency": -1
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      }
+    }
+  ],
+  "dns": {
+    "servers": [
+      {
+        "address": "208.67.222.222",
+        "port": 5353
+      },
+      {
+        "address": "1.1.1.1",
+        "port": 53
+      }
+    ]
+  },
+  "routing": {
+    "domainStrategy": "AsIs"
+  }
+}

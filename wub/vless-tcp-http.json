@@ -1,0 +1,40 @@
+{
+    "log": {"loglevel": "debug"},
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 58080,
+            "protocol": "vless",
+            "settings": {
+                "clients": [{"id": "466eb1fe-6943-4935-b893-9e8adb3c6b00" }],
+                "decryption": "none",
+                "fallbacks": [  {  "dest": 60080 }  ]
+            },
+            "streamSettings": 
+            {
+                  "network": "tcp",
+                  "security": "none",
+                  "tcpSettings": {
+                    "acceptProxyProtocol": false,
+                    "header": {
+                                    "type": "http",
+                                    "request": {
+                                                "path": [ "/tcpip-58080/"],
+                                                "version": "1.1",
+                                                "headers":{
+                                                    "Host": ["9bdez39ksp30.ngrok.xiaomiqiu123.top"]
+                                                    }
+                                                },
+                                    "response": {}
+                                    }
+                }
+            }
+        } 
+    ], "outbounds": [ { "protocol": "freedom" }  ]
+}
+
+
+
+                
+                
+                

