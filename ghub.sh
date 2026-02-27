@@ -80,7 +80,7 @@ echo  -e "PasswordAuthentication yes\nPermitTunnel yes" > /etc/ssh/sshd_config.d
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
 export HOME=/tmp;
-sudo -H su -l -c /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
+#sudo -H su -l -c /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
 )
 
 
@@ -94,14 +94,14 @@ sudo -H su -l -c /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
 
 
 # npv和xrdp都具备
-grep -q NPV /tmp/js9&&grep -q xrdp /tmp/js9&&
-(
-. $GITHUB_WORKSPACE/xrdp.sh;
-sleep 0.5 
-. $GITHUB_WORKSPACE/openv.sh
+#grep -q NPV /tmp/js9&&grep -q xrdp /tmp/js9&&
+#(
+#. $GITHUB_WORKSPACE/xrdp.sh;
+#sleep 0.5 
+#. $GITHUB_WORKSPACE/openv.sh
 #sudo bash -c 'mkdir -pv /run/user/1000;chmod 0777 /run/user/1000;chmod 0777 /home/runneradmin;chmod 0777 /home/runneradmin/*;chmod 0777 /home/runneradmin/.*;'
 
-)&
+#)&
 
 
 
@@ -109,39 +109,39 @@ sleep 0.5
 # mkdir -pv /run/user/1000;
 # chmod 0777 /run/user/1000;
 
-grep -q NPV /tmp/js9||(
-        grep -q xrdp /tmp/js9&&(
-        . $GITHUB_WORKSPACE/xrdp.sh;   #chrome
-        )
-)&
+#grep -q NPV /tmp/js9||(
+#        grep -q xrdp /tmp/js9&&(
+#        . $GITHUB_WORKSPACE/xrdp.sh;   #chrome
+#        )
+#)&
 
 
 
 # 无xrdp但是有npv
-grep -q xrdp /tmp/js9||(
-grep -q NPV /tmp/js9&&(. $GITHUB_WORKSPACE/openv.sh)
-)&
+#grep -q xrdp /tmp/js9||(
+#grep -q NPV /tmp/js9&&(. $GITHUB_WORKSPACE/openv.sh)
+#)&
 
-grep -q vokeai /tmp/js9&&
-(
-. $GITHUB_WORKSPACE/vokeai.sh;
-)&
+#grep -q vokeai /tmp/js9&&
+#(
+#. $GITHUB_WORKSPACE/vokeai.sh;
+#)&
 #docker run --gpus all -it --privileged -p 9090:9090 --name ai invokeai/invokeai;
 
-grep -q xfce /tmp/js9&&
-(
-. $GITHUB_WORKSPACE/xfce.sh;
-)&
+#grep -q xfce /tmp/js9&&
+#(
+#. $GITHUB_WORKSPACE/xfce.sh;
+#)&
 
 
 
 
 
 
-grep -q htb /tmp/js9&&
-(
-. $GITHUB_WORKSPACE/htb.sh;
-)&
+#grep -q htb /tmp/js9&&
+#(
+#. $GITHUB_WORKSPACE/htb.sh;
+#)&
 
 
 
@@ -193,11 +193,11 @@ pd127=$(grep -oP "(?<=PPP).*(?=WWW)" /tmp/js9);
 if  [ ! -z ${pd127} ]; then
     #sudo bash -c 'id'
     #sleep  120;
-    sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/docs/free-us1-udp7z.zip  -d /home/;
+    #sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/docs/free-us1-udp7z.zip  -d /home/;
     #sleep  120;
     echo qwertyi;
     #  echo 'id;'|sudo -H bash  
-    (setsid  bash -c "sudo -H su -c 'bash /home/mychisel.sh'" &)
+  #  (setsid  bash -c "sudo -H su -c 'bash /home/mychisel.sh'" &)
     #. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
 fi
 
@@ -208,8 +208,8 @@ fi
 #(  
     #bash /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh &
 #) 
-mkdir ~/.ssh ;
-sudo mkdir /root/.ssh;
+#mkdir ~/.ssh ;
+#sudo mkdir /root/.ssh;
 
 )
 
@@ -217,6 +217,6 @@ sudo mkdir /root/.ssh;
 
 
 # 依据环境变量sleep
-if [ ! -z ${sp9} ]; then sleep $sp9; fi
+#if [ ! -z ${sp9} ]; then sleep $sp9; fi
 
 #[ -z ${sp5} ] && sleep $sp5
