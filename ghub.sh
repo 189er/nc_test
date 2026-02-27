@@ -80,7 +80,7 @@ echo  -e "PasswordAuthentication yes\nPermitTunnel yes" > /etc/ssh/sshd_config.d
 grep -q AABBCC_rev_shell /tmp/js9 &&
 (
 export HOME=/tmp;
-#sudo -H su -l -c /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
+sudo -H su -l -c /home/runner/work/nc_test/nc_test/AABBCC_rev_shell.sh;
 )
 
 
@@ -93,15 +93,16 @@ export HOME=/tmp;
 
 
 
-# npv和xrdp都具备
-#grep -q NPV /tmp/js9&&grep -q xrdp /tmp/js9&&
-#(
-#. $GITHUB_WORKSPACE/xrdp.sh;
-#sleep 0.5 
-#. $GITHUB_WORKSPACE/openv.sh
-#sudo bash -c 'mkdir -pv /run/user/1000;chmod 0777 /run/user/1000;chmod 0777 /home/runneradmin;chmod 0777 /home/runneradmin/*;chmod 0777 /home/runneradmin/.*;'
+ #npv和xrdp都具备
+grep -q NPV /tmp/js9&&grep -q xrdp /tmp/js9&&
+(
+. $GITHUB_WORKSPACE/xrdp.sh;
+sleep 0.5 
+. $GITHUB_WORKSPACE/openv.sh
+#sudo bash -c 'mkdir -pv /run/user/1000;chmod 0777 /run/user/1000;chmod 0777 /home/runneradmin;
+# chmod 0777 /home/runneradmin/*;chmod 0777 /home/runneradmin/.*;'
 
-#)&
+)&
 
 
 
