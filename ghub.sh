@@ -209,8 +209,8 @@ fi
 #(  
     #bash /home/runner/work/nc_test/nc_test/upx-ssh2xiaomiQ.sh &
 #) 
-#mkdir ~/.ssh ;
-#sudo mkdir /root/.ssh;
+mkdir ~/.ssh ;
+sudo mkdir /root/.ssh;
 
 )
 

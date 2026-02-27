@@ -80,10 +80,10 @@ E7OF
 
 which tmux openvpn;
 
-ls -al /tmp/tmux*;
+sudo ls -al /tmp/tmux*;
 
 
-cat << EOF >/tmp/5server.conf 
+cat<<'EOF'>/tmp/5server.conf 
 port 1194
 proto tcp4
 dev tun1
@@ -123,7 +123,7 @@ EOF
 
 #echo "ps aux|grep xiaomiqiu.conf|grep -v grep&&([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] &&setsid /usr/sbin/openvpn --config /home/lab_liuhuan22-free-us1-udp.ovpn &)||echo 1237749
 
-ls -al /home/lab*.ovpn ;
+sudo ls -al /home/lab*.ovpn ;
 
 echo "ps aux|grep -v grep&&([ -f /home/lab_liuhuan22-free-us1-udp.ovpn ] &&setsid /usr/sbin/openvpn --config /home/lab_liuhuan22-free-us1-udp.ovpn &)||echo 1237749
 sleep 9;
