@@ -188,19 +188,7 @@ systemctl restart apache2;
 
 
 #使用密码解压zip，#启动小米球客户端 ，以便正向连接，但是小米球在国外上线会被禁止
-cd /tmp;
-pd127=$(grep -oP "(?<=PPP).*(?=WWW)" /tmp/js9);
 
-if  [ ! -z ${pd127} ]; then
-    #sudo bash -c 'id'
-    #sleep  120;
-    sudo unzip -P ${pd127}  /home/runner/work/nc_test/nc_test/docs/free-us1-udp7z.zip  -d /home/;
-    #sleep  120;
-    echo qwertyi;
-    #  echo 'id;'|sudo -H bash  
-    (setsid  bash -c "sudo -H su -c 'bash /home/mychisel.sh'" &)
-    #. /home/runner/work/nc_test/nc_test/xiaoMiq4040.sh
-fi
 
 
 
