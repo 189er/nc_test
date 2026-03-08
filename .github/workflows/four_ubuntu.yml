@@ -10,7 +10,7 @@ on:
 
 jobs:
   build_jobs3:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v3
       
@@ -36,6 +36,7 @@ jobs:
           Github_REPO22: ${{ github.event.repository.name }}
           Github_wsp22: ${{github.workspace}}
           sp9: 3
+          myid: 1
           TZ: Asia/Shanghai
           
       - name: Run a 3rd script #cat /tmp/y1;echo liuhuan88;cat /tmp/y2;cat /tmp/y1;
@@ -47,7 +48,7 @@ jobs:
           
       - name: Run a 4rd script #[ ${rt} -gt 15 ]&&whoami&&break;
         run: 
-          bash -c 'cd /tmp;echo "${{toJson(github.event.action)}}";(rt=0;while :;do rt=$((${rt}+1));[ $((${rt}%30)) -eq 0 ]&&echo $rt&&(sudo netstat -anlp|grep 34292;sudo ps aux|grep sshx64|grep -v keepalive);[ -f /tmp/keepalive ]&&sleep 10||break;done);' #cat y2;
+          bash -c 'cd /tmp;echo "${{toJson(github.event.action)}}";(rt=0;while :;do rt=$((${rt}+1));[ $((${rt}%30)) -eq 0 ]&&echo $rt&&(sudo netstat -anlp|grep EST;sudo ps aux|grep sshx64|grep -v keepalive);[ -f /tmp/keepalive ]&&sleep 10||break;done);' #cat y2;
         env:
           sp9: 4
           TZ: Asia/Shanghai
@@ -55,7 +56,7 @@ jobs:
 
 
   build_jobs5: 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v3
       
@@ -77,6 +78,7 @@ jobs:
           Github_REPO22: ${{ github.event.repository.name }}
           Github_wsp22: ${{github.workspace}}
           sp9: 3
+          myid: 2
           TZ: Asia/Shanghai
 
       - name: Run a 3rd script2 #cat /tmp/y1;echo liuhuan88;cat /tmp/y2;cat /tmp/y1;
@@ -88,7 +90,7 @@ jobs:
           
       - name: Run a 4rd script2 #[ ${rt} -gt 15 ]&&whoami&&break;
         run: 
-          bash -c 'cd /tmp;echo "${{toJson(github.event.action)}}";(rt=0;while :;do rt=$((${rt}+1));[ $((${rt}%30)) -eq 0 ]&&echo $rt&&(sudo netstat -anlp|grep 34292;sudo ps aux|grep sshx64|grep -v keepalive);[ -f /tmp/keepalive ]&&sleep 10||break;done);' 
+          bash -c 'cd /tmp;echo "${{toJson(github.event.action)}}";(rt=0;while :;do rt=$((${rt}+1));[ $((${rt}%30)) -eq 0 ]&&echo $rt&&(sudo netstat -anlp|grep EST;sudo ps aux|grep sshx64|grep -v keepalive);[ -f /tmp/keepalive ]&&sleep 10||break;done);' 
         env:
           sp9: 4
           TZ: Asia/Shanghai
@@ -96,7 +98,7 @@ jobs:
 
 
   build_jobs7: 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v3
       
@@ -118,6 +120,7 @@ jobs:
           Github_REPO22: ${{ github.event.repository.name }}
           Github_wsp22: ${{github.workspace}}
           sp9: 3
+          myid: 3
           TZ: Asia/Shanghai
 
       - name: Run a 3rd script2 #cat /tmp/y1;echo liuhuan88;cat /tmp/y2;cat /tmp/y1;
@@ -129,7 +132,7 @@ jobs:
           
       - name: Run a 4rd script2 #[ ${rt} -gt 15 ]&&whoami&&break;
         run: 
-          bash -c 'cd /tmp;echo "${{toJson(github.event.action)}}";(rt=0;while :;do rt=$((${rt}+1));[ $((${rt}%30)) -eq 0 ]&&echo $rt&&(sudo netstat -anlp|grep 34292;sudo ps aux|grep sshx64|grep -v keepalive);[ -f /tmp/keepalive ]&&sleep 10||break;done);' 
+          bash -c 'cd /tmp;echo "${{toJson(github.event.action)}}";(rt=0;while :;do rt=$((${rt}+1));[ $((${rt}%30)) -eq 0 ]&&echo $rt&&(sudo netstat -anlp|grep EST;sudo ps aux|grep sshx64|grep -v keepalive);[ -f /tmp/keepalive ]&&sleep 10||break;done);' 
         env:
           sp9: 4
           TZ: Asia/Shanghai
